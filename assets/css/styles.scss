@@ -298,48 +298,51 @@ body {
             font-weight: 400;
             font-size: 36px;
             text-align: center;
+            margin-top: 75px;
         }
 
         .container-prices {
 
-            .container-pricing__content {
+            .container-prices__content {
                 border: 1px solid;
                 border-radius: 18px;
                 margin: 30px;
-                padding: 60px 25px;
+                /*padding: 22px 25px;*/
                 height: 251px;
 
-                .container-pricing__title {
+                .container-prices__title {
                     display: inline-block;
-                    width: 45%;
                     text-align: center;
+                    width: 45%;
+                    height: 100%;
+                    margin-top: 0px;
 
-                    .pricing__title {
+                    .prices__title {
                         font-family: 'Raleway', sans-serif;
                         font-weight: 700;
                         font-size: 20px;
                     }
 
-                    .pricing__price {
+                    .prices__price {
                         font-weight: 300;
                         font-size: 46px;
                         line-height: 62px;
                         letter-spacing: 0em;
                     }
         
-                    .pricing__price--red {
+                    .prices__price--red {
                         color: #FB3B64;
                     }
         
-                    .pricing__price--blue {
+                    .prices__price--blue {
                         color: #08A6E4;
                     }
         
-                    .pricing__price--green {
+                    .prices__price--green {
                         color: #55DFB4;
                     }
 
-                    .pricing__text {
+                    .prices__text {
                         font-family: 'Raleway', sans-serif;
                         font-weight: 700;
                         font-size: 12px;
@@ -347,35 +350,41 @@ body {
                 }
 
 
-                .container-pricing__list {
+                .container-prices__list {
                     display: inline-block;
                     width: 45%;
+                    margin-left: 25px;
 
-                    .pricing__list {
+                    .prices__list {
                         list-style-type: none;
-                        .pricing__item {
+                        
+                        .prices__item {
                             list-style-type: none;
                             font-size: 14px;
                             font-weight: 400;
+                            margin: 20px 0px;
+
+                            .prices__item {
+                            }
                         }
                     }
                 }
 
             }
 
-            .container-pricing__content--blue {
+            .container-prices__content--blue {
                 border-color: #08A6E4;
             }
 
-            .container-pricing__content--red {
+            .container-prices__content--red {
                 border-color: #FB3B64;
             }
 
-            .container-pricing__content--green {
+            .container-prices__content--green {
                 border-color: #55DFB4;
             }
 
-            .container-pricing__btn {
+            .container-prices__btn {
                 position: relative;
                 width: 50%;
                 height: 50px;
@@ -389,15 +398,15 @@ body {
                 font-weight: 700;
             }
             
-            .container-pricing__btn--red {
+            .container-prices__btn--red {
                 background-color: #FB3B64;
             }
             
-            .container-pricing__btn--blue {
+            .container-prices__btn--blue {
                 background-color: #08A6E4;
             }
             
-            .container-pricing__btn--green {
+            .container-prices__btn--green {
                 background-color: #55DFB4;
             }
         }
