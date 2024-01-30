@@ -412,9 +412,20 @@ body {
                 margin-top: -57px;
                 padding: 14px;
                 text-align: center;
-                background-color: $color-red;
                 font-size: 13px;
                 font-weight: 700;
+                
+                &--red {
+                    background-color: $color-red;
+                }
+
+                &--blue {
+                    background-color: $color-blue;
+                }
+
+                &--green {
+                    background-color: $color-green;
+                }
             }
         }
     }

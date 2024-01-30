@@ -318,9 +318,17 @@ body {
   margin-top: -57px;
   padding: 14px;
   text-align: center;
-  background-color: #FB3B64;
   font-size: 13px;
   font-weight: 700;
+}
+.main .pricing .prices__btn--red {
+  background-color: #FB3B64;
+}
+.main .pricing .prices__btn--blue {
+  background-color: #08A6E4;
+}
+.main .pricing .prices__btn--green {
+  background-color: #55DFB4;
 }
 .main .contact {
   width: 100%;
