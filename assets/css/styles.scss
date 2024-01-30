@@ -106,8 +106,9 @@ body {
                 width: 100%;
                 border-radius: 40px;
                 background-color: #08A6E4;
-                color: #FFF;
-                height: 40%;
+                box-shadow: 5px 10px 14px 0px #07ACE64A;
+                height: 67px;
+                margin: 60px 0px;
             }
         }
 
@@ -115,7 +116,7 @@ body {
 
             .sell__img {
                 display: block;
-                margin: 0px -215px;
+                margin: 0px -186px;
                 width: 210%;
             }
         }
@@ -140,7 +141,7 @@ body {
                 .container__popularity__icon {
                     margin: 0 auto;
                     border-radius: 50%;
-                    width: 17.75%;
+                    width: 62.71px;
                     height: 62.71px;
                     text-align: end;
                 }
@@ -203,92 +204,107 @@ body {
             border: 1px solid #E8E9ED;
             margin-bottom: 40px;
 
-            .caracteristics__title {
-                padding: 30px 30px 0px 30px;
-                font-family: 'Raleway', sans-serif;
-                font-size: 30px;
-                font-weight: 400;
-                line-height: 35px;
-                letter-spacing: 0em;
-                text-align: left;
-            }
-
-            .caracteristics-mac__title {
-                padding: 0px 30px;
-            }
-
-            .caracteristics__text {
-                font-family: 'Open Sans', sans-serif;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 21px;
-                letter-spacing: 0em;
-                text-align: left;
-                padding: 30px;
+            .caracteristics__content__title {
+                
+                .caracteristics__title {
+                    padding: 30px 30px 0px 30px;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 30px;
+                    font-weight: 400;
+                    line-height: 35px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                }
+    
+                .caracteristics-mac__title {
+                    padding: 0px 30px;
+                }
+    
+                .caracteristics__text {
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 21px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    padding: 30px;
+                }
             }
 
             .caracteristics__content__icons {
                 text-align: center;
+                height: 40%;
 
                 .caracteristics-mac__content__icon {
                     padding: 40px;
 
                     .caracteristics__icon {
                         display: inline-block;
+                        position: relative;
                         background-color: #FB3B64;
-                        width: 33.5%;
-                        height: 100px;
+                        width: 90.12px;
+                        height: 90.12px;
                         border-radius: 41px;
                         transform: rotate(45deg);
                         margin: 0px 0px;
-                        position: relative;
-                        text-align: end;
-                        right: -100px;
+                        right: -160px;
+                        top: -45px;
                     }
                     
                     .caracteristics__img {
-                        width: 100%;
+                        width: 192px;
+                        height: 109px;
                         display: inline-block;
                         position: relative;
-                        top: -65px;
+                        left: -50px;
                     }
                 }
 
                 .caracteristics-iphone__content__icon {
-                    margin-top: 40px;
-                    display: inline-block;
-                    background-color: #08A6E4;
-                    width: 33.5%;
-                    height: 50%;
-                    border-radius: 50%;
-                    z-index: -1;
-                    
-                    .caracteristics__img {
-                        width: 100%;
-                        display: inline-block;
-                        z-index: 1;
-                    }
-                }
+                    margin-top: 15px;
 
-                .caracteristics-trumpet__content__icon {
-                    text-align: center;
-                    padding: 40px;
-                    display: inline-block;
-                    background-color: #55DFB4;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 5px;
-                    z-index: -1;
-                    
-                    .caracteristics__img {
-                        width: 100%;
+                    .caracteristics__icon {
                         display: inline-block;
-                        z-index: 1;
+                        background-color: #08A6E4;
+                        width: 131.8px;
+                        height: 131.7px;
+                        border-radius: 50%;
+                        position: relative;
+                        left: 80px;
+                    }
+
+                    .caracteristics__img {
+                        width: 175px;
+                        height: 134px;
+                        display: inline-block;
+                        position: relative;
+                        left: -54px;
+                        top: 14px;
                     }
                 }
             }
-            
         }
+        .caracteristics-trumpet__content {
+            
+            .caracteristics-trumpet__content__icon {
+                padding: 40px;
+                background-color: #55DFB4;
+                width: 100%;
+                height: 195px;
+                text-align: left;
+                border-radius: 5px;
+                margin-top: -60px;
+                
+                
+                .caracteristics__img {
+                    width: fit-content;
+                    display: inline-block;
+                    z-index: 1;
+                    
+                }
+            }
+        }
+        
     }
 
     .container-pricing {
@@ -516,8 +532,6 @@ body {
     }
 }
 
-
-
 .btn {
     border: 0px;
     color: #FFF;
@@ -543,27 +557,34 @@ body {
     position: relative;
     width: 100%;
     height: 15%;
-    
-    .footer-info {
-        
-        .footer-title {
+    box-shadow: 0px -5px 40px 0px #00000033;
+    color: #08A6E4;
+    margin-top: 47px;
+    padding: 20px;
 
+    .footer-info {
+        display: inline-block;
+        width: 70%;
+
+        .footer-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 26px;
+            font-weight: 300;
+            line-height: 30px;
         }
 
         .footer-text {
-
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 15px;
         }
     }
 
     .footer-icons {
-        
-        .footer-fac {
+        display: inline-block;
+        width: 25%;
+        vertical-align: top;
 
-        }
-
-        .footer-twi {
-
-        }
     }
 }
 
