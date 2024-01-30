@@ -37,6 +37,9 @@ body {
   width: 20%;
   text-align: right;
 }
+.header .header__container__icon .header__x-menu {
+  display: none;
+}
 .header .header__container__nav .header__nav .nav__menu__icon {
   text-align: right;
 }

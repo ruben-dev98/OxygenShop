@@ -39,7 +39,11 @@ body {
         width: 20%;
         text-align: right;
 
-        .header__icon {
+        .header__menu {
+        }
+
+        .header__x-menu {
+            display: none;
         }
 
     }
