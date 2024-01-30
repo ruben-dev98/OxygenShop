@@ -316,6 +316,7 @@ body {
                     width: 45%;
                     height: 100%;
                     margin-top: 0px;
+                    vertical-align: middle;
 
                     .prices__title {
                         font-family: 'Raleway', sans-serif;
@@ -413,10 +414,82 @@ body {
     }
 
     .container-contact {
-        width: 50%;
+        width: 100%;
 
         .contact-info {
+            width: 100%;
+            padding: 30px 30px;
 
+            .contact__title {
+                font-family: 'Raleway', sans-serif;
+                font-size: 40px;
+                font-weight: 400;
+            }
+
+            .contact__text {
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 8px;
+            }
+
+            .contact__img {
+                font-size: 16px;
+                font-weight: 600;
+                color: #A5A5A5;
+                padding: 70px 0px;
+            }
+        }
+
+        .contact__form {
+            width: 100%;
+
+            .form {
+                
+                .form__content {
+                    padding: 20px 33px;
+                }
+
+                .form__input {
+                    display: block;
+                    width: 100%;
+                    border: 0px;
+                    border-bottom: 1px solid #95989A;
+                    padding-top: 20px;
+                }
+
+                .form__label {
+                    display: block;
+                    font-weight: 600;
+                    font-size: 11px;
+                    color: #08A6E4;
+                    letter-spacing: 3.2799999713897705px;
+                }
+
+                .form__check {
+                    display: inline-block;
+                    width: 20%;
+                    height: 100%;
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 5px;
+                }
+
+                .form__check:checked {
+                    background-color: #FFF;
+                    background-image: url(../img/checkmark.svg);
+                }
+
+                .form__text {
+                    display: inline-block;
+                    width: 80%;
+                    height: 100%;
+                    font-weight: 400;
+                    font-size: 12;
+                    line-height: 16px;
+                    vertical-align: top;
+                    color: #707070;
+                }
+            }
         }
     }
 }

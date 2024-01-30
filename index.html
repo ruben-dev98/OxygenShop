@@ -178,23 +178,40 @@
         </div>
         <div class="container-contact">
             <div class="contact-info">
-                Any questions?
-                Leave your email address or call us!
-                <img src="assets/img/mail-icon.svg" alt=""> info@bestshop.xyz <img src="assets/img/phone-icon.svg" alt=""> 123 456 789
+                <h2 class="contact__title">Any questions?</h2>
+                <p class="contact__text">Leave your email address or call us!</p>
+                <p class="contact__img">
+                    <p>
+                        <img class="info__img" src="assets/img/mail-icon.svg" alt=""/>
+                        <span class="info__text">info@bestshop.xyz</span>
+                    </p>
+                    <p>
+                        <img class="info__img" src="assets/img/phone-icon.svg" alt=""/>
+                        <span class="info__text">123 456 789</span>
+                    </p>
+                </p>
             </div>
             <div class="contact__form">
                 <form class="form" action="">
-                    <label class="form__label" for="user">NAME</label>
-                    <input class="form__input" type="text" name="user" id="user">
-                    <label class="form__label" for="user-email">EMAIL</label>
-                    <input class="form__input" type="email" name="user-email" id="user-email">
-                    <input class="form__input" type="checkbox" name="legal" id="legal"><label class="form__label" for="legal">
-                        I hereby give consent for my personal data included in my application to be processed for the purposes 
-                        of the recruitment process under the European Parliament’s and 
-                        Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, 
-                        with regard to the processing of personal data and on the free movement of such data, 
-                        and repealing Directive 95/46/EC (Data Protection Directive)
-                    </label>
+                    <div class="form__content">
+                        <label class="form__label" for="user">NAME</label>
+                        <input class="form__input" type="text" name="user" id="user">
+                    </div>
+                    <div class="form__content">
+                        <label class="form__label" for="user-email">EMAIL</label>
+                        <input class="form__input" type="email" name="user-email" id="user-email">
+                    </div>
+                    <div class="form__content">
+                        <input class="form__check" type="checkbox" name="legal" id="legal">
+                        <span class="form__text">
+                            I hereby give consent for my personal data included in my application to be processed for the purposes 
+                            of the recruitment process under the European Parliament’s and 
+                            Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, 
+                            with regard to the processing of personal data and on the free movement of such data, 
+                            and repealing Directive 95/46/EC (Data Protection Directive)
+                        </span>
+                    </div>
+                    
                     <button class="btn btn--blue">Send</button>
                 </form>
             </div>
