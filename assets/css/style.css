@@ -19,12 +19,12 @@ body {
   color: #08A6E4;
   padding: 20px;
 }
-.header .header__container__title {
+.header__div {
   display: inline-block;
   width: 70%;
   text-align: left;
 }
-.header .header__container__title .header__title {
+.header__title {
   font-family: "Raleway", sans-serif;
   font-size: 2rem;
   font-weight: 300;
@@ -32,59 +32,56 @@ body {
   letter-spacing: 0em;
   /*text-align: left;*/
 }
-.header .header__container__icon {
+.header__icon {
   display: inline-block;
   width: 20%;
   text-align: right;
 }
-.header .header__container__icon .header__x-menu {
+.header__x-menu {
   display: none;
 }
-.header .header__container__nav .header__nav .nav__menu__icon {
-  text-align: right;
-}
-.header .header__container__nav .header__nav .nav__list {
+.header__nav .nav__list {
   margin-top: 30px;
   margin-bottom: 20px;
   list-style-type: none;
-  display: none;
+  /*display: none;*/
 }
-.header .header__container__nav .header__nav .nav__list .nav__item {
+.header__nav .nav__item {
   font-size: 11px;
   line-height: 15px;
   letter-spacing: 3.2799999714px;
   text-align: left;
   color: #A5A5A5;
 }
-.header .header__container__nav .header__nav .nav__list .nav__item--active {
+.header__nav .nav__item--active {
   color: #000000;
 }
 
-.container {
+.main {
   position: relative;
   width: 100%;
   height: 70%;
 }
-.container .container__sell {
+.main .sell {
   height: 25%;
   margin: 0 30px;
 }
-.container .container__sell .container__sell__content {
+.main .sell__content {
   margin-top: 120px;
 }
-.container .container__sell .container__sell__content .sell__title {
+.main .sell__title {
   text-align: center;
   font-weight: 400;
   font-size: 35px;
   height: 30%;
 }
-.container .container__sell .container__sell__content .sell__text {
+.main .sell__text {
   position: relative;
   text-align: center;
   font-weight: 400;
   height: 30%;
 }
-.container .container__sell .container__sell__content .sell__button {
+.main .sell__button {
   text-align: center;
   width: 100%;
   border-radius: 40px;
@@ -93,56 +90,41 @@ body {
   height: 67px;
   margin: 60px 0px;
 }
-.container .container__sell .container__sell__img {
+.main .sell__img {
   width: 100%;
   margin-bottom: 20px;
 }
-.container .container__sell .container__sell__img .sell__img {
-  margin: 0 auto;
-  width: 100%;
+.main .sell__img {
   height: 267px;
 }
-.container .container__popularity {
+.main .popularity {
   display: block;
   margin: 0 30px;
   text-align: center;
 }
-.container .container__popularity .container__popularity__title {
+.main .popularity__title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   margin-bottom: 35px;
 }
-.container .container__popularity .container__popularity__content .container__popularity__icons {
-  margin-bottom: 25px;
-}
-.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon {
-  margin: 0 auto;
-  border-radius: 50%;
-  width: 62.71px;
-  height: 62.71px;
-  text-align: end;
-}
-.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__person {
-  background-color: #FB3B64;
-}
-.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__person .popularity__img {
+.main .popularity__img--person {
   margin-left: 31px;
 }
-.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__eye {
-  background-color: #08A6E4;
-}
-.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__eye .popularity__img {
+.main .popularity__img--eye {
   margin-top: 10px;
   margin-left: 19px;
 }
-.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__catalog {
-  background-color: #55DFB4;
-}
-.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__catalog .popularity__img {
+.main .popularity__img--catalog {
   margin-top: 4px;
   margin-left: 29px;
 }
-.container .container__popularity .container__popularity__content .container__popularity__icons .popularity__number {
+.main .popularity__text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #A5A5A5;
+}
+.main .popularity__number {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 1.25rem;
@@ -150,23 +132,36 @@ body {
   line-height: 24px;
   padding: 13px 0px;
 }
-.container .container__popularity .container__popularity__content .container__popularity__icons .popularity__text {
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  color: #A5A5A5;
+.main .popularity__icons {
+  margin-bottom: 25px;
 }
-.container .container__caracteristics {
+.main .popularity__icon {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 62.71px;
+  height: 62.71px;
+  text-align: end;
+}
+.main .popularity__icon--person {
+  background-color: #FB3B64;
+}
+.main .popularity__icon--eye {
+  background-color: #08A6E4;
+}
+.main .popularity__icon--catalog {
+  background-color: #55DFB4;
+}
+.main .caracteristics {
   background-color: #F7F7F7;
   padding: 30px;
 }
-.container .container__caracteristics .container__caracteristics__content {
+.main .caracteristics__content {
   background-color: #FFF;
   border-radius: 5px;
   border: 1px solid #E8E9ED;
   margin-bottom: 40px;
 }
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__title .caracteristics__title {
+.main .caracteristics__title {
   padding: 30px 30px 0px 30px;
   font-family: "Raleway", sans-serif;
   font-size: 30px;
@@ -175,10 +170,10 @@ body {
   letter-spacing: 0em;
   text-align: left;
 }
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__title .caracteristics-mac__title {
-  padding: 0px 30px;
+.main .caracteristics__title--mac {
+  padding: 10px 30px;
 }
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__title .caracteristics__text {
+.main .caracteristics__text {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -187,14 +182,16 @@ body {
   text-align: left;
   padding: 30px;
 }
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons {
+.main .caracteristics__icons {
   text-align: center;
-  height: 40%;
 }
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-mac__content__icon {
-  padding: 40px;
+.main .caracteristics__icons--mac {
+  padding-top: 40px;
 }
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-mac__content__icon .caracteristics__icon {
+.main .caracteristics__icons--iphone {
+  margin-top: 15px;
+}
+.main .caracteristics__icon--mac {
   display: inline-block;
   position: relative;
   background-color: #FB3B64;
@@ -206,17 +203,7 @@ body {
   right: -160px;
   top: -45px;
 }
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-mac__content__icon .caracteristics__img {
-  width: 192px;
-  height: 109px;
-  display: inline-block;
-  position: relative;
-  left: -50px;
-}
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-iphone__content__icon {
-  margin-top: 15px;
-}
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-iphone__content__icon .caracteristics__icon {
+.main .caracteristics__icon--iphone {
   display: inline-block;
   background-color: #08A6E4;
   width: 131.8px;
@@ -225,15 +212,7 @@ body {
   position: relative;
   left: 80px;
 }
-.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-iphone__content__icon .caracteristics__img {
-  width: 175px;
-  height: 134px;
-  display: inline-block;
-  position: relative;
-  left: -54px;
-  top: 14px;
-}
-.container .container__caracteristics .caracteristics-trumpet__content .caracteristics-trumpet__content__icon {
+.main .caracteristics__icon--trumpet {
   padding: 40px;
   background-color: #55DFB4;
   width: 100%;
@@ -242,26 +221,48 @@ body {
   border-radius: 5px;
   margin-top: -60px;
 }
-.container .container__caracteristics .caracteristics-trumpet__content .caracteristics-trumpet__content__icon .caracteristics__img {
+.main .caracteristics__img--mac {
+  width: 192px;
+  height: 109px;
+  display: inline-block;
+  position: relative;
+  left: -50px;
+}
+.main .caracteristics__img--iphone {
+  width: 175px;
+  height: 134px;
+  display: inline-block;
+  position: relative;
+  left: -54px;
+  top: 14px;
+}
+.main .caracteristics__img--trumpet {
   width: fit-content;
   display: inline-block;
-  z-index: 1;
 }
-.container .container-pricing .container-pricing__title {
+.main .pricing__title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   font-size: 36px;
   text-align: center;
   margin-top: 75px;
 }
-.container .container-pricing .container-prices .container-prices__content {
+.main .pricing .prices__content {
   border: 1px solid;
   border-radius: 18px;
   margin: 30px;
-  /*padding: 22px 25px;*/
   height: 251px;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__title {
+.main .pricing .prices__content--red {
+  border-color: #FB3B64;
+}
+.main .pricing .prices__content--blue {
+  border-color: #08A6E4;
+}
+.main .pricing .prices__content--green {
+  border-color: #55DFB4;
+}
+.main .pricing .prices__plan {
   display: inline-block;
   text-align: center;
   width: 45%;
@@ -269,55 +270,46 @@ body {
   margin-top: 0px;
   vertical-align: middle;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__title .prices__title {
+.main .pricing .prices__title {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 20px;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__title .prices__price {
+.main .pricing .prices__price {
   font-weight: 300;
   font-size: 46px;
   line-height: 62px;
   letter-spacing: 0em;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__title .prices__price--red {
+.main .pricing .prices__price--red {
   color: #FB3B64;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__title .prices__price--blue {
+.main .pricing .prices__price--blue {
   color: #08A6E4;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__title .prices__price--green {
+.main .pricing .prices__price--green {
   color: #55DFB4;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__title .prices__text {
+.main .pricing .prices__text {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 12px;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__list {
+.main .pricing .prices__info {
   display: inline-block;
   width: 45%;
   margin-left: 25px;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__list .prices__list {
+.main .pricing .prices__list {
   list-style-type: none;
 }
-.container .container-pricing .container-prices .container-prices__content .container-prices__list .prices__list .prices__item {
+.main .pricing .prices__item {
   list-style-type: none;
   font-size: 14px;
   font-weight: 400;
   margin: 20px 0px;
 }
-.container .container-pricing .container-prices .container-prices__content--blue {
-  border-color: #08A6E4;
-}
-.container .container-pricing .container-prices .container-prices__content--red {
-  border-color: #FB3B64;
-}
-.container .container-pricing .container-prices .container-prices__content--green {
-  border-color: #55DFB4;
-}
-.container .container-pricing .container-prices .container-prices__btn {
+.main .pricing .prices__btn {
   position: relative;
   width: 50%;
   height: 50px;
@@ -330,65 +322,59 @@ body {
   font-size: 13px;
   font-weight: 700;
 }
-.container .container-pricing .container-prices .container-prices__btn--red {
-  background-color: #FB3B64;
-}
-.container .container-pricing .container-prices .container-prices__btn--blue {
-  background-color: #08A6E4;
-}
-.container .container-pricing .container-prices .container-prices__btn--green {
-  background-color: #55DFB4;
-}
-.container .container-contact {
+.main .contact {
   width: 100%;
 }
-.container .container-contact .contact-info {
+.main .contact__info {
   width: 100%;
   padding: 30px 30px;
 }
-.container .container-contact .contact-info .contact-info__title {
+.main .contact__title {
   font-family: "Raleway", sans-serif;
   font-size: 40px;
   font-weight: 400;
 }
-.container .container-contact .contact-info .contact-info__text {
+.main .contact__text {
   font-size: 16px;
   font-weight: 400;
   margin-top: 8px;
 }
-.container .container-contact .contact-info .contact-info__icons {
+.main .contact__text--email {
+  vertical-align: top;
+}
+.main .contact__text--tlf {
+  vertical-align: top;
+}
+.main .contact__contact {
   font-size: 16px;
   font-weight: 600;
   color: #A5A5A5;
   padding-top: 70px;
 }
-.container .container-contact .contact-info .contact-info__icons .icon__content .info__img {
+.main .contact__img {
   vertical-align: middle;
 }
-.container .container-contact .contact-info .contact-info__icons .icon__content .icon__text {
-  vertical-align: top;
-}
-.container .container-contact .contact__form {
+.main .contact__form {
   width: 100%;
 }
-.container .container-contact .contact__form .form .form__content {
+.main .contact__form .form__content {
   padding: 20px 33px;
 }
-.container .container-contact .contact__form .form .form__input {
+.main .contact__form .form__input {
   display: block;
   width: 100%;
   border: 0px;
   border-bottom: 1px solid #95989A;
   padding-top: 20px;
 }
-.container .container-contact .contact__form .form .form__label {
+.main .contact__form .form__label {
   display: block;
   font-weight: 600;
   font-size: 11px;
   color: #08A6E4;
   letter-spacing: 3.2799999714px;
 }
-.container .container-contact .contact__form .form .form__check {
+.main .contact__form .form__check {
   display: inline-block;
   width: 20%;
   height: 100%;
@@ -396,11 +382,11 @@ body {
   height: 24px;
   margin-right: 5px;
 }
-.container .container-contact .contact__form .form .form__check:checked {
+.main .contact__form .form__check:checked {
   background-color: #FFF;
   background-image: url(../img/checkmark.svg);
 }
-.container .container-contact .contact__form .form .form__text {
+.main .contact__form .form__text {
   display: inline-block;
   width: 80%;
   height: 100%;
@@ -410,7 +396,7 @@ body {
   vertical-align: top;
   color: #707070;
 }
-.container .container-contact .contact__form .form .form__submit {
+.main .contact__form .form__submit {
   width: 60%;
   height: 57px;
   text-align: center;
@@ -436,22 +422,22 @@ body {
   margin-top: 47px;
   padding: 20px;
 }
-.footer .footer-info {
+.footer__info {
   display: inline-block;
   width: 70%;
 }
-.footer .footer-info .footer-title {
+.footer__title {
   font-family: "Raleway", sans-serif;
   font-size: 26px;
   font-weight: 300;
   line-height: 30px;
 }
-.footer .footer-info .footer-text {
+.footer__text {
   font-size: 11px;
   font-weight: 400;
   line-height: 15px;
 }
-.footer .footer-icons {
+.footer__icons {
   display: inline-block;
   width: 25%;
   vertical-align: top;
