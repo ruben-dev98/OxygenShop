@@ -7,7 +7,7 @@
 body {
     min-width: 320px;
     font-size: 16px;
-    font-family: 'Open Sans', sans serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 }
 
@@ -288,6 +288,100 @@ body {
             
         }
     }
+
+    .container-pricing {
+        
+        .container-pricing__title {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .container-pricing__content {
+            border: 1px solid;
+            border-radius: 18px;
+            margin: 30px;
+
+            .container-pricing__title {
+                text-align: left;
+                .pricing_title {
+
+                }
+    
+                .pricing_title--red {
+    
+                }
+    
+                .pricing_title--blue {
+    
+                }
+    
+                .pricing_title--green {
+    
+                }
+
+                .pricing_price {
+
+                }
+    
+                .pricing_price--red {
+    
+                }
+    
+                .pricing_price--blue {
+    
+                }
+    
+                .pricing_price--green {
+    
+                }
+
+                .pricing_text {
+
+                }
+            }
+
+
+            .container-pricing__list {
+
+                .pricing_list {
+
+                    .pricing_item {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+            }
+            
+            .container-pricing__btn {
+                text-align: center;
+            }
+            
+
+        }
+
+        .container-pricing__content--blue {
+            border-color: #08A6E4;
+        }
+
+        .container-pricing__content--red {
+            border-color: #FB3B64;
+        }
+
+        .container-pricing__content--green {
+            border-color: #55DFB4;
+        }
+
+
+    }
+
+    .container-contact {
+        
+        .contact-info {
+
+        }
+    }
 }
 
 .btn {
@@ -309,7 +403,28 @@ body {
 .footer {
     width: 100%;
     height: 15%;
+    
+    .footer-info {
+        
+        .footer-title {
 
+        }
+
+        .footer-text {
+
+        }
+    }
+
+    .footer-icons {
+        
+        .footer-fac {
+
+        }
+
+        .footer-twi {
+
+        }
+    }
 }
 
 @media only screen and (min-width: 1000px) {
