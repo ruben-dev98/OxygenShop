@@ -420,23 +420,34 @@ body {
             width: 100%;
             padding: 30px 30px;
 
-            .contact__title {
+            .contact-info__title {
                 font-family: 'Raleway', sans-serif;
                 font-size: 40px;
                 font-weight: 400;
             }
 
-            .contact__text {
+            .contact-info__text {
                 font-size: 16px;
                 font-weight: 400;
                 margin-top: 8px;
             }
 
-            .contact__img {
+            .contact-info__icons {
                 font-size: 16px;
                 font-weight: 600;
                 color: #A5A5A5;
-                padding: 70px 0px;
+                padding-top: 70px;
+
+                .icon__content {
+
+                    .info__img {
+                        vertical-align: middle;
+                    }
+
+                    .icon__text {
+                        vertical-align: top;
+                    }
+                }
             }
         }
 
@@ -489,6 +500,17 @@ body {
                     vertical-align: top;
                     color: #707070;
                 }
+
+                .form__submit {
+                    width: 60%;
+                    height: 57px;
+                    text-align: center;
+                    vertical-align: middle;
+                    background-color: #08A6E4;
+                    border-radius: 35px;
+                    box-shadow: 5px 10px 14px 0px #07ACE64A;
+
+                }
             }
         }
     }
@@ -499,7 +521,9 @@ body {
 .btn {
     border: 0px;
     color: #FFF;
-    background-color: inherit;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
 
     .btn--blue {
 
