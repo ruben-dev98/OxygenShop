@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  font-size: 16px;
+  font-family: "Open Sans", sans serif;
+  font-weight: 700;
+}
+
+.header {
+  height: 15%;
+  width: 100%;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2901960784);
+  color: #08A6E4;
+  padding: 20px;
+}
+.header .header__container__title {
+  display: inline-block;
+  width: 70%;
+  text-align: left;
+}
+.header .header__container__title .header__title {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 37px;
+  letter-spacing: 0em;
+  /*text-align: left;*/
+}
+.header .header__container__icon {
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+}
+.header .header__container__nav .header__nav .nav__menu__icon {
+  text-align: right;
+}
+.header .header__container__nav .header__nav .nav__list {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: none;
+}
+.header .header__container__nav .header__nav .nav__list .nav__item {
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 3.2799999714px;
+  text-align: left;
+  color: #A5A5A5;
+}
+.header .header__container__nav .header__nav .nav__list .nav__item--active {
+  color: #000000;
+}
+
+.container {
+  width: 100%;
+  height: 70%;
+}
+.container .container__sell {
+  height: 25%;
+  margin: 0 30px;
+}
+.container .container__sell .container__sell__content {
+  margin-top: 120px;
+}
+.container .container__sell .container__sell__content .sell__title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 35px;
+  height: 30%;
+}
+.container .container__sell .container__sell__content .sell__text {
+  position: relative;
+  text-align: center;
+  font-weight: 400;
+  height: 30%;
+}
+.container .container__sell .container__sell__content .sell__button {
+  text-align: center;
+  width: 100%;
+  border-radius: 40px;
+  background-color: #08A6E4;
+  color: #FFF;
+  height: 40%;
+}
+.container .container__sell .container__sell__img .sell__img {
+  display: block;
+  margin: 0px -215px;
+  width: 210%;
+}
+.container .container__popularity {
+  display: block;
+  margin: 0 30px;
+  text-align: center;
+}
+.container .container__popularity .container__popularity__title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons {
+  margin-bottom: 25px;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 17.75%;
+  height: 62.71px;
+  text-align: end;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__person {
+  background-color: #FB3B64;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__person .popularity__img {
+  margin-left: 31px;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__eye {
+  background-color: #08A6E4;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__eye .popularity__img {
+  margin-top: 10px;
+  margin-left: 19px;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__catalog {
+  background-color: #55DFB4;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .container__popularity__icon__catalog .popularity__img {
+  margin-top: 4px;
+  margin-left: 29px;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .popularity__number {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 5.9600000381px;
+  line-height: 24px;
+  padding: 13px 0px;
+}
+.container .container__popularity .container__popularity__content .container__popularity__icons .popularity__text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #A5A5A5;
+}
+.container .container__caracteristics {
+  background-color: #F7F7F7;
+  padding: 30px;
+}
+.container .container__caracteristics .container__caracteristics__content {
+  background-color: #FFF;
+  border-radius: 5px;
+  border: 1px solid #E8E9ED;
+  margin-bottom: 40px;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__title {
+  padding: 30px 30px 0px 30px;
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics-mac__title {
+  padding: 0px 30px;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 30px;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons {
+  text-align: center;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-mac__content__icon {
+  padding: 40px;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-mac__content__icon .caracteristics__icon {
+  display: inline-block;
+  background-color: #FB3B64;
+  width: 33.5%;
+  height: 100px;
+  border-radius: 41px;
+  transform: rotate(45deg);
+  margin: 0px 0px;
+  position: relative;
+  text-align: end;
+  right: -100px;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-mac__content__icon .caracteristics__img {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  top: -65px;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-iphone__content__icon {
+  margin-top: 40px;
+  display: inline-block;
+  background-color: #08A6E4;
+  width: 33.5%;
+  height: 50%;
+  border-radius: 50%;
+  z-index: -1;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-iphone__content__icon .caracteristics__img {
+  width: 100%;
+  display: inline-block;
+  z-index: 1;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-trumpet__content__icon {
+  text-align: center;
+  padding: 40px;
+  display: inline-block;
+  background-color: #55DFB4;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: -1;
+}
+.container .container__caracteristics .container__caracteristics__content .caracteristics__content__icons .caracteristics-trumpet__content__icon .caracteristics__img {
+  width: 100%;
+  display: inline-block;
+  z-index: 1;
+}
+
+.footer {
+  width: 100%;
+  height: 15%;
+}
+
+/*# sourceMappingURL=style.css.map */
