@@ -1,0 +1,45 @@
+.sell {
+    height: 25%;
+    margin: 0 30px;
+
+    &__content {
+        margin-top: 120px;
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 400;
+        font-size: 35px;
+        height: 30%;
+    }
+
+    &__text {
+        position: relative;
+        text-align: center;
+        font-weight: 400;
+        height: 30%;
+    }
+
+    &__button {
+        text-align: center;
+        width: 100%;
+        border-radius: 40px;
+        background-color: $color-blue;
+        box-shadow: 5px 10px 14px 0px #07ACE64A;
+        height: 67px;
+        margin: 60px 0px;
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    &__img {
+        height: 267px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    
+}

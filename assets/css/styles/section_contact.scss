@@ -1,0 +1,110 @@
+.contact {
+    width: 100%;
+
+    &__info {
+        width: 100%;
+        padding: 30px 30px;
+    }
+
+    &__title {
+        font-family: $font-rale;
+        font-size: 40px;
+        font-weight: 400;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 8px;
+
+        &--email {
+            vertical-align: top;
+        }
+
+        &--tlf {
+            vertical-align: top;
+        }
+
+        
+    }
+
+    &__content {
+    }
+
+    &__contact {
+        font-size: 16px;
+        font-weight: 600;
+        color: #A5A5A5;
+        padding-top: 70px;
+    }
+
+    &__img {
+        vertical-align: middle;
+    }
+
+    &__form {
+        width: 100%;
+
+        .form {
+            
+            &__content {
+                padding: 20px 33px;
+            }
+
+            &__input {
+                display: block;
+                width: 100%;
+                border: 0px;
+                border-bottom: 1px solid #95989A;
+                padding-top: 20px;
+            }
+
+            &__label {
+                display: block;
+                font-weight: 600;
+                font-size: 11px;
+                color: $color-blue;
+                letter-spacing: 3.2799999713897705px;
+            }
+
+            &__check {
+                display: inline-block;
+                width: 20%;
+                height: 100%;
+                width: 24px;
+                height: 24px;
+                margin-right: 5px;
+            }
+
+            &__check:checked {
+                background-color: #FFF;
+                background-image: url(../img/checkmark.svg);
+            }
+
+            &__text {
+                display: inline-block;
+                width: 80%;
+                height: 100%;
+                font-weight: 400;
+                font-size: 12;
+                line-height: 16px;
+                vertical-align: top;
+                color: #707070;
+            }
+
+            &__submit {
+                width: 60%;
+                height: 57px;
+                text-align: center;
+                vertical-align: middle;
+                background-color: $color-blue;
+                border-radius: 35px;
+                box-shadow: 5px 10px 14px 0px #07ACE64A;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    
+}

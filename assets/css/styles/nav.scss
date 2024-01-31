@@ -1,0 +1,37 @@
+.nav {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+    &__list {
+        position: absolute;
+        display: none;
+        top: -2em;
+        width: 100%;
+        padding: 1.5em;
+        list-style-type: none;
+        background-color: #fff;
+        box-shadow: 0px 3px 6px 0px #0000004A;
+        z-index: 1;
+        
+        /*display: none;*/
+
+        &-item {
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-align: left;
+            color: #A5A5A5;
+            margin-top: 1.2em;
+            margin-bottom: 2.4em;
+
+            &--active {
+                color: #000000;
+            }
+        }
+    
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    
+}

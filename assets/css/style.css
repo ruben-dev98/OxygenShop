@@ -1,20 +1,7 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-width: 320px;
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-}
-
 .header {
-  position: relative;
+  /*position: relative;*/ /*No hace falta*/
   width: 100%;
-  height: 15%;
+  /*height: 15%;*/
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2901960784);
   color: #08A6E4;
   padding: 20px;
@@ -40,48 +27,56 @@ body {
 .header__x-menu {
   display: none;
 }
-.header__nav .nav__list {
-  margin-top: 30px;
-  margin-bottom: 20px;
+
+.nav {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.nav__list {
+  position: absolute;
+  display: none;
+  top: -2em;
+  width: 100%;
+  padding: 1.5em;
   list-style-type: none;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2901960784);
+  z-index: 1;
   /*display: none;*/
 }
-.header__nav .nav__item {
-  font-size: 11px;
-  line-height: 15px;
-  letter-spacing: 3.2799999714px;
+.nav__list-item {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
   text-align: left;
   color: #A5A5A5;
+  margin-top: 1.2em;
+  margin-bottom: 2.4em;
 }
-.header__nav .nav__item--active {
+.nav__list-item--active {
   color: #000000;
 }
 
-.main {
-  position: relative;
-  width: 100%;
-  height: 70%;
-}
-.main .sell {
+.sell {
   height: 25%;
   margin: 0 30px;
 }
-.main .sell__content {
+.sell__content {
   margin-top: 120px;
 }
-.main .sell__title {
+.sell__title {
   text-align: center;
   font-weight: 400;
   font-size: 35px;
   height: 30%;
 }
-.main .sell__text {
+.sell__text {
   position: relative;
   text-align: center;
   font-weight: 400;
   height: 30%;
 }
-.main .sell__button {
+.sell__button {
   text-align: center;
   width: 100%;
   border-radius: 40px;
@@ -90,41 +85,42 @@ body {
   height: 67px;
   margin: 60px 0px;
 }
-.main .sell__img {
+.sell__img {
   width: 100%;
   margin-bottom: 20px;
 }
-.main .sell__img {
+.sell__img {
   height: 267px;
 }
-.main .popularity {
+
+.popularity {
   display: block;
   margin: 0 30px;
   text-align: center;
 }
-.main .popularity__title {
+.popularity__title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   margin-bottom: 35px;
 }
-.main .popularity__img--person {
+.popularity__img--person {
   margin-left: 31px;
 }
-.main .popularity__img--eye {
+.popularity__img--eye {
   margin-top: 10px;
   margin-left: 19px;
 }
-.main .popularity__img--catalog {
+.popularity__img--catalog {
   margin-top: 4px;
   margin-left: 29px;
 }
-.main .popularity__text {
+.popularity__text {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #A5A5A5;
 }
-.main .popularity__number {
+.popularity__number {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 1.25rem;
@@ -132,36 +128,38 @@ body {
   line-height: 24px;
   padding: 13px 0px;
 }
-.main .popularity__icons {
+.popularity__icons {
   margin-bottom: 25px;
 }
-.main .popularity__icon {
+.popularity__icon {
   margin: 0 auto;
   border-radius: 50%;
   width: 62.71px;
   height: 62.71px;
+  /*Cambiar a rem o porcentaje*/
   text-align: end;
 }
-.main .popularity__icon--person {
+.popularity__icon--person {
   background-color: #FB3B64;
 }
-.main .popularity__icon--eye {
+.popularity__icon--eye {
   background-color: #08A6E4;
 }
-.main .popularity__icon--catalog {
+.popularity__icon--catalog {
   background-color: #55DFB4;
 }
-.main .caracteristics {
+
+.caracteristics {
   background-color: #F7F7F7;
   padding: 30px;
 }
-.main .caracteristics__content {
+.caracteristics__content {
   background-color: #FFF;
   border-radius: 5px;
   border: 1px solid #E8E9ED;
   margin-bottom: 40px;
 }
-.main .caracteristics__title {
+.caracteristics__title {
   padding: 30px 30px 0px 30px;
   font-family: "Raleway", sans-serif;
   font-size: 30px;
@@ -170,10 +168,10 @@ body {
   letter-spacing: 0em;
   text-align: left;
 }
-.main .caracteristics__title--mac {
+.caracteristics__title--mac {
   padding: 10px 30px;
 }
-.main .caracteristics__text {
+.caracteristics__text {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -182,138 +180,144 @@ body {
   text-align: left;
   padding: 30px;
 }
-.main .caracteristics__icons {
+.caracteristics__icons {
   text-align: center;
 }
-.main .caracteristics__icons--mac {
+.caracteristics__icons--mac {
   padding-top: 40px;
 }
-.main .caracteristics__icons--iphone {
+.caracteristics__icons--iphone {
   margin-top: 15px;
 }
-.main .caracteristics__icon--mac {
+.caracteristics__icon--mac {
   display: inline-block;
   position: relative;
   background-color: #FB3B64;
   width: 90.12px;
   height: 90.12px;
+  /*Cambiar a rem o porcentaje*/
   border-radius: 41px;
   transform: rotate(45deg);
   margin: 0px 0px;
   right: -160px;
   top: -45px;
 }
-.main .caracteristics__icon--iphone {
+.caracteristics__icon--iphone {
   display: inline-block;
   background-color: #08A6E4;
   width: 131.8px;
   height: 131.7px;
+  /*Cambiar a rem o porcentaje*/
   border-radius: 50%;
   position: relative;
   left: 80px;
 }
-.main .caracteristics__icon--trumpet {
+.caracteristics__icon--trumpet {
   padding: 40px;
   background-color: #55DFB4;
   width: 100%;
   height: 195px;
+  /*Cambiar a rem o porcentaje*/
   text-align: left;
   border-radius: 5px;
   margin-top: -60px;
 }
-.main .caracteristics__img--mac {
+.caracteristics__img--mac {
   width: 192px;
   height: 109px;
+  /*Cambiar a rem o porcentaje*/
   display: inline-block;
   position: relative;
   left: -50px;
 }
-.main .caracteristics__img--iphone {
+.caracteristics__img--iphone {
   width: 175px;
   height: 134px;
+  /*Cambiar a rem o porcentaje*/
   display: inline-block;
   position: relative;
   left: -54px;
   top: 14px;
 }
-.main .caracteristics__img--trumpet {
+.caracteristics__img--trumpet {
   width: fit-content;
   display: inline-block;
 }
-.main .pricing__title {
+
+.pricing__title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 2.5rem;
   text-align: center;
-  margin-top: 75px;
+  margin-top: 20%;
 }
-.main .pricing .prices__content {
-  border: 1px solid;
-  border-radius: 18px;
-  margin: 30px;
-  height: 251px;
+.pricing .prices__content {
+  border: 1px;
+  border-style: solid;
+  border-radius: 1.5em;
+  margin: 7%;
+  height: 16em;
 }
-.main .pricing .prices__content--red {
+.pricing .prices__content--red {
   border-color: #FB3B64;
 }
-.main .pricing .prices__content--blue {
+.pricing .prices__content--blue {
   border-color: #08A6E4;
 }
-.main .pricing .prices__content--green {
+.pricing .prices__content--green {
   border-color: #55DFB4;
 }
-.main .pricing .prices__plan {
+.pricing .prices__plan {
   display: inline-block;
   text-align: center;
   width: 45%;
   height: 100%;
-  margin-top: 0px;
+  margin-top: 0em;
   vertical-align: middle;
 }
-.main .pricing .prices__title {
+.pricing .prices__title {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.3rem;
 }
-.main .pricing .prices__price {
+.pricing .prices__price {
   font-weight: 300;
-  font-size: 46px;
+  font-size: 2.8rem;
   line-height: 62px;
   letter-spacing: 0em;
 }
-.main .pricing .prices__price--red {
+.pricing .prices__price--red {
   color: #FB3B64;
 }
-.main .pricing .prices__price--blue {
+.pricing .prices__price--blue {
   color: #08A6E4;
 }
-.main .pricing .prices__price--green {
+.pricing .prices__price--green {
   color: #55DFB4;
 }
-.main .pricing .prices__text {
+.pricing .prices__text {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
-.main .pricing .prices__info {
+.pricing .prices__info {
   display: inline-block;
   width: 45%;
-  margin-left: 25px;
+  margin-left: 3%;
 }
-.main .pricing .prices__list {
+.pricing .prices__list {
   list-style-type: none;
 }
-.main .pricing .prices__item {
+.pricing .prices__item {
   list-style-type: none;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 400;
-  margin: 20px 0px;
+  margin: 1.5em 0em;
 }
-.main .pricing .prices__btn {
-  position: relative;
-  width: 50%;
-  height: 50px;
-  border-radius: 23px;
+.pricing .prices__btn {
+  width: 11.5em;
+  height: 4em;
+  border-radius: 2em;
   margin: 0 auto;
   margin-top: -57px;
   padding: 14px;
@@ -321,68 +325,69 @@ body {
   font-size: 13px;
   font-weight: 700;
 }
-.main .pricing .prices__btn--red {
+.pricing .prices__btn--red {
   background-color: #FB3B64;
 }
-.main .pricing .prices__btn--blue {
+.pricing .prices__btn--blue {
   background-color: #08A6E4;
 }
-.main .pricing .prices__btn--green {
+.pricing .prices__btn--green {
   background-color: #55DFB4;
 }
-.main .contact {
+
+.contact {
   width: 100%;
 }
-.main .contact__info {
+.contact__info {
   width: 100%;
   padding: 30px 30px;
 }
-.main .contact__title {
+.contact__title {
   font-family: "Raleway", sans-serif;
   font-size: 40px;
   font-weight: 400;
 }
-.main .contact__text {
+.contact__text {
   font-size: 16px;
   font-weight: 400;
   margin-top: 8px;
 }
-.main .contact__text--email {
+.contact__text--email {
   vertical-align: top;
 }
-.main .contact__text--tlf {
+.contact__text--tlf {
   vertical-align: top;
 }
-.main .contact__contact {
+.contact__contact {
   font-size: 16px;
   font-weight: 600;
   color: #A5A5A5;
   padding-top: 70px;
 }
-.main .contact__img {
+.contact__img {
   vertical-align: middle;
 }
-.main .contact__form {
+.contact__form {
   width: 100%;
 }
-.main .contact__form .form__content {
+.contact__form .form__content {
   padding: 20px 33px;
 }
-.main .contact__form .form__input {
+.contact__form .form__input {
   display: block;
   width: 100%;
   border: 0px;
   border-bottom: 1px solid #95989A;
   padding-top: 20px;
 }
-.main .contact__form .form__label {
+.contact__form .form__label {
   display: block;
   font-weight: 600;
   font-size: 11px;
   color: #08A6E4;
   letter-spacing: 3.2799999714px;
 }
-.main .contact__form .form__check {
+.contact__form .form__check {
   display: inline-block;
   width: 20%;
   height: 100%;
@@ -390,11 +395,11 @@ body {
   height: 24px;
   margin-right: 5px;
 }
-.main .contact__form .form__check:checked {
+.contact__form .form__check:checked {
   background-color: #FFF;
   background-image: url(../img/checkmark.svg);
 }
-.main .contact__form .form__text {
+.contact__form .form__text {
   display: inline-block;
   width: 80%;
   height: 100%;
@@ -404,7 +409,7 @@ body {
   vertical-align: top;
   color: #707070;
 }
-.main .contact__form .form__submit {
+.contact__form .form__submit {
   width: 60%;
   height: 57px;
   text-align: center;
@@ -414,13 +419,6 @@ body {
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.2901960784);
 }
 
-.btn {
-  border: 0px;
-  color: #FFF;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-}
 .footer {
   position: relative;
   width: 100%;
@@ -449,6 +447,33 @@ body {
   display: inline-block;
   width: 25%;
   vertical-align: top;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+
+.btn {
+  border: 0px;
+  color: #FFF;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
