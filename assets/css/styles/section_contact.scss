@@ -3,104 +3,100 @@
 
     &__info {
         width: 100%;
-        padding: 30px 30px;
-    }
+        padding: 0em 1.5em;
+        margin-top: 2.5em;
 
-    &__title {
-        font-family: $font-rale;
-        font-size: 40px;
-        font-weight: 400;
-    }
-
-    &__text {
-        font-size: 16px;
-        font-weight: 400;
-        margin-top: 8px;
-
-        &--email {
-            vertical-align: top;
+        &-title {
+            font-family: $font-rale;
+            font-size: 2.5rem;
+            font-weight: 400;
         }
 
-        &--tlf {
-            vertical-align: top;
+        &-text {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 0.5em;
+            margin-bottom: 4.5em;
         }
 
-        
-    }
+        &-icons {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #A5A5A5;
+            margin-bottom: 1em;
 
-    &__content {
-    }
+            &-img {
+                vertical-align: middle;
+            }
+            &-text {
 
-    &__contact {
-        font-size: 16px;
-        font-weight: 600;
-        color: #A5A5A5;
-        padding-top: 70px;
-    }
-
-    &__img {
-        vertical-align: middle;
+                &--email {
+                    vertical-align: top;
+                }
+            
+                &--tlf {
+                    vertical-align: top;
+                }
+            }
+        }
     }
 
     &__form {
         width: 100%;
 
-        .form {
-            
-            &__content {
-                padding: 20px 33px;
+            &-control {
+                padding: 1.5em 1.7em;
+
+                &-input {
+                    display: block;
+                    width: 100%;
+                    border: 0px;
+                    border-bottom: 1px solid #95989A;
+                    padding-top: 2em;
+                }
+    
+                &-label {
+                    display: block;
+                    font-weight: 600;
+                    font-size: 0.7rem;
+                    color: $color-blue;
+                    letter-spacing: 3.2799999713897705px;
+                }
+
+                &-check {
+                    display: inline-block;
+                    width: 20%;
+                    width: 1.8em;
+                    height: 1.8em;
+                    margin-right: 0.5em;
+                }
+
+                &-check:checked {
+                    background-color: #FFF;
+                    background-image: url(../img/checkmark.svg);
+                }
+
+                &-text {
+                    display: inline-block;
+                    width: 80%;
+                    font-weight: 400;
+                    font-size: 0.9rem;
+                    line-height: 16px;
+                    vertical-align: top;
+                    color: #707070;
+                }
             }
 
-            &__input {
-                display: block;
-                width: 100%;
-                border: 0px;
-                border-bottom: 1px solid #95989A;
-                padding-top: 20px;
-            }
-
-            &__label {
-                display: block;
-                font-weight: 600;
-                font-size: 11px;
-                color: $color-blue;
-                letter-spacing: 3.2799999713897705px;
-            }
-
-            &__check {
-                display: inline-block;
-                width: 20%;
-                height: 100%;
-                width: 24px;
-                height: 24px;
-                margin-right: 5px;
-            }
-
-            &__check:checked {
-                background-color: #FFF;
-                background-image: url(../img/checkmark.svg);
-            }
-
-            &__text {
-                display: inline-block;
-                width: 80%;
-                height: 100%;
-                font-weight: 400;
-                font-size: 12;
-                line-height: 16px;
-                vertical-align: top;
-                color: #707070;
-            }
-
-            &__submit {
-                width: 60%;
-                height: 57px;
-                text-align: center;
-                vertical-align: middle;
-                background-color: $color-blue;
-                border-radius: 35px;
-                box-shadow: 5px 10px 14px 0px #07ACE64A;
-            }
+        &-submit {
+            width: 16em;
+            height: 4em;
+            text-align: center;
+            vertical-align: middle;
+            background-color: $color-blue;
+            border-radius: 2em;
+            box-shadow: 5px 10px 14px 0px #07ACE64A;
+            margin-right: 1.7em;
+            margin-left: auto;
         }
     }
 }

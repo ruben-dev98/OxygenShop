@@ -1,6 +1,6 @@
 
 .popularity {
-    padding: 0 1.5em;
+    padding: 0 1em;
     text-align: center;
 
     &__title {
@@ -9,65 +9,62 @@
         margin-bottom: 2em;
     }
 
-    &__img {
-
-        &--person {
-            margin-left: 2em;
+    &__info {
+        &-text {
+            font-family: $font-rale;
+            font-weight: 400;
+            font-size: 1rem;
+            color: #A5A5A5;
         }
 
-        &--eye {
-            margin-top: 0.8em;
-            margin-left: 1.2em;
+        &-number {
+            font-family: $font-rale;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 5.960000038146973px;
+            padding: 0.7em 0em;
         }
 
-        &--catalog {
-            margin-top: 0.1em;
-            margin-left: 2em;
-        }
-        
-    }
-
-    &__content {
-
-    }
-
-    &__text {
-        font-family: $font-rale;
-        font-weight: 400;
-        font-size: 1rem;
-        color: #A5A5A5;
-    }
-
-    &__number {
-        font-family: $font-rale;
-        font-weight: 800;
-        font-size: 1.2rem;
-        letter-spacing: 5.960000038146973px;
-        padding: 0.7em 0em;
-    }
-
-    &__icons {
-        margin-bottom: 1.5em;
-    }
+        &-icons {
+            margin-bottom: 1.5em;
     
-    &__icon {
-        margin: 0 auto;
-        border-radius: 50%;
-        width: 3.9em;
-        height: 3.9em;
-        /*Cambiar a rem o porcentaje*/
-        text-align: end;
-                
-        &--person {
-            background-color: $color-red;
-        }
-
-        &--eye {
-            background-color: $color-blue;
-        }
-
-        &--catalog {
-            background-color: $color-green;
+            &-icon {
+                margin: 0 auto;
+                border-radius: 50%;
+                width: 3.9em;
+                height: 3.9em;
+                /*Cambiar a rem o porcentaje*/
+                text-align: end;
+    
+                &-img {
+                    
+                    &--person {
+                        margin-left: 2em;
+                    }
+    
+                    &--eye {
+                        margin-top: 0.8em;
+                        margin-left: 1.2em;
+                    }
+    
+                    &--catalog {
+                        margin-top: 0.1em;
+                        margin-left: 2em;
+                    }
+                }
+                        
+                &--person {
+                    background-color: $color-red;
+                }
+        
+                &--eye {
+                    background-color: $color-blue;
+                }
+        
+                &--catalog {
+                    background-color: $color-green;
+                }
+            }
         }
     }
 }

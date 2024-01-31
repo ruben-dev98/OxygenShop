@@ -1,5 +1,5 @@
 .pricing {
-        
+    padding: 0em 2em;
     &__title {
         font-family: $font-rale;
         font-weight: 400;
@@ -9,25 +9,22 @@
     }
 
     .prices {
+        border: 1px;
+        border-style: solid;
+        border-radius: 1.5em;
+        margin: 15% 0%;
+        height: 16em;
+        
+        &--red {
+            border-color: $color-red;
+        }
 
-        &__content {
-            border: 1px;
-            border-style: solid;
-            border-radius: 1.5em;
-            margin: 7%;
-            height: 16em;
-            
-            &--red {
-                border-color: $color-red;
-            }
+        &--blue {
+            border-color: $color-blue;
+        }
 
-            &--blue {
-                border-color: $color-blue;
-            }
-
-            &--green {
-                border-color: $color-green;
-            }
+        &--green {
+            border-color: $color-green;
         }
 
         &__plan {
@@ -37,55 +34,54 @@
             height: 100%;
             margin-top: 0em;
             vertical-align: middle;
-        }
 
-        &__title {
-            font-family: $font-rale;
-            font-weight: 700;
-            font-size: 1.3rem;
-        }
-
-        &__price {
-            font-weight: 300;
-            font-size: 2.8rem;
-            line-height: 62px;
-            letter-spacing: 0em;
-
-            &--red {
-                color: $color-red;
+            &-title {
+                font-family: $font-rale;
+                font-weight: 700;
+                font-size: 1.3rem;
             }
 
-            &--blue {
-                color: $color-blue;
+            &-price {
+                font-weight: 300;
+                font-size: 2.8rem;
+                line-height: 62px;
+                letter-spacing: 0em;
+    
+                &--red {
+                    color: $color-red;
+                }
+    
+                &--blue {
+                    color: $color-blue;
+                }
+    
+                &--green {
+                    color: $color-green;
+                }
             }
 
-            &--green {
-                color: $color-green;
+            &-text {
+                font-family: $font-rale;
+                font-weight: 700;
+                font-size: 0.8rem;
             }
         }
-
-        &__text {
-            font-family: $font-rale;
-            font-weight: 700;
-            font-size: 0.8rem;
-        }
-
 
         &__info {
             display: inline-block;
             width: 45%;
             margin-left: 3%;
-        }
 
-        &__list {
-            list-style-type: none;
-        }
-        
-        &__item {
-            list-style-type: none;
-            font-size: 0.9rem;
-            font-weight: 400;
-            margin: 1.5em 0em;
+            &-list {
+                list-style-type: none;
+
+                &-item {
+                    list-style-type: none;
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    margin: 1.5em 0em;
+                }
+            }
         }
 
         &__btn {
@@ -93,7 +89,7 @@
             height: 4em;
             border-radius: 2em;
             margin: 0 auto;
-            margin-top: -4em;
+            margin-top: -7.4em;
             padding: 0.8em;
             text-align: center;
             font-size: 0.8rem;

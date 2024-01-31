@@ -63,11 +63,10 @@
 .sell__title {
   text-align: center;
   font-weight: 400;
-  font-size: 35px;
+  font-size: 2.2rem;
   height: 30%;
 }
 .sell__text {
-  position: relative;
   text-align: center;
   font-weight: 400;
   height: 30%;
@@ -90,7 +89,7 @@
 }
 
 .popularity {
-  padding: 0 1.5em;
+  padding: 0 1em;
   text-align: center;
 }
 .popularity__title {
@@ -98,34 +97,23 @@
   font-weight: 400;
   margin-bottom: 2em;
 }
-.popularity__img--person {
-  margin-left: 2em;
-}
-.popularity__img--eye {
-  margin-top: 0.8em;
-  margin-left: 1.2em;
-}
-.popularity__img--catalog {
-  margin-top: 0.1em;
-  margin-left: 2em;
-}
-.popularity__text {
+.popularity__info-text {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   color: #A5A5A5;
 }
-.popularity__number {
+.popularity__info-number {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: 5.9600000381px;
   padding: 0.7em 0em;
 }
-.popularity__icons {
+.popularity__info-icons {
   margin-bottom: 1.5em;
 }
-.popularity__icon {
+.popularity__info-icons-icon {
   margin: 0 auto;
   border-radius: 50%;
   width: 3.9em;
@@ -133,27 +121,38 @@
   /*Cambiar a rem o porcentaje*/
   text-align: end;
 }
-.popularity__icon--person {
+.popularity__info-icons-icon-img--person {
+  margin-left: 2em;
+}
+.popularity__info-icons-icon-img--eye {
+  margin-top: 0.8em;
+  margin-left: 1.2em;
+}
+.popularity__info-icons-icon-img--catalog {
+  margin-top: 0.1em;
+  margin-left: 2em;
+}
+.popularity__info-icons-icon--person {
   background-color: #FB3B64;
 }
-.popularity__icon--eye {
+.popularity__info-icons-icon--eye {
   background-color: #08A6E4;
 }
-.popularity__icon--catalog {
+.popularity__info-icons-icon--catalog {
   background-color: #55DFB4;
 }
 
-.caracteristics {
+.features {
   background-color: #F7F7F7;
-  padding: 2.7em;
+  padding: 2.7em 1.5em;
 }
-.caracteristics__content {
+.features__article {
   background-color: #FFF;
   border-radius: 0.3em;
   border: 1px solid #E8E9ED;
   margin-bottom: 2.5em;
 }
-.caracteristics__title {
+.features__article-title {
   padding: 0.5em 0.5em 0em 0.4em;
   font-family: "Raleway", sans-serif;
   font-size: 1.9rem;
@@ -162,7 +161,7 @@
   letter-spacing: 0em;
   text-align: left;
 }
-.caracteristics__text {
+.features__article-text {
   font-family: "Open Sans", sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
@@ -171,17 +170,10 @@
   text-align: left;
   padding: 1em;
 }
-.caracteristics__icons {
+.features__article-icons {
   text-align: center;
 }
-.caracteristics__icons--mac {
-  padding-top: 2.7em;
-}
-.caracteristics__icons--iphone {
-  margin-top: 0.5em;
-  margin-bottom: -8em;
-}
-.caracteristics__icon--mac {
+.features__article-icons-icon--mac {
   display: inline-block;
   position: relative;
   background-color: #FB3B64;
@@ -192,7 +184,7 @@
   right: -9.5em;
   top: -2.3em;
 }
-.caracteristics__icon--iphone {
+.features__article-icons-icon--iphone {
   background-color: #08A6E4;
   width: 8.2em;
   height: 8.2em;
@@ -200,7 +192,7 @@
   border-radius: 50%;
   margin: 0 auto;
 }
-.caracteristics__icon--trumpet {
+.features__article-icons-icon--trumpet {
   padding: 1em;
   background-color: #55DFB4;
   width: 100%;
@@ -210,7 +202,7 @@
   border-radius: 0.3em;
   margin-top: -3em;
 }
-.caracteristics__img--mac {
+.features__article-icons-img--mac {
   width: 12em;
   height: 6.8em;
   /*Cambiar a rem o porcentaje*/
@@ -218,17 +210,27 @@
   position: relative;
   left: -3em;
 }
-.caracteristics__img--iphone {
+.features__article-icons-img--iphone {
   width: 10.9em;
   height: 8.4em;
   position: relative;
   top: -7.7em;
   left: 1.5em;
 }
-.caracteristics__img--trumpet {
+.features__article-icons-img--trumpet {
   width: fit-content;
 }
+.features__article-icons--mac {
+  padding-top: 2.7em;
+}
+.features__article-icons--iphone {
+  margin-top: 0.5em;
+  margin-bottom: -8em;
+}
 
+.pricing {
+  padding: 0em 2em;
+}
 .pricing__title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
@@ -236,20 +238,20 @@
   text-align: center;
   margin-top: 20%;
 }
-.pricing .prices__content {
+.pricing .prices {
   border: 1px;
   border-style: solid;
   border-radius: 1.5em;
-  margin: 7%;
+  margin: 15% 0%;
   height: 16em;
 }
-.pricing .prices__content--red {
+.pricing .prices--red {
   border-color: #FB3B64;
 }
-.pricing .prices__content--blue {
+.pricing .prices--blue {
   border-color: #08A6E4;
 }
-.pricing .prices__content--green {
+.pricing .prices--green {
   border-color: #55DFB4;
 }
 .pricing .prices__plan {
@@ -260,27 +262,27 @@
   margin-top: 0em;
   vertical-align: middle;
 }
-.pricing .prices__title {
+.pricing .prices__plan-title {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
 }
-.pricing .prices__price {
+.pricing .prices__plan-price {
   font-weight: 300;
   font-size: 2.8rem;
   line-height: 62px;
   letter-spacing: 0em;
 }
-.pricing .prices__price--red {
+.pricing .prices__plan-price--red {
   color: #FB3B64;
 }
-.pricing .prices__price--blue {
+.pricing .prices__plan-price--blue {
   color: #08A6E4;
 }
-.pricing .prices__price--green {
+.pricing .prices__plan-price--green {
   color: #55DFB4;
 }
-.pricing .prices__text {
+.pricing .prices__plan-text {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
@@ -290,10 +292,10 @@
   width: 45%;
   margin-left: 3%;
 }
-.pricing .prices__list {
+.pricing .prices__info-list {
   list-style-type: none;
 }
-.pricing .prices__item {
+.pricing .prices__info-list-item {
   list-style-type: none;
   font-size: 0.9rem;
   font-weight: 400;
@@ -304,7 +306,7 @@
   height: 4em;
   border-radius: 2em;
   margin: 0 auto;
-  margin-top: -4em;
+  margin-top: -7.4em;
   padding: 0.8em;
   text-align: center;
   font-size: 0.8rem;
@@ -325,83 +327,85 @@
 }
 .contact__info {
   width: 100%;
-  padding: 30px 30px;
+  padding: 0em 1.5em;
+  margin-top: 2.5em;
 }
-.contact__title {
+.contact__info-title {
   font-family: "Raleway", sans-serif;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 400;
 }
-.contact__text {
-  font-size: 16px;
+.contact__info-text {
+  font-size: 1rem;
   font-weight: 400;
-  margin-top: 8px;
+  margin-top: 0.5em;
+  margin-bottom: 4.5em;
 }
-.contact__text--email {
-  vertical-align: top;
-}
-.contact__text--tlf {
-  vertical-align: top;
-}
-.contact__contact {
-  font-size: 16px;
+.contact__info-icons {
+  font-size: 1rem;
   font-weight: 600;
   color: #A5A5A5;
-  padding-top: 70px;
+  margin-bottom: 1em;
 }
-.contact__img {
+.contact__info-icons-img {
   vertical-align: middle;
+}
+.contact__info-icons-text--email {
+  vertical-align: top;
+}
+.contact__info-icons-text--tlf {
+  vertical-align: top;
 }
 .contact__form {
   width: 100%;
 }
-.contact__form .form__content {
-  padding: 20px 33px;
+.contact__form-control {
+  padding: 1.5em 1.7em;
 }
-.contact__form .form__input {
+.contact__form-control-input {
   display: block;
   width: 100%;
   border: 0px;
   border-bottom: 1px solid #95989A;
-  padding-top: 20px;
+  padding-top: 2em;
 }
-.contact__form .form__label {
+.contact__form-control-label {
   display: block;
   font-weight: 600;
-  font-size: 11px;
+  font-size: 0.7rem;
   color: #08A6E4;
   letter-spacing: 3.2799999714px;
 }
-.contact__form .form__check {
+.contact__form-control-check {
   display: inline-block;
   width: 20%;
-  height: 100%;
-  width: 24px;
-  height: 24px;
-  margin-right: 5px;
+  width: 1.8em;
+  height: 1.8em;
+  margin-right: 0.5em;
 }
-.contact__form .form__check:checked {
+.contact__form-control-check:checked {
   background-color: #FFF;
   background-image: url(../img/checkmark.svg);
 }
-.contact__form .form__text {
+.contact__form-control-text {
   display: inline-block;
   width: 80%;
-  height: 100%;
   font-weight: 400;
-  font-size: 12;
+  font-size: 0.9rem;
   line-height: 16px;
   vertical-align: top;
   color: #707070;
 }
-.contact__form .form__submit {
-  width: 60%;
-  height: 57px;
+.contact__form-submit {
+  width: 16em;
+  height: 4em;
   text-align: center;
   vertical-align: middle;
   background-color: #08A6E4;
-  border-radius: 35px;
+  border-radius: 2em;
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.2901960784);
+  margin-right: 1.7em;
+  margin-left: auto;
 }
 
 .footer {
@@ -417,13 +421,13 @@
   display: inline-block;
   width: 70%;
 }
-.footer__title {
+.footer__info-title {
   font-family: "Raleway", sans-serif;
   font-size: 26px;
   font-weight: 300;
   line-height: 30px;
 }
-.footer__text {
+.footer__info-text {
   font-size: 11px;
   font-weight: 400;
   line-height: 15px;
@@ -433,7 +437,6 @@
   width: 25%;
   vertical-align: top;
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
