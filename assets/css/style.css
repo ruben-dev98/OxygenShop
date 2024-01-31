@@ -51,18 +51,17 @@
   text-align: left;
   color: #A5A5A5;
   margin-top: 1.2em;
-  margin-bottom: 2.4em;
+  margin-bottom: 1.4em;
 }
 .nav__list-item--active {
   color: #000000;
 }
 
 .sell {
-  height: 25%;
-  margin: 0 30px;
+  padding: 0em 1.5em;
 }
 .sell__content {
-  margin-top: 120px;
+  margin-top: 5em;
 }
 .sell__title {
   text-align: center;
@@ -79,63 +78,61 @@
 .sell__button {
   text-align: center;
   width: 100%;
-  border-radius: 40px;
+  border-radius: 3em;
   background-color: #08A6E4;
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.2901960784);
-  height: 67px;
-  margin: 60px 0px;
+  height: 4em;
+  margin: 4.5em 0em;
 }
 .sell__img {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 2em;
 }
 .sell__img {
   height: 267px;
 }
 
 .popularity {
-  display: block;
-  margin: 0 30px;
+  padding: 0 1.5em;
   text-align: center;
 }
 .popularity__title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  margin-bottom: 35px;
+  margin-bottom: 2em;
 }
 .popularity__img--person {
-  margin-left: 31px;
+  margin-left: 2em;
 }
 .popularity__img--eye {
-  margin-top: 10px;
-  margin-left: 19px;
+  margin-top: 0.8em;
+  margin-left: 1.2em;
 }
 .popularity__img--catalog {
-  margin-top: 4px;
-  margin-left: 29px;
+  margin-top: 0.1em;
+  margin-left: 2em;
 }
 .popularity__text {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 1rem;
   color: #A5A5A5;
 }
 .popularity__number {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   letter-spacing: 5.9600000381px;
-  line-height: 24px;
-  padding: 13px 0px;
+  padding: 0.7em 0em;
 }
 .popularity__icons {
-  margin-bottom: 25px;
+  margin-bottom: 1.5em;
 }
 .popularity__icon {
   margin: 0 auto;
   border-radius: 50%;
-  width: 62.71px;
-  height: 62.71px;
+  width: 3.9em;
+  height: 3.9em;
   /*Cambiar a rem o porcentaje*/
   text-align: end;
 }
@@ -151,76 +148,70 @@
 
 .caracteristics {
   background-color: #F7F7F7;
-  padding: 30px;
+  padding: 2.7em;
 }
 .caracteristics__content {
   background-color: #FFF;
-  border-radius: 5px;
+  border-radius: 0.3em;
   border: 1px solid #E8E9ED;
-  margin-bottom: 40px;
+  margin-bottom: 2.5em;
 }
 .caracteristics__title {
-  padding: 30px 30px 0px 30px;
+  padding: 0.5em 0.5em 0em 0.4em;
   font-family: "Raleway", sans-serif;
-  font-size: 30px;
+  font-size: 1.9rem;
   font-weight: 400;
   line-height: 35px;
   letter-spacing: 0em;
   text-align: left;
 }
-.caracteristics__title--mac {
-  padding: 10px 30px;
-}
 .caracteristics__text {
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 21px;
   letter-spacing: 0em;
   text-align: left;
-  padding: 30px;
+  padding: 1em;
 }
 .caracteristics__icons {
   text-align: center;
 }
 .caracteristics__icons--mac {
-  padding-top: 40px;
+  padding-top: 2.7em;
 }
 .caracteristics__icons--iphone {
-  margin-top: 15px;
+  margin-top: 0.5em;
+  margin-bottom: -8em;
 }
 .caracteristics__icon--mac {
   display: inline-block;
   position: relative;
   background-color: #FB3B64;
-  width: 90.12px;
-  height: 90.12px;
-  /*Cambiar a rem o porcentaje*/
-  border-radius: 41px;
+  width: 5.5em;
+  height: 5.5em;
+  border-radius: 2.5em;
   transform: rotate(45deg);
-  margin: 0px 0px;
-  right: -160px;
-  top: -45px;
+  right: -9.5em;
+  top: -2.3em;
 }
 .caracteristics__icon--iphone {
-  display: inline-block;
   background-color: #08A6E4;
-  width: 131.8px;
-  height: 131.7px;
+  width: 8.2em;
+  height: 8.2em;
   /*Cambiar a rem o porcentaje*/
   border-radius: 50%;
-  position: relative;
-  left: 80px;
+  margin: 0 auto;
 }
 .caracteristics__icon--trumpet {
-  padding: 40px;
+  padding: 1em;
   background-color: #55DFB4;
   width: 100%;
-  height: 195px;
+  height: 12.2em;
   /*Cambiar a rem o porcentaje*/
   text-align: left;
-  border-radius: 5px;
-  margin-top: -60px;
+  border-radius: 0.3em;
+  margin-top: -3em;
 }
 .caracteristics__img--mac {
   width: 192px;
@@ -228,20 +219,17 @@
   /*Cambiar a rem o porcentaje*/
   display: inline-block;
   position: relative;
-  left: -50px;
+  left: -3em;
 }
 .caracteristics__img--iphone {
   width: 175px;
   height: 134px;
-  /*Cambiar a rem o porcentaje*/
-  display: inline-block;
   position: relative;
-  left: -54px;
-  top: 14px;
+  top: -7.7em;
+  left: 1.5em;
 }
 .caracteristics__img--trumpet {
   width: fit-content;
-  display: inline-block;
 }
 
 .pricing__title {
@@ -319,10 +307,10 @@
   height: 4em;
   border-radius: 2em;
   margin: 0 auto;
-  margin-top: -57px;
-  padding: 14px;
+  margin-top: -4em;
+  padding: 0.8em;
   text-align: center;
-  font-size: 13px;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 .pricing .prices__btn--red {
