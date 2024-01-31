@@ -1,9 +1,7 @@
 .sell {
     padding: 0em 1.5em;
-
-    &__content {
-        margin-top: 5em;
-    }
+    margin-top: 5em;
+    text-align: center;
 
     &__title {
         text-align: center;
@@ -21,12 +19,12 @@
 
     &__button {
         text-align: center;
-        width: 100%;
+        width: 20em;
+        height: 4em;
+        margin: 4.5em auto;
         border-radius: 3em;
         background-color: $color-blue;
         box-shadow: 5px 10px 14px 0px #07ACE64A;
-        height: 4em;
-        margin: 4.5em 0em;
     }
 
     &__img {

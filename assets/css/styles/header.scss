@@ -4,15 +4,12 @@
     /*height: 15%;*/
     box-shadow: 0px 3px 6px 0px #0000004A;
     color: $color-blue;
-    padding: 20px;
+    padding: 1em;
 
-    &__div {
+    &__title {
         display: inline-block;
         width: 70%;
         text-align: left;
-    }
-
-    &__title {
         font-family: $font-rale;
         font-size: 2rem;
         font-weight: 300;
@@ -25,13 +22,13 @@
         display: inline-block;
         width: 20%;
         text-align: right;
-    }
-
-    &__menu {
-    }
-
-    &__x-menu {
-        display: none;
+        
+        &-menu {
+        }
+        
+        &-x-menu {
+            display: none;
+        }
     }
 
 }

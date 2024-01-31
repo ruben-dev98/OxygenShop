@@ -4,14 +4,12 @@
   /*height: 15%;*/
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2901960784);
   color: #08A6E4;
-  padding: 20px;
+  padding: 1em;
 }
-.header__div {
+.header__title {
   display: inline-block;
   width: 70%;
   text-align: left;
-}
-.header__title {
   font-family: "Raleway", sans-serif;
   font-size: 2rem;
   font-weight: 300;
@@ -24,7 +22,7 @@
   width: 20%;
   text-align: right;
 }
-.header__x-menu {
+.header__icon-x-menu {
   display: none;
 }
 
@@ -59,9 +57,8 @@
 
 .sell {
   padding: 0em 1.5em;
-}
-.sell__content {
   margin-top: 5em;
+  text-align: center;
 }
 .sell__title {
   text-align: center;
@@ -77,12 +74,12 @@
 }
 .sell__button {
   text-align: center;
-  width: 100%;
+  width: 20em;
+  height: 4em;
+  margin: 4.5em auto;
   border-radius: 3em;
   background-color: #08A6E4;
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.2901960784);
-  height: 4em;
-  margin: 4.5em 0em;
 }
 .sell__img {
   width: 100%;
@@ -214,16 +211,16 @@
   margin-top: -3em;
 }
 .caracteristics__img--mac {
-  width: 192px;
-  height: 109px;
+  width: 12em;
+  height: 6.8em;
   /*Cambiar a rem o porcentaje*/
   display: inline-block;
   position: relative;
   left: -3em;
 }
 .caracteristics__img--iphone {
-  width: 175px;
-  height: 134px;
+  width: 10.9em;
+  height: 8.4em;
   position: relative;
   top: -7.7em;
   left: 1.5em;
