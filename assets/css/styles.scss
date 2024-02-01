@@ -4,6 +4,8 @@ $color-blue: #08A6E4;
 $color-red: #FB3B64;
 $color-green: #55DFB4;
 
+//Luis: Ejercicio github funcionó a la primera
+
 @import './styles/header.scss';
 @import './styles/nav.scss';
 @import './styles/section_sell.scss';
@@ -39,16 +41,10 @@ body {
     width: 100%;
     height: 100%;
 
-    .btn--blue {
+    .btn--blue {}
 
-    }
+    .btn--green {}
 
-    .btn--green {
-
-    }
-
-    .btn--red {
-
-    }
+    .btn--red {}
 
 }
