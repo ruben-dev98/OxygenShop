@@ -28,14 +28,13 @@
 
 .nav {
   position: relative;
-  display: inline-block;
   width: 100%;
 }
 .nav__list {
   position: absolute;
   display: none;
-  top: -2em;
   width: 100%;
+  top: -1.2em;
   padding: 1.5em;
   list-style-type: none;
   background-color: #fff;
@@ -74,7 +73,7 @@
   text-align: center;
   width: 20em;
   height: 4em;
-  margin: 4em auto;
+  margin: 3em auto;
   border-radius: 3em;
   background-color: #08A6E4;
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.2901960784);
@@ -82,14 +81,16 @@
 .sell__bg {
   width: 100%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0em auto;
+  margin-top: 4em;
 }
 .sell__bg-img {
   display: block;
   position: relative;
   width: 47.7em;
   height: 16.7em;
-  margin: 2em auto;
+  margin: 0em auto;
+  margin-bottom: 2em;
   left: -12.5em;
 }
 
@@ -306,7 +307,7 @@
   margin: 1.5em 0em;
 }
 .pricing .prices__info-list-item-text {
-  margin-left: 0.5em;
+  margin-left: 0.3em;
 }
 .pricing .prices__btn {
   width: 11.5em;
@@ -398,7 +399,8 @@
   background-color: #FFF;
   background-image: url(../img/checkmark.svg);
   background-repeat: no-repeat;
-  background-size: 90%;
+  background-position: center;
+  /*background-size: 100%;*/
 }
 .contact__form-control-text {
   display: inline-block;
@@ -422,13 +424,11 @@
 }
 
 .footer {
-  position: relative;
   width: 100%;
-  height: 15%;
   box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.2);
   color: #08A6E4;
-  margin-top: 47px;
-  padding: 20px;
+  margin-top: 3em;
+  padding: 1em;
 }
 .footer__info {
   display: inline-block;
@@ -436,20 +436,30 @@
 }
 .footer__info-title {
   font-family: "Raleway", sans-serif;
-  font-size: 26px;
+  font-size: 1.5rem;
   font-weight: 300;
   line-height: 30px;
 }
 .footer__info-text {
-  font-size: 11px;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 15px;
+  color: #A5A5A5;
 }
 .footer__icons {
   display: inline-block;
-  width: 25%;
+  width: 28%;
   vertical-align: top;
 }
+.footer__icons-icon--fa {
+  margin-left: 1em;
+  vertical-align: top;
+}
+.footer__icons-icon--twi {
+  margin-left: 0.5em;
+  vertical-align: top;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -475,6 +485,10 @@ body {
   background-color: transparent;
   width: 100%;
   height: 100%;
+  cursor: pointer;
+}
+.cursor--pointer {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

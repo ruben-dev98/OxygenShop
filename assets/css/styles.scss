@@ -40,11 +40,15 @@ body {
     background-color: transparent;
     width: 100%;
     height: 100%;
+    cursor: pointer;
 
     .btn--blue {}
 
     .btn--green {}
 
     .btn--red {}
+}
 
+.cursor--pointer {
+    cursor: pointer;
 }
