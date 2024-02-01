@@ -79,8 +79,11 @@
     box-shadow: none;
     gap: 7.5em;
   }
-  .nav__list-item--active {
+  .nav__list-item {
+    cursor: pointer;
     padding-bottom: 2em;
+  }
+  .nav__list-item--active {
     border-bottom: 4px solid #08A6E4;
   }
 }

@@ -46,9 +46,9 @@
             gap: 7.5em;
     
             &-item {
-    
+                cursor: pointer;
+                padding-bottom: 2em;
                 &--active {
-                    padding-bottom: 2em;
                     border-bottom: 4px solid $color-blue;
                 }
             }
