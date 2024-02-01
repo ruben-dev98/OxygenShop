@@ -64,28 +64,33 @@
   text-align: center;
   font-weight: 400;
   font-size: 2.2rem;
-  height: 30%;
 }
 .sell__text {
   text-align: center;
   font-weight: 400;
-  height: 30%;
+  margin-top: 1em;
 }
 .sell__button {
   text-align: center;
   width: 20em;
   height: 4em;
-  margin: 4.5em auto;
+  margin: 4em auto;
   border-radius: 3em;
   background-color: #08A6E4;
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.2901960784);
 }
-.sell__img {
+.sell__bg {
   width: 100%;
-  margin-bottom: 2em;
+  overflow: hidden;
+  margin: 0 auto;
 }
-.sell__img {
-  height: 267px;
+.sell__bg-img {
+  display: block;
+  position: relative;
+  width: 47.7em;
+  height: 16.7em;
+  margin: 2em auto;
+  left: -12.5em;
 }
 
 .popularity {
@@ -162,7 +167,6 @@
   text-align: left;
 }
 .features__article-text {
-  font-family: "Open Sans", sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 21px;
@@ -300,6 +304,9 @@
   font-size: 0.9rem;
   font-weight: 400;
   margin: 1.5em 0em;
+}
+.pricing .prices__info-list-item-text {
+  margin-left: 0.5em;
 }
 .pricing .prices__btn {
   width: 11.5em;
