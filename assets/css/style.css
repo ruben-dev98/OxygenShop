@@ -301,7 +301,7 @@
   .features {
     /*padding: 2.7em 16.5em;*/
     display: grid;
-    grid-template-columns: 15em 1fr 10em 1fr 15em;
+    grid-template-columns: 15em 1.8fr 5em 1fr 15em;
     grid-template-rows: repeat(3 1fr);
     grid-template-areas: ". mac mac mac ." ". iphone iphone iphone ." ". trumpet . trumpImg .";
   }
@@ -311,12 +311,13 @@
   .features__article--mac {
     grid-area: mac;
     display: grid;
-    grid-template-areas: "info icons";
+    grid-template-columns: 1fr 2em 1fr;
+    grid-template-areas: "info . icons";
   }
   .features__article--iphone {
     grid-area: iphone;
     display: grid;
-    grid-template-columns: 1fr 10em 1fr;
+    grid-template-columns: 1fr 2em 1fr;
     grid-template-areas: "icons . info";
   }
   .features__article--trumpet {
@@ -324,34 +325,42 @@
     margin-bottom: 0em;
   }
   .features__article-info {
-    width: 60%;
+    width: 100%;
     grid-area: info;
-    vertical-align: center;
-    display: grid;
-    grid-template-rows: 2em 5em 5em;
-    grid-template-areas: "." "title" "text";
   }
   .features__article-info--iphone {
-    grid-template-rows: 2em 8em 7em;
+    width: 100%;
+  }
+  .features__article-info--trumpet {
+    width: 100%;
   }
   .features__article-info-title {
-    grid-area: title;
+    padding: 2.5em 0.5em 0em 1em;
+  }
+  .features__article-info-title--iphone {
+    width: 100%;
+  }
+  .features__article-info-title--trumpet {
+    width: 100%;
+    padding-top: 2em;
   }
   .features__article-info-text {
-    padding: 0em;
-    grid-area: text;
+    padding: 2.5em 0em 3em 0em;
     border-bottom: 4px solid;
+    border-width: 50%;
     margin: 0em 1em;
+    margin-left: 2.5em;
   }
   .features__article-info-text--mac {
     border-color: #FB3B64;
-    padding-bottom: 10em;
+    width: 70%;
   }
   .features__article-info-text--iphone {
     border-color: #08A6E4;
   }
   .features__article-info-text--trumpet {
     border-color: #55DFB4;
+    padding-bottom: 1em;
   }
   .features__article-icons {
     grid-area: icons;
@@ -388,7 +397,11 @@
     left: 3.5em;
   }
   .features__article-icons-img--trumpet {
+    margin: 0 auto;
     width: fit-content;
+    display: block;
+    top: 2em;
+    position: relative;
   }
   .features__article-icons--mac {
     padding: 1.7em 0em;
@@ -499,6 +512,58 @@
   background-color: #55DFB4;
 }
 
+@media only screen and (min-width: 1000px) {
+  .pricing {
+    display: grid;
+    grid-template-columns: 1fr 23.4em 2em 23.4em 2em 23.4em 1fr;
+    grid-template-areas: ". . . title . . ." ". priceBa . pricePro . pricePre .";
+  }
+  .pricing__title {
+    margin: 20% 0%;
+    grid-area: title;
+  }
+  .pricing .prices {
+    height: 30.2em;
+    margin: 0em 0em;
+  }
+  .pricing .prices--red {
+    grid-area: priceBa;
+  }
+  .pricing .prices--blue {
+    grid-area: pricePro;
+  }
+  .pricing .prices--green {
+    grid-area: pricePre;
+  }
+  .pricing .prices__plan {
+    display: block;
+    width: 100%;
+    padding-top: 3em;
+    height: 43%;
+  }
+  .pricing .prices__info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .pricing .prices__info-list-item {
+    padding: 0em 0em;
+  }
+  .pricing .prices__btn {
+    margin: 0 auto;
+    margin-top: 2em;
+  }
+  .pricing .prices__btn--red {
+    background-color: #FB3B64;
+  }
+  .pricing .prices__btn--blue {
+    background-color: #08A6E4;
+  }
+  .pricing .prices__btn--green {
+    background-color: #55DFB4;
+  }
+}
 .contact {
   width: 100%;
 }

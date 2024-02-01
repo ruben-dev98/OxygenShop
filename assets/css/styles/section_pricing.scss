@@ -120,4 +120,71 @@
 
 @media only screen and (min-width: 1000px) {
     
+    .pricing {
+        display: grid;
+        grid-template-columns: 1fr 23.4em 2em 23.4em 2em 23.4em 1fr;
+        grid-template-areas: 
+        ". . . title . . ."
+        ". priceBa . pricePro . pricePre ."
+        ;
+        
+        &__title {
+            margin: 20% 0%;
+            grid-area: title;
+        }
+    
+        .prices {
+            height: 30.2em;
+            margin: 0em 0em;
+            
+            &--red {
+                grid-area: priceBa;
+            }
+    
+            &--blue {
+                grid-area: pricePro;
+            }
+    
+            &--green {
+                grid-area: pricePre;
+            }
+    
+            &__plan {
+                display: block;
+                width: 100%;
+                padding-top: 3em;
+                height: 43%;
+            }
+    
+            &__info {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin: 0 auto;
+                
+                &-list {
+                    &-item {
+                        padding: 0em 0em;
+                    }
+                }
+            }
+    
+            &__btn {
+                margin: 0 auto;
+                margin-top: 2em;
+                
+                &--red {
+                    background-color: $color-red;
+                }
+    
+                &--blue {
+                    background-color: $color-blue;
+                }
+    
+                &--green {
+                    background-color: $color-green;
+                }
+            }
+        }
+    }
 }

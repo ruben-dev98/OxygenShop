@@ -109,7 +109,7 @@
     .features {
         /*padding: 2.7em 16.5em;*/
         display: grid;
-        grid-template-columns: 15em 1fr 10em 1fr 15em;
+        grid-template-columns: 15em 1.8fr 5em 1fr 15em;
         grid-template-rows: repeat(3 1fr);
         grid-template-areas: 
         ". mac mac mac ."
@@ -123,15 +123,16 @@
             &--mac {
                 grid-area: mac;
                 display: grid;
+                grid-template-columns: 1fr 2em 1fr;
                 grid-template-areas: 
-                "info icons"
+                "info . icons"
                 ;
             }
 
             &--iphone {
                 grid-area: iphone;
                 display: grid;
-                grid-template-columns: 1fr 10em 1fr;
+                grid-template-columns: 1fr 2em 1fr;
                 grid-template-areas: 
                 "icons . info"
                 ;
@@ -143,34 +144,43 @@
             }
 
             &-info {
-                width: 60%;
+                width: 100%;
                 grid-area: info;
-                vertical-align: center;
-                display: grid;
-                grid-template-rows: 2em 5em 5em;
-                grid-template-areas: 
-                "."
-                "title"
-                "text"
-                ;
 
                 &--iphone {
-                    grid-template-rows: 2em 8em 7em;
+                    width: 100%;
+                }
+
+                &--trumpet {
+                    width: 100%;
                 }
 
                 &-title {
-                    grid-area: title;
+                    padding: 2.5em 0.5em 0em 1em;
+
+                    &--mac {
+                    }
+
+                    &--iphone {
+                        width: 100%;
+                    }
+
+                    &--trumpet {
+                        width: 100%;
+                        padding-top: 2em;
+                    }
                 }
 
                 &-text {
-                    padding: 0em;
-                    grid-area: text;
+                    padding: 2.5em 0em 3em 0em;
                     border-bottom: 4px solid;
+                    border-width: 50%;
                     margin: 0em 1em;
+                    margin-left: 2.5em;
 
                     &--mac {
                         border-color: $color-red;
-                        padding-bottom: 10em;
+                        width: 70%;
                     }
 
                     &--iphone {
@@ -179,6 +189,7 @@
 
                     &--trumpet {
                         border-color: $color-green;
+                        padding-bottom: 1em;
                     }
                 }
             }
@@ -228,7 +239,11 @@
                     }
             
                     &--trumpet {
+                        margin: 0 auto;
                         width: fit-content;
+                        display: block;
+                        top: 2em;
+                        position: relative;
                     }
                 }
         
