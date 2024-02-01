@@ -33,4 +33,27 @@
 
 @media only screen and (min-width: 1000px) {
     
+    .nav {
+        width: 96%;
+        
+        &__list {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            top: -4.5em;
+            background-color: transparent;
+            box-shadow: none;
+            gap: 7.5em;
+    
+            &-item {
+    
+                &--active {
+                    padding-bottom: 2em;
+                    border-bottom: 4px solid $color-blue;
+                }
+            }
+        
+        }
+    }
+    
 }
