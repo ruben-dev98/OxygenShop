@@ -384,15 +384,21 @@
   letter-spacing: 3.2799999714px;
 }
 .contact__form-control-check {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   display: inline-block;
-  width: 20%;
   width: 1.8em;
   height: 1.8em;
   margin-right: 0.5em;
+  border-radius: 0.3em;
+  border: 1px solid #95989A;
 }
 .contact__form-control-check:checked {
   background-color: #FFF;
   background-image: url(../img/checkmark.svg);
+  background-repeat: no-repeat;
+  background-size: 90%;
 }
 .contact__form-control-text {
   display: inline-block;
