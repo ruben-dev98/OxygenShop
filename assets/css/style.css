@@ -545,23 +545,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 0 auto;
-  }
-  .pricing .prices__info-list-item {
-    padding: 0em 0em;
   }
   .pricing .prices__btn {
-    margin: 0 auto;
     margin-top: 2em;
-  }
-  .pricing .prices__btn--red {
-    background-color: #FB3B64;
-  }
-  .pricing .prices__btn--blue {
-    background-color: #08A6E4;
-  }
-  .pricing .prices__btn--green {
-    background-color: #55DFB4;
   }
 }
 .contact {
@@ -657,6 +643,31 @@
   margin-left: auto;
 }
 
+@media only screen and (min-width: 1000px) {
+  .contact {
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .contact__info {
+    width: 20%;
+    padding: 0em 0em;
+    margin-top: 0em;
+  }
+  .contact__info-icons {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .contact__form {
+    width: 20%;
+  }
+  .contact__form-control {
+    padding-bottom: 2.5em;
+    padding-top: 0em;
+  }
+}
 .footer {
   width: 100%;
   box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.2);

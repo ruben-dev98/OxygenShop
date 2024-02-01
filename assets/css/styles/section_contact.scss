@@ -109,5 +109,30 @@
 }
 
 @media only screen and (min-width: 1000px) {
+    .contact {
+        margin: 80px auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
     
+        &__info {
+            width: 20%;
+            padding: 0em 0em;
+            margin-top: 0em;
+
+            &-icons {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+    
+        &__form {
+            width: 20%;
+                &-control {
+                    padding-bottom: 2.5em;
+                    padding-top: 0em;
+                }
+        }
+    }
 }
