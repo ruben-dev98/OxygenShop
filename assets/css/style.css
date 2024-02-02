@@ -518,7 +518,7 @@
 @media only screen and (min-width: 1000px) {
   .pricing {
     display: grid;
-    grid-template-columns: 1fr 23.4em 2em 23.4em 2em 23.4em 1fr;
+    grid-template-columns: 1fr 23.4em 5em 23.4em 5em 23.4em 1fr;
     grid-template-areas: ". . . title . . ." ". priceBa . pricePro . pricePre .";
   }
   .pricing__title {
@@ -526,17 +526,42 @@
     grid-area: title;
   }
   .pricing .prices {
-    height: 30.2em;
+    height: 29.8em;
     margin: 0em 0em;
+  }
+  .pricing .prices:hover {
+    height: 31.5em;
+    margin-top: -1em;
+  }
+  .pricing .prices:hover .prices__btn {
+    margin-top: 2.7em;
+  }
+  .pricing .prices:hover .prices__btn--red {
+    box-shadow: 5px 10px 14px 0px #FB3B64;
+  }
+  .pricing .prices:hover .prices__btn--blue {
+    box-shadow: 5px 10px 14px 0px #08A6E4;
+  }
+  .pricing .prices:hover .prices__btn--green {
+    box-shadow: 5px 10px 14px 0px #55DFB4;
   }
   .pricing .prices--red {
     grid-area: priceBa;
   }
+  .pricing .prices--red:hover {
+    box-shadow: 5px 10px 27px 0px #FB3B64;
+  }
   .pricing .prices--blue {
     grid-area: pricePro;
   }
+  .pricing .prices--blue:hover {
+    box-shadow: 5px 10px 27px 0px #08A6E4;
+  }
   .pricing .prices--green {
     grid-area: pricePre;
+  }
+  .pricing .prices--green:hover {
+    box-shadow: 5px 10px 27px 0px #55DFB4;
   }
   .pricing .prices__plan {
     display: block;
@@ -550,7 +575,7 @@
     width: 100%;
   }
   .pricing .prices__btn {
-    margin-top: 2em;
+    margin-top: 1.7em;
   }
 }
 .contact {
@@ -648,27 +673,43 @@
 
 @media only screen and (min-width: 1000px) {
   .contact {
-    margin: 80px auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    margin-top: 8em;
+    margin-bottom: 5em;
+    display: grid;
+    grid-template-columns: 20em 1.5fr 1.5fr 20em;
+    grid-template-areas: ". info form .";
   }
   .contact__info {
-    width: 20%;
+    grid-area: info;
     padding: 0em 0em;
     margin-top: 0em;
+    margin-left: 2.5em;
+  }
+  .contact__info-title {
+    font-size: 3rem;
   }
   .contact__info-icons {
     display: inline-block;
     margin-right: 10px;
   }
   .contact__form {
-    width: 20%;
+    grid-area: form;
   }
   .contact__form-control {
+    padding: 0em 0em;
     padding-bottom: 2.5em;
-    padding-top: 0em;
+  }
+  .contact__form-control-input {
+    padding: inherit 0em;
+  }
+  .contact__form-control-label {
+    /*width: 92%;*/
+  }
+  .contact__form-control-text {
+    width: 92%;
+  }
+  .contact__form-submit {
+    margin-right: 0em;
   }
 }
 .footer {

@@ -110,16 +110,21 @@
 
 @media only screen and (min-width: 1000px) {
     .contact {
-        margin: 80px auto;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-wrap: wrap;
+        margin-top: 8em;
+        margin-bottom: 5em;
+        display: grid;
+        grid-template-columns: 20em 1.5fr 1.5fr 20em;
+        grid-template-areas: ". info form .";
     
         &__info {
-            width: 20%;
+            grid-area: info;
             padding: 0em 0em;
             margin-top: 0em;
+            margin-left: 2.5em;
+
+            &-title {
+                font-size: 3rem;
+            }
 
             &-icons {
                 display: inline-block;
@@ -128,10 +133,26 @@
         }
     
         &__form {
-            width: 20%;
+            grid-area: form;
                 &-control {
+                    padding: 0em 0em;
                     padding-bottom: 2.5em;
-                    padding-top: 0em;
+
+                    &-input {
+                        padding: inherit 0em;
+                    }
+
+                    &-label {
+                        /*width: 92%;*/
+                    }
+
+                    &-text {
+                        width: 92%;
+                    }
+                }
+
+                &-submit {
+                    margin-right: 0em;
                 }
         }
     }
