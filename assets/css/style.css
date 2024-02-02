@@ -304,23 +304,24 @@
   .features {
     /*padding: 2.7em 16.5em;*/
     display: grid;
-    grid-template-columns: 15em 1.8fr 5em 1fr 15em;
-    grid-template-rows: repeat(3 1fr);
+    grid-template-columns: 14.25% 44.25% 3% 24.25% 14.25%;
     grid-template-areas: ". mac mac mac ." ". iphone iphone iphone ." ". trumpet . trumpImg .";
   }
   .features__article {
+    padding: 0em;
     /*display: grid;*/
   }
   .features__article--mac {
     grid-area: mac;
     display: grid;
-    grid-template-columns: 1fr 2em 1fr;
-    grid-template-areas: "info . icons";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20em;
+    grid-template-areas: "info icons";
   }
   .features__article--iphone {
     grid-area: iphone;
     display: grid;
-    grid-template-columns: 1fr 2em 1fr;
+    grid-template-columns: 49% 5% 46%;
     grid-template-areas: "icons . info";
   }
   .features__article--trumpet {
@@ -332,7 +333,8 @@
     grid-area: info;
   }
   .features__article-info--iphone {
-    width: 100%;
+    width: 96%;
+    margin-left: 2em;
   }
   .features__article-info--trumpet {
     width: 100%;
@@ -341,83 +343,123 @@
     padding: 2.5em 0.5em 0em 1em;
   }
   .features__article-info-title--iphone {
-    width: 100%;
+    width: 55%;
+    padding: 2.5em 0em 0em 0em;
   }
   .features__article-info-title--trumpet {
-    width: 100%;
-    padding-top: 2em;
+    width: 55%;
+    padding-top: 1em;
   }
   .features__article-info-text {
     padding: 2.5em 0em 3em 0em;
-    border-bottom: 4px solid;
-    border-width: 50%;
     margin: 0em 1em;
     margin-left: 2.5em;
   }
-  .features__article-info-text--mac {
-    border-color: #FB3B64;
-    width: 70%;
+  .features__article-info-text::after {
+    margin-top: 10%;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 4px;
+    width: 50%;
   }
   .features__article-info-text--iphone {
-    border-color: #08A6E4;
+    margin-left: 0em;
   }
-  .features__article-info-text--trumpet {
-    border-color: #55DFB4;
-    padding-bottom: 1em;
+  .features__article-info-text--mac::after {
+    background-color: #FB3B64;
+  }
+  .features__article-info-text--iphone::after {
+    background-color: #08A6E4;
+  }
+  .features__article-info-text--trumpet::after {
+    background-color: #55DFB4;
   }
   .features__article-icons {
     grid-area: icons;
+    position: relative;
+    height: 100%;
+  }
+  .features__article-icons--mac {
+    padding: 0em;
+    margin: 0 auto;
+  }
+  .features__article-icons--iphone {
+    margin-top: 0.5em;
+    margin-bottom: -17em;
+    height: 100%;
+  }
+  .features__article-icons--trumpet {
+    grid-area: trumpImg;
   }
   .features__article-icons-icon--mac {
     width: 11.3em;
     height: 11.3em;
-    right: -13.5em;
-    top: -4.3em;
+    right: -51%;
+    top: 11%;
+    display: block;
   }
   .features__article-icons-icon--iphone {
     width: 20em;
     height: 20em;
+    margin: 0em 3em;
   }
   .features__article-icons-icon--trumpet {
-    padding: 1em;
-    background-color: #55DFB4;
-    width: 100%;
     height: 100%;
-    /*Cambiar a rem o porcentaje*/
-    text-align: left;
-    border-radius: 0.3em;
     margin-top: 0em;
   }
   .features__article-icons-img--mac {
     width: 23em;
     height: 13.7em;
-    left: -10.5em;
+    left: 0%;
+    top: -34%;
+    display: block;
   }
   .features__article-icons-img--iphone {
     width: 26.6em;
     height: 20.5em;
-    top: -18.7em;
-    left: 3.5em;
+    top: -77%;
+    left: 8%;
+    display: block;
   }
   .features__article-icons-img--trumpet {
     margin: 0 auto;
-    width: fit-content;
     display: block;
     top: 2em;
     position: relative;
   }
-  .features__article-icons--mac {
-    padding: 1.7em 0em;
-    padding-top: 4.7em;
-  }
-  .features__article-icons--iphone {
-    margin-top: 0.5em;
-    margin-bottom: -17em;
-  }
-  .features__article-icons--trumpet {
-    grid-area: trumpImg;
-  }
 }
+/*@media only screen and (min-width: 1500px) {
+    .features {
+        &__article {
+
+            &-icons {
+
+                &-icon {
+
+                    &--mac {
+                        width: 11.3em;
+                        height: 11.3em;
+                        right: -61%;
+                        top: 11%;
+                        display: block;
+                    }
+                }
+
+                &-img {
+
+                    &--mac {
+                        width: 23em;
+                        height: 13.7em;
+                        left: 23%;
+                        top: -34%;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}*/
 .pricing {
   padding: 0em 2em;
 }
