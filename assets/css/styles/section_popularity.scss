@@ -81,7 +81,7 @@
         &__info {
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 17.5em repeat(3, 1fr) 17.5em;
+            grid-template-columns: 20% 20% 20% 20% 20%;
             grid-template-areas: 
             ". person eye catalog .";
             &-icons--person {

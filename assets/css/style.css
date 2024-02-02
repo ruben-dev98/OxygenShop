@@ -202,7 +202,7 @@
   .popularity__info {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 17.5em repeat(3, 1fr) 17.5em;
+    grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-areas: ". person eye catalog .";
   }
   .popularity__info-icons--person {
@@ -517,8 +517,9 @@
 
 @media only screen and (min-width: 1000px) {
   .pricing {
+    padding: 0em;
     display: grid;
-    grid-template-columns: 1fr 23.4em 5em 23.4em 5em 23.4em 1fr;
+    grid-template-columns: 15% 20% 5% 20% 5% 20% 15%;
     grid-template-areas: ". . . title . . ." ". priceBa . pricePro . pricePre .";
   }
   .pricing__title {
@@ -676,14 +677,13 @@
     margin-top: 8em;
     margin-bottom: 5em;
     display: grid;
-    grid-template-columns: 20em 1.5fr 1.5fr 20em;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-areas: ". info form .";
   }
   .contact__info {
     grid-area: info;
     padding: 0em 0em;
     margin-top: 0em;
-    margin-left: 2.5em;
   }
   .contact__info-title {
     font-size: 3rem;
@@ -702,12 +702,6 @@
   .contact__form-control-input {
     padding: inherit 0em;
   }
-  .contact__form-control-label {
-    /*width: 92%;*/
-  }
-  .contact__form-control-text {
-    width: 92%;
-  }
   .contact__form-submit {
     margin-right: 0em;
   }
@@ -725,7 +719,7 @@
 }
 .footer__info-title {
   font-family: "Raleway", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 30px;
 }
@@ -749,6 +743,14 @@
   vertical-align: top;
 }
 
+@media only screen and (min-width: 1000px) {
+  .footer__info {
+    width: 90%;
+  }
+  .footer__icons {
+    width: 8%;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;

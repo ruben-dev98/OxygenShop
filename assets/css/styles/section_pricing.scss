@@ -121,8 +121,9 @@
 @media only screen and (min-width: 1000px) {
     
     .pricing {
+        padding: 0em;
         display: grid;
-        grid-template-columns: 1fr 23.4em 5em 23.4em 5em 23.4em 1fr;
+        grid-template-columns: 15% 20% 5% 20% 5% 20% 15%;
         grid-template-areas: 
         ". . . title . . ."
         ". priceBa . pricePro . pricePre ."
