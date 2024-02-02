@@ -26,6 +26,18 @@
   display: none;
 }
 
+@media only screen and (min-width: 1000px) {
+  .header__title {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding-left: 2.5em;
+    /*text-align: left;*/
+  }
+  .header__icon {
+    display: none;
+  }
+}
 .nav {
   position: relative;
   width: 100%;
@@ -54,6 +66,27 @@
   color: #000000;
 }
 
+@media only screen and (min-width: 1000px) {
+  .nav {
+    width: 96%;
+  }
+  .nav__list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    top: -4.5em;
+    background-color: transparent;
+    box-shadow: none;
+    gap: 7.5em;
+  }
+  .nav__list-item {
+    cursor: pointer;
+    padding-bottom: 2em;
+  }
+  .nav__list-item--active {
+    border-bottom: 4px solid #08A6E4;
+  }
+}
 .sell {
   padding: 0em 1.5em;
   margin-top: 5em;
@@ -94,11 +127,25 @@
   left: -12.5em;
 }
 
+@media only screen and (min-width: 1000px) {
+  .sell__bg {
+    width: 100%;
+    margin-top: 4em;
+  }
+  .sell__bg-img {
+    width: 100%;
+    height: 37.1em;
+    margin-bottom: 2em;
+    left: 0;
+  }
+}
 .popularity {
+  width: 100%;
   padding: 0 1em;
   text-align: center;
 }
 .popularity__title {
+  font-size: 2rem;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   margin-bottom: 2em;
@@ -148,6 +195,26 @@
   background-color: #55DFB4;
 }
 
+@media only screen and (min-width: 1000px) {
+  .popularity__title {
+    font-size: 2.3rem;
+  }
+  .popularity__info {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: ". person eye catalog .";
+  }
+  .popularity__info-icons--person {
+    grid-area: person;
+  }
+  .popularity__info-icons--eye {
+    grid-area: eye;
+  }
+  .popularity__info-icons--catalog {
+    grid-area: catalog;
+  }
+}
 .features {
   background-color: #F7F7F7;
   padding: 2.7em 1.5em;
@@ -158,8 +225,8 @@
   border: 1px solid #E8E9ED;
   margin-bottom: 2.5em;
 }
-.features__article-title {
-  padding: 0.5em 0.5em 0em 0.4em;
+.features__article-info-title {
+  padding: 1em 0.6em 0em 0.4em;
   font-family: "Raleway", sans-serif;
   font-size: 1.9rem;
   font-weight: 400;
@@ -167,7 +234,7 @@
   letter-spacing: 0em;
   text-align: left;
 }
-.features__article-text {
+.features__article-info-text {
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 21px;
@@ -233,6 +300,166 @@
   margin-bottom: -8em;
 }
 
+@media only screen and (min-width: 1000px) {
+  .features {
+    /*padding: 2.7em 16.5em;*/
+    display: grid;
+    grid-template-columns: 14.25% 44.25% 3% 24.25% 14.25%;
+    grid-template-areas: ". mac mac mac ." ". iphone iphone iphone ." ". trumpet . trumpImg .";
+  }
+  .features__article {
+    padding: 0em;
+    /*display: grid;*/
+  }
+  .features__article--mac {
+    grid-area: mac;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20em;
+    grid-template-areas: "info icons";
+  }
+  .features__article--iphone {
+    grid-area: iphone;
+    display: grid;
+    grid-template-columns: 49% 5% 46%;
+    grid-template-areas: "icons . info";
+  }
+  .features__article--trumpet {
+    grid-area: trumpet;
+    margin-bottom: 0em;
+  }
+  .features__article-info {
+    width: 100%;
+    grid-area: info;
+  }
+  .features__article-info--iphone {
+    width: 96%;
+    margin-left: 2em;
+  }
+  .features__article-info--trumpet {
+    width: 100%;
+  }
+  .features__article-info-title {
+    padding: 2.5em 0.5em 0em 1em;
+  }
+  .features__article-info-title--iphone {
+    width: 55%;
+    padding: 2.5em 0em 0em 0em;
+  }
+  .features__article-info-title--trumpet {
+    width: 55%;
+    padding-top: 1em;
+  }
+  .features__article-info-text {
+    padding: 2.5em 0em 3em 0em;
+    margin: 0em 1em;
+    margin-left: 2.5em;
+  }
+  .features__article-info-text::after {
+    margin-top: 10%;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 4px;
+    width: 50%;
+  }
+  .features__article-info-text--iphone {
+    margin-left: 0em;
+  }
+  .features__article-info-text--mac::after {
+    background-color: #FB3B64;
+  }
+  .features__article-info-text--iphone::after {
+    background-color: #08A6E4;
+  }
+  .features__article-info-text--trumpet::after {
+    background-color: #55DFB4;
+  }
+  .features__article-icons {
+    grid-area: icons;
+    position: relative;
+    height: 100%;
+  }
+  .features__article-icons--mac {
+    padding: 0em;
+    margin: 0 auto;
+  }
+  .features__article-icons--iphone {
+    margin-top: 0.5em;
+    margin-bottom: -17em;
+    height: 100%;
+  }
+  .features__article-icons--trumpet {
+    grid-area: trumpImg;
+  }
+  .features__article-icons-icon--mac {
+    width: 11.3em;
+    height: 11.3em;
+    right: -51%;
+    top: 11%;
+    display: block;
+  }
+  .features__article-icons-icon--iphone {
+    width: 20em;
+    height: 20em;
+    margin: 0em 3em;
+  }
+  .features__article-icons-icon--trumpet {
+    height: 100%;
+    margin-top: 0em;
+  }
+  .features__article-icons-img--mac {
+    width: 23em;
+    height: 13.7em;
+    left: 0%;
+    top: -34%;
+    display: block;
+  }
+  .features__article-icons-img--iphone {
+    width: 26.6em;
+    height: 20.5em;
+    top: -77%;
+    left: 8%;
+    display: block;
+  }
+  .features__article-icons-img--trumpet {
+    margin: 0 auto;
+    display: block;
+    top: 2em;
+    position: relative;
+  }
+}
+/*@media only screen and (min-width: 1500px) {
+    .features {
+        &__article {
+
+            &-icons {
+
+                &-icon {
+
+                    &--mac {
+                        width: 11.3em;
+                        height: 11.3em;
+                        right: -61%;
+                        top: 11%;
+                        display: block;
+                    }
+                }
+
+                &-img {
+
+                    &--mac {
+                        width: 23em;
+                        height: 13.7em;
+                        left: 23%;
+                        top: -34%;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}*/
 .pricing {
   padding: 0em 2em;
 }
@@ -330,6 +557,70 @@
   background-color: #55DFB4;
 }
 
+@media only screen and (min-width: 1000px) {
+  .pricing {
+    padding: 0em;
+    display: grid;
+    grid-template-columns: 15% 20% 5% 20% 5% 20% 15%;
+    grid-template-areas: ". . . title . . ." ". priceBa . pricePro . pricePre .";
+  }
+  .pricing__title {
+    margin: 20% 0%;
+    grid-area: title;
+  }
+  .pricing .prices {
+    height: 29.8em;
+    margin: 0em 0em;
+  }
+  .pricing .prices:hover {
+    height: 31.5em;
+    margin-top: -1em;
+  }
+  .pricing .prices:hover .prices__btn {
+    margin-top: 2.7em;
+  }
+  .pricing .prices:hover .prices__btn--red {
+    box-shadow: 5px 10px 14px 0px #FB3B64;
+  }
+  .pricing .prices:hover .prices__btn--blue {
+    box-shadow: 5px 10px 14px 0px #08A6E4;
+  }
+  .pricing .prices:hover .prices__btn--green {
+    box-shadow: 5px 10px 14px 0px #55DFB4;
+  }
+  .pricing .prices--red {
+    grid-area: priceBa;
+  }
+  .pricing .prices--red:hover {
+    box-shadow: 5px 10px 27px 0px #FB3B64;
+  }
+  .pricing .prices--blue {
+    grid-area: pricePro;
+  }
+  .pricing .prices--blue:hover {
+    box-shadow: 5px 10px 27px 0px #08A6E4;
+  }
+  .pricing .prices--green {
+    grid-area: pricePre;
+  }
+  .pricing .prices--green:hover {
+    box-shadow: 5px 10px 27px 0px #55DFB4;
+  }
+  .pricing .prices__plan {
+    display: block;
+    width: 100%;
+    padding-top: 3em;
+    height: 43%;
+  }
+  .pricing .prices__info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .pricing .prices__btn {
+    margin-top: 1.7em;
+  }
+}
 .contact {
   width: 100%;
 }
@@ -423,6 +714,40 @@
   margin-left: auto;
 }
 
+@media only screen and (min-width: 1000px) {
+  .contact {
+    margin-top: 8em;
+    margin-bottom: 5em;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas: ". info form .";
+  }
+  .contact__info {
+    grid-area: info;
+    padding: 0em 0em;
+    margin-top: 0em;
+  }
+  .contact__info-title {
+    font-size: 3rem;
+  }
+  .contact__info-icons {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .contact__form {
+    grid-area: form;
+  }
+  .contact__form-control {
+    padding: 0em 0em;
+    padding-bottom: 2.5em;
+  }
+  .contact__form-control-input {
+    padding: inherit 0em;
+  }
+  .contact__form-submit {
+    margin-right: 0em;
+  }
+}
 .footer {
   width: 100%;
   box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.2);
@@ -436,7 +761,7 @@
 }
 .footer__info-title {
   font-family: "Raleway", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 30px;
 }
@@ -460,6 +785,14 @@
   vertical-align: top;
 }
 
+@media only screen and (min-width: 1000px) {
+  .footer__info {
+    width: 90%;
+  }
+  .footer__icons {
+    width: 8%;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;

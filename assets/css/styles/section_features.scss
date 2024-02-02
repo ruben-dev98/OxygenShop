@@ -7,25 +7,27 @@
         border-radius: 0.3em;
         border: 1px solid #E8E9ED;
         margin-bottom: 2.5em;
-
-        &-title {
-            padding: 0.5em 0.5em 0em 0.4em;
-            font-family: $font-rale;
-            font-size: 1.9rem;
-            font-weight: 400;
-            line-height: 35px;
-            letter-spacing: 0em;
-            text-align: left;
+        &-info {
+            &-title {
+                padding: 1em 0.6em 0em 0.4em;
+                font-family: $font-rale;
+                font-size: 1.9rem;
+                font-weight: 400;
+                line-height: 35px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+        
+            &-text {
+                font-size: 0.8rem;
+                font-weight: 400;
+                line-height: 21px;
+                letter-spacing: 0em;
+                text-align: left;
+                padding: 1em;
+            }
         }
-    
-        &-text {
-            font-size: 0.8rem;
-            font-weight: 400;
-            line-height: 21px;
-            letter-spacing: 0em;
-            text-align: left;
-            padding: 1em;
-        }
+        
 
         &-icons {
             text-align: center;
@@ -104,5 +106,205 @@
 }
 
 @media only screen and (min-width: 1000px) {
+    .features {
+        /*padding: 2.7em 16.5em;*/
+        display: grid;
+        grid-template-columns: 14.25% 44.25% 3% 24.25% 14.25%;
+        grid-template-areas: 
+        ". mac mac mac ."
+        ". iphone iphone iphone ."
+        ". trumpet . trumpImg ."
+        ;
     
+        &__article {
+            padding: 0em;
+            /*display: grid;*/
+            &--mac {
+                grid-area: mac;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 20em;
+                grid-template-areas: 
+                "info icons"
+                ;
+            }
+
+            &--iphone {
+                grid-area: iphone;
+                display: grid;
+                grid-template-columns: 49% 5% 46%;
+                grid-template-areas: 
+                "icons . info"
+                ;
+            }
+
+            &--trumpet {
+                grid-area: trumpet;
+                margin-bottom: 0em;
+            }
+
+            &-info {
+                width: 100%;
+                grid-area: info;
+
+                &--iphone {
+                    width: 96%;
+                    margin-left: 2em;
+                }
+
+                &--trumpet {
+                    width: 100%;
+                }
+
+                &-title {
+                    padding: 2.5em 0.5em 0em 1em;
+
+                    &--mac {
+                    }
+
+                    &--iphone {
+                        width: 55%;
+                        padding: 2.5em 0em 0em 0em
+                    }
+
+                    &--trumpet {
+                        width: 55%;
+                        padding-top: 1em;
+                    }
+                }
+
+                &-text {
+                    padding: 2.5em 0em 3em 0em;
+                    margin: 0em 1em;
+                    margin-left: 2.5em;
+
+                    &::after {
+                        margin-top: 10%;
+                        bottom: 0;
+                        content: '';
+                        display: block;
+                        height: 4px;
+                        width: 50%;
+                    }
+
+                    &--iphone {
+                        margin-left: 0em;
+                    }
+
+                    &--mac::after {
+                        background-color: $color-red;
+                    }
+
+                    &--iphone::after {
+                        background-color: $color-blue;
+                    }
+
+                    &--trumpet::after {
+                        background-color: $color-green;
+                    }
+                }
+            }
+    
+            &-icons {
+                grid-area: icons;
+                position: relative;
+                height: 100%;
+                
+                &--mac {
+                    padding: 0em;
+                    margin: 0 auto;
+                }
+        
+                &--iphone {
+                    margin-top: 0.5em;
+                    margin-bottom: -17em;
+                    height: 100%;
+                }
+                
+                &--trumpet {
+                    grid-area: trumpImg;
+                }
+
+                &-icon {
+    
+                    &--mac {
+                        width: 11.3em;
+                        height: 11.3em;
+                        right: -51%;
+                        top: 11%;
+                        display: block;
+                    }
+            
+                    &--iphone {
+                        width: 20em;
+                        height: 20em;
+                        margin: 0em 3em;
+                    }
+            
+                    &--trumpet {
+                        height: 100%;
+                        margin-top: 0em;
+                    }
+                }
+    
+                &-img {
+    
+                    &--mac {
+                        width: 23em;
+                        height: 13.7em;
+                        left: 0%;
+                        top: -34%;
+                        display: block;
+                    }
+            
+                    &--iphone {
+                        width: 26.6em;
+                        height: 20.5em;
+                        top: -77%;
+                        left: 8%;
+                        display: block;
+                    }
+            
+                    &--trumpet {
+                        margin: 0 auto;
+                        display: block;
+                        top: 2em;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
 }
+
+/*@media only screen and (min-width: 1500px) {
+    .features {
+        &__article {
+    
+            &-icons {
+
+                &-icon {
+    
+                    &--mac {
+                        width: 11.3em;
+                        height: 11.3em;
+                        right: -61%;
+                        top: 11%;
+                        display: block;
+                    }
+                }
+    
+                &-img {
+    
+                    &--mac {
+                        width: 23em;
+                        height: 13.7em;
+                        left: 23%;
+                        top: -34%;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}*/

@@ -120,4 +120,85 @@
 
 @media only screen and (min-width: 1000px) {
     
+    .pricing {
+        padding: 0em;
+        display: grid;
+        grid-template-columns: 15% 20% 5% 20% 5% 20% 15%;
+        grid-template-areas: 
+        ". . . title . . ."
+        ". priceBa . pricePro . pricePre ."
+        ;
+        
+        &__title {
+            margin: 20% 0%;
+            grid-area: title;
+        }
+    
+        .prices {
+            height: 29.8em;
+            margin: 0em 0em;
+            
+            &:hover {
+                height: 31.5em;
+                margin-top: -1em;
+
+                .prices__btn {
+                    margin-top: 2.7em;
+
+                    &--red {
+                        box-shadow: 5px 10px 14px 0px $color-red;
+                    }
+    
+                    &--blue {
+                        box-shadow: 5px 10px 14px 0px $color-blue;
+                    }
+    
+                    &--green {
+                        box-shadow: 5px 10px 14px 0px $color-green;
+                    }
+                }
+            }
+
+            &--red {
+                grid-area: priceBa;
+
+                &:hover {
+                    box-shadow: 5px 10px 27px 0px $color-red;
+                }
+            }
+    
+            &--blue {
+                grid-area: pricePro;
+
+                &:hover {
+                    box-shadow: 5px 10px 27px 0px $color-blue;
+                }
+            }
+    
+            &--green {
+                grid-area: pricePre;
+
+                &:hover {
+                    box-shadow: 5px 10px 27px 0px $color-green;
+                }
+            }
+    
+            &__plan {
+                display: block;
+                width: 100%;
+                padding-top: 3em;
+                height: 43%;
+            }
+    
+            &__info {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+    
+            &__btn {
+                margin-top: 1.7em;
+            }
+        }
+    }
 }
