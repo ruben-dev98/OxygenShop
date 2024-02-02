@@ -49,6 +49,15 @@ body {
     .btn--red {}
 }
 
+.scroll {
+    display: none;
+    background-color: $color-green;
+    height: 1em;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
 .cursor--pointer {
     cursor: pointer;
 }

@@ -21,6 +21,8 @@
   display: inline-block;
   width: 20%;
   text-align: right;
+  margin-right: 0;
+  margin-left: auto;
 }
 .header__icon-x-menu {
   display: none;
@@ -820,6 +822,15 @@ body {
   height: 100%;
   cursor: pointer;
 }
+.scroll {
+  display: none;
+  background-color: #55DFB4;
+  height: 1em;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
 .cursor--pointer {
   cursor: pointer;
 }
