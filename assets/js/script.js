@@ -1,6 +1,15 @@
+/*************  MENU  ******************/
 let iconMenu = document.getElementsByClassName('header__icon-menu')[0];
 let iconMenuX = document.getElementsByClassName('header__icon-x-menu')[0];
 let list = document.getElementsByClassName('nav__list')[0];
+
+/*************  SCROLLBAR  ******************/
+
+let scrollBar = document.getElementsByClassName('scroll')[0];
+
+/*************  TO_TOP  ******************/
+
+let toTop = document.getElementsByClassName('to__top')[0];
 
 /*************  MENU  ******************/
 
@@ -19,7 +28,7 @@ iconMenuX.addEventListener('click', e => {
 
 /*************  SCROLLBAR  ******************/
 
-let scrollBar = document.getElementsByClassName('scroll')[0];
+
 
 window.addEventListener('scroll', e => {
     /*3336*/
@@ -27,6 +36,8 @@ window.addEventListener('scroll', e => {
     //console.log(document.body);
     let width = window.scrollY*100/e.target.body.scrollHeight;
     scrollBar.setAttribute('style', 'width: ' + width + '%; display: block;');
+    if(width > 50) toTop.setAttribute('style', 'display: block');
+    else toTop.setAttribute('style', 'display:none');
 });
 
 
@@ -34,7 +45,14 @@ window.addEventListener('scroll', e => {
 
 
 
-/*************  SCROLLBAR  ******************/
+/*************  TO_TOP  ******************/
 
-/*************  SCROLLBAR  ******************/
+toTop.addEventListener('click', e => {
+    setTimeout(() => {
+        //let sc = scrollY - 100;
+        window.scrollTo(0 , 0);
+    }, 200);
+});
+
+/*************  TO_TOP  ******************/
 

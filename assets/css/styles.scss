@@ -58,6 +58,16 @@ body {
     z-index: 100;
 }
 
+.to__top {
+    display: none;
+    background-color: #08A6E4;
+    width: 10em;
+    height: 10em;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
 .cursor--pointer {
     cursor: pointer;
 }
