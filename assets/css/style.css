@@ -841,6 +841,26 @@ body {
   bottom: 0;
 }
 
+.modal {
+  top: 32.5%;
+  left: 32.5%;
+}
+.modal::backdrop {
+  opacity: 0.75;
+}
+.modal__btn {
+  border: 0;
+  cursor: pointer;
+  display: block;
+  margin-right: 0;
+  margin-left: auto;
+  background-color: transparent;
+  padding: 0.5em;
+}
+.modal__title {
+  padding: 5em;
+}
+
 .cursor--pointer {
   cursor: pointer;
 }

@@ -18,6 +18,24 @@ let userName = document.getElementById("user");
 let userEmail = document.getElementById("user-email");
 let legal = document.getElementById("legal");
 
+/***************  MODAL  ******************/
+
+let modal = document.getElementsByClassName('modal')[0];
+
+/************************************************************/
+
+function visibleModal() {
+    if(!localStorage.getItem('modal')) {
+        modal.showModal();
+    }
+}
+
+function clear() {
+    userName.value = "";
+    userEmail.value = "";
+    legal.checked = false;
+}
+
 /*************  MENU  ******************/
 
 iconMenu.addEventListener('click', e => {
@@ -35,22 +53,19 @@ iconMenuX.addEventListener('click', e => {
 
 /*************  SCROLLBAR  ******************/
 
-
-
 window.addEventListener('scroll', e => {
     /*3336*/
     //console.log(e.target.body)
     //console.log(document.body);
     let width = window.scrollY*100/e.target.body.scrollHeight;
     scrollBar.setAttribute('style', 'width: ' + width + '%; display: block;');
-    if(width > 50) toTop.setAttribute('style', 'display: block');
-    else toTop.setAttribute('style', 'display:none');
+    if(width >= 25) {
+        visibleModal();
+        toTop.setAttribute('style', 'display: block');
+    } else {
+        toTop.setAttribute('style', 'display:none');
+    }
 });
-
-
-/*************  SCROLLBAR  ******************/
-
-
 
 /*************  TO_TOP  ******************/
 
@@ -61,15 +76,33 @@ toTop.addEventListener('click', e => {
     }, 200);
 });
 
-/*************  TO_TOP  ******************/
-
 /***************  FORM  ******************/
 
 btnSub.addEventListener('click', () => {
-    let u = new User(userName.nodeValue, userEmail.nodeValue, legal.nodeValue);
-    console.log(u);
-    
+    let u = new User(userName.value, userEmail.value, legal.checked);
+    userName.removeAttribute('style');
+    if(u.isValid(userName, userEmail, legal)) {
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+            method: "POST",
+            body: u.saveUser(),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+        .then((response) => response.json())
+        .then((json) => {
+            console.log(json);
+            u.removeUser();
+        });
+        clear();
+    }
 });
 
-/***************  FORM  ******************/
+// Popup Modal aparece al 25% de la página o después de 5seg
+// 3 formas de quitarla tecla ESC, click fuera de modal y boton X en modal
+// LocalStorage para que no aparezca de nuevo
 
+/***************  MODAL  ******************/
+setTimeout(() => {
+    visibleModal();
+}, 5000);

@@ -17,6 +17,10 @@
 </head>
 
 <body>
+    <dialog class="modal">
+        <button class="modal__btn">X</button>
+        <h2 class="modal__title">SUBSCRIBE TO OUR NEWSLETTER</h2>
+    </dialog>
     <div class="scroll"></div>
     <header class="header">
         <h1 class="header__title">OXYGENShop</h1>
@@ -229,17 +233,17 @@
                     <span class="contact__info-icons-text contact__info-contact-icons-text--tlf">123 456 789</span>
                 </div>
             </div>
-            <form class="contact__form" action="#">
+            <div class="contact__form" action="#">
                 <div class="contact__form-control">
                     <label class="contact__form-control-label" for="user">NAME</label>
-                    <input class="contact__form-control-input" type="text" name="user" id="user">
+                    <input class="contact__form-control-input" required type="text" name="user" id="user">
                 </div>
                 <div class="contact__form-control">
                     <label class="contact__form-control-label" for="user-email">EMAIL</label>
-                    <input class="contact__form-control-input" type="email" name="user-email" id="user-email">
+                    <input class="contact__form-control-input" required type="email" name="user-email" id="user-email">
                 </div>
                 <div class="contact__form-control">
-                    <input class="contact__form-control-check" type="checkbox" name="legal" id="legal">
+                    <input class="contact__form-control-check" required type="checkbox" name="legal" id="legal">
                     <span class="contact__form-control-text">
                         I hereby give consent for my personal data included in my application to be processed for the
                         purposes
@@ -253,7 +257,7 @@
                 <div class="cursor--pointer contact__form-submit">
                     <button class="btn btn__submit">Send</button>
                 </div>
-            </form>
+            </div>
         </section>
     </div>
     <footer class="footer">
