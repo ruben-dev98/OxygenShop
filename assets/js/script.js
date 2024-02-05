@@ -23,10 +23,31 @@ let legal = document.getElementById("legal");
 let modal = document.getElementsByClassName('modal')[0];
 let btnModal = document.getElementsByClassName('modal__btn')[0];
 
+/*************  PRICES  ******************/
+
+let priceTitles = document.getElementsByClassName('prices__plan-title');
+let basic = document.getElementsByClassName('prices__plan-price--red')[0];
+let prof = document.getElementsByClassName('prices__plan-price--blue')[0];
+let prem = document.getElementsByClassName('prices__plan-price--green')[0];
+let listMon = document.getElementsByClassName('pricing__list')[0];
+
 /************************************************************/
 
+function isLocal(item) {
+    if(!localStorage.getItem(item)) {
+        return false;
+    }
+    return true;
+}
+
+function setLocal(item) {
+    if(!localStorage.getItem(item)) {
+        localStorage.setItem(item, true);
+    }
+}
+
 function visibleModal() {
-    if(!localStorage.getItem('modal')) {
+    if(!isLocal('modal')) {
         modal.showModal();
     }
 }
@@ -110,20 +131,41 @@ setTimeout(() => {
 
 btnModal.addEventListener('click', () => {
     modal.close();
-    //localStorage.setItem('modal', true);
+    setLocal('modal');
 });
 
 modal.addEventListener('keydown', (e) => {
     if(e.keyCode == 27) {
         modal.close();
+        setLocal('modal');
     }
 });
 
 window.addEventListener('click', (e) => {
-    console.log();
     if(e.target == modal) {
         modal.close();
+        setLocal('modal');
     }
     
 });
 
+/**************  PRICES  *******************/
+
+listMon.addEventListener('change', (e) => {
+    fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
+    .then((response) => response.json())
+    .then((json) => {
+        let mon = e.target.value;
+        let textSplit = prof.innerText.split('');
+        let symbol = textSplit[0];
+        let price = Number.parseInt(textSplit[1]+textSplit[2]);
+        console.log(`${symbol}${price}`);
+        /*console.log(Number.parseInt(prof.innerText)/json.eur);
+        console.log(Number.parseInt(prem.innerText)/json.eur);
+        console.log(json.eur);
+        basic.innerText = 0;*/
+    } 
+    
+    
+    );
+})
