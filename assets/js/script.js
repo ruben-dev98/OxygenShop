@@ -24,12 +24,22 @@ let modal = document.getElementsByClassName('modal')[0];
 let btnModal = document.getElementsByClassName('modal__btn')[0];
 
 /*************  PRICES  ******************/
+const basicPrice = 0;
+const profPrice = 25;
+const premPrice = 60;
 
 let priceTitles = document.getElementsByClassName('prices__plan-title');
 let basic = document.getElementsByClassName('prices__plan-price--red')[0];
 let prof = document.getElementsByClassName('prices__plan-price--blue')[0];
 let prem = document.getElementsByClassName('prices__plan-price--green')[0];
 let listMon = document.getElementsByClassName('pricing__list')[0];
+
+/*************  SLIDER  ******************/
+
+let items = document.getElementsByClassName('slider__item');
+let countItems = document.getElementsByClassName('slider__count-item');
+let prev = document.getElementsByClassName('slider__button-prev');
+let next = document.getElementsByClassName('slider__button-next');
 
 /************************************************************/
 
@@ -58,6 +68,23 @@ function clear() {
     legal.checked = false;
 }
 
+function calcCoin(mon, price, json) {
+    let symbol = '';
+    let change = 0;
+    if(mon == 'eur') {
+        symbol = '€';
+        change = json.eur.eur;
+    } else if(mon == 'gbp') {
+        symbol = '£';
+        change = json.eur.gbp;
+    } else {
+        symbol = '$';
+        change = json.eur.usd;
+    }
+    
+    return `${symbol}${Number.parseFloat(change*price).toFixed(0)}`;
+}
+
 /*************  MENU  ******************/
 
 iconMenu.addEventListener('click', e => {
@@ -83,9 +110,9 @@ window.addEventListener('scroll', e => {
     scrollBar.setAttribute('style', 'width: ' + width + '%; display: block;');
     if(width >= 25) {
         visibleModal();
-        toTop.setAttribute('style', 'display: block');
+        //toTop.setAttribute('style', 'display: block');
     } else {
-        toTop.setAttribute('style', 'display:none');
+        //toTop.setAttribute('style', 'display:none');
     }
 });
 
@@ -154,18 +181,15 @@ window.addEventListener('click', (e) => {
 listMon.addEventListener('change', (e) => {
     fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
     .then((response) => response.json())
-    .then((json) => {
+    .then(async (json) => {
         let mon = e.target.value;
-        let textSplit = prof.innerText.split('');
-        let symbol = textSplit[0];
-        let price = Number.parseInt(textSplit[1]+textSplit[2]);
-        console.log(`${symbol}${price}`);
-        /*console.log(Number.parseInt(prof.innerText)/json.eur);
-        console.log(Number.parseInt(prem.innerText)/json.eur);
-        console.log(json.eur);
-        basic.innerText = 0;*/
+        let js = await json;
+        basic.innerHTML = calcCoin(mon, basicPrice, js);
+        prof.innerHTML = calcCoin(mon, profPrice, js);
+        prem.innerHTML = calcCoin(mon, premPrice, js);
     } 
     
     
     );
-})
+});
+
