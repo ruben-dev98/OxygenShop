@@ -137,22 +137,24 @@ window.addEventListener('scroll', e => {
     //console.log(e.target.body)
     //console.log(document.body);
     let width = window.scrollY*100/e.target.body.scrollHeight;
-    scrollBar.setAttribute('style', 'width: ' + width + '%; display: block;');
+    scrollBar.setAttribute('style', `width: ${width}%; display: block;`);
     if(width >= 25) {
         visibleModal();
-        //toTop.setAttribute('style', 'display: block');
+        toTop.setAttribute('style', 'display: block');
     } else {
-        //toTop.setAttribute('style', 'display:none');
+        toTop.setAttribute('style', 'display:none');
     }
 });
 
 /*************  TO_TOP  ******************/
 
 toTop.addEventListener('click', e => {
-    setTimeout(() => {
-        //let sc = scrollY - 100;
-        window.scrollTo(0 , 0);
-    }, 200);
+    setTimeout(() => anim = setInterval(() => {
+        window.scrollTo(0 , window.scrollY - 50);
+        if(window.scrollY == 0) {
+            clearInterval(anim);
+        }
+    }, 20), 200);
 });
 
 /***************  FORM  ******************/
