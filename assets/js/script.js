@@ -21,6 +21,7 @@ let legal = document.getElementById("legal");
 /***************  MODAL  ******************/
 
 let modal = document.getElementsByClassName('modal')[0];
+let btnModal = document.getElementsByClassName('modal__btn')[0];
 
 /************************************************************/
 
@@ -106,3 +107,23 @@ btnSub.addEventListener('click', () => {
 setTimeout(() => {
     visibleModal();
 }, 5000);
+
+btnModal.addEventListener('click', () => {
+    modal.close();
+    //localStorage.setItem('modal', true);
+});
+
+modal.addEventListener('keydown', (e) => {
+    if(e.keyCode == 27) {
+        modal.close();
+    }
+});
+
+window.addEventListener('click', (e) => {
+    console.log();
+    if(e.target == modal) {
+        modal.close();
+    }
+    
+});
+
