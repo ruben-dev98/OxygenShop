@@ -137,10 +137,11 @@ iconMenuX.addEventListener('click', e => {
 /*************  SCROLLBAR  ******************/
 
 window.addEventListener('scroll', e => {
-    /*3336*/
-    //console.log(e.target.body)
-    //console.log(document.body);
-    let width = window.scrollY*100/e.target.body.scrollHeight;
+    let width = window.scrollY*100/window.document.body.scrollHeight;
+    if((window.document.body.scrollHeight - 1) - window.scrollY  <= window.innerHeight) {
+        width = 100;
+    }
+    
     scrollBar.setAttribute('style', `width: ${width}%; display: block;`);
     if(width >= 25) {
         visibleModal();

@@ -908,8 +908,9 @@ body {
 }
 .scroll {
   display: none;
-  background-color: #55DFB4;
-  height: 1em;
+  background-color: #DB483E;
+  box-shadow: 0em 0em 0.5em 0em #F19088;
+  height: 0.5em;
   position: fixed;
   top: 0;
   z-index: 100;
