@@ -13,13 +13,14 @@ class User {
         return json = `{
             name: ${this.name},
             email: ${this.email},
-            legal: ${true}
+            legal: ${this.legal}
         }`;
     }
 
     isValid() {
         if(this.name/*Regex*/);
         if(this.email/*Regex*/);
+        if(this.legal)/**/;
         /* Implementación */
     }
 }

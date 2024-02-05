@@ -11,6 +11,13 @@ let scrollBar = document.getElementsByClassName('scroll')[0];
 
 let toTop = document.getElementsByClassName('to__top')[0];
 
+/***************  FORM  ******************/
+
+let btnSub = document.getElementsByClassName('btn__submit')[0];
+let userName = document.getElementById("user");
+let userEmail = document.getElementById("user-email");
+let legal = document.getElementById("legal");
+
 /*************  MENU  ******************/
 
 iconMenu.addEventListener('click', e => {
@@ -55,4 +62,14 @@ toTop.addEventListener('click', e => {
 });
 
 /*************  TO_TOP  ******************/
+
+/***************  FORM  ******************/
+
+btnSub.addEventListener('click', () => {
+    let u = new User(userName.nodeValue, userEmail.nodeValue, legal.nodeValue);
+    console.log(u);
+    
+});
+
+/***************  FORM  ******************/
 
