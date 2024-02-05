@@ -36,6 +36,12 @@ let listMon = document.getElementsByClassName('pricing__list')[0];
 
 /*************  SLIDER  ******************/
 
+const classItem = 'slider__item';
+const classItemActive = 'slider__item--active';
+
+const classCountItem = 'slider__count-item';
+const classCountItemActive = 'slider__count-item--active';
+
 let items = document.getElementsByClassName('slider__item');
 let countItems = document.getElementsByClassName('slider__count-item');
 let sliderCount = document.getElementsByClassName('slider__count')[0];
@@ -69,43 +75,41 @@ function clear() {
     legal.checked = false;
 }
 
-function calcCoin(mon, price, json) {
+function calcCoin(mon, price, jsn) {
     let symbol = '';
     let change = 0;
     if(mon == 'eur') {
         symbol = '€';
-        change = json.eur.eur;
+        change = jsn.eur.eur;
     } else if(mon == 'gbp') {
         symbol = '£';
-        change = json.eur.gbp;
+        change = jsn.eur.gbp;
     } else {
         symbol = '$';
-        change = json.eur.usd;
+        change = jsn.eur.usd;
     }
     
     return `${symbol}${Number.parseFloat(change*price).toFixed(0)}`;
 }
 
-function setItemActive(index) {
-    items.item(index).setAttribute('class', 'slider__item slider__item--active');
-    countItems.item(index).setAttribute('class', 'slider__count-item slider__count-item--active');
+function setItemActive(arr, index, className) {
+    arr.item(index).setAttribute('class', className);
 }
 
-function delItemActive() {
-    (document.getElementsByClassName('slider__item--active')[0]).setAttribute('class', 'slider__item');
-    (document.getElementsByClassName('slider__count-item--active')[0]).setAttribute('class', 'slider__count-item');    
+function delItemActive(classNameActive, className) {
+    (document.getElementsByClassName(classNameActive)[0]).setAttribute('class', className);  
 }
 
-function getIndex(array, className) {
+function getIndex(arr, className) {
     let index = 0;
-    for(let i = 0; i < array.length; i++) {
+    for(let i = 0; i < arr.length; i++) {
         if(typeof className == 'string') {
-            if(array.item(i) == (document.getElementsByClassName(className)[0])) {
+            if(arr.item(i) == (document.getElementsByClassName(className)[0])) {
                 index = i;
                 break;
             }
         } else {
-            if(array.item(i) == className) {
+            if(arr.item(i) == className) {
                 index = i;
                 break;
             }
@@ -148,13 +152,20 @@ window.addEventListener('scroll', e => {
 
 /*************  TO_TOP  ******************/
 
-toTop.addEventListener('click', e => {
-    setTimeout(() => anim = setInterval(() => {
-        window.scrollTo(0 , window.scrollY - 50);
+function anim() {
+    let anim = setInterval(() => {
+        window.scrollTo(0 , window.scrollY - 85);
         if(window.scrollY == 0) {
             clearInterval(anim);
         }
-    }, 20), 200);
+    }, 20);
+}
+
+toTop.addEventListener('click', e => {
+    let time = setTimeout(() => {
+        anim();
+        clearTimeout(time);
+    }, 200);
 });
 
 /***************  FORM  ******************/
@@ -219,36 +230,42 @@ listMon.addEventListener('change', (e) => {
         basic.innerHTML = calcCoin(mon, basicPrice, js);
         prof.innerHTML = calcCoin(mon, profPrice, js);
         prem.innerHTML = calcCoin(mon, premPrice, js);
-    } 
-    
-    
-    );
+    });
 });
 
 /*************  SLIDER  ******************/
 
 prev.addEventListener('click', () => {
-    let index = getIndex(countItems, 'slider__count-item--active');
+    let index = getIndex(countItems, classCountItemActive);
     if((index - 1) >= 0) {
         index -= 1;
     }
-    delItemActive();
-    setItemActive(index);
+
+    delItemActive(classItemActive, classItem);
+    delItemActive(classCountItemActive, classCountItem);
+    setItemActive(items, index, `${classItem} ${classItemActive}`);
+    setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);  
 });
 
 next.addEventListener('click', () => {
-    let index = getIndex(countItems, 'slider__count-item--active');
+    let index = getIndex(countItems, classCountItemActive);
     if((index + 1) < countItems.length) {
         index += 1;
     }
-    delItemActive();
-    setItemActive(index);
+
+    delItemActive(classItemActive, classItem);
+    delItemActive(classCountItemActive, classCountItem);
+    setItemActive(items, index, `${classItem} ${classItemActive}`);
+    setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);  
 });
 
 sliderCount.addEventListener('click', (e) => {
     if (e.target != sliderCount) {
         let index = getIndex(countItems, e.target);
-        delItemActive();
-        setItemActive(index);    
+        
+        delItemActive(classItemActive, classItem);
+        delItemActive(classCountItemActive, classCountItem);
+        setItemActive(items, index, `${classItem} ${classItemActive}`);
+        setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);
     }
 });

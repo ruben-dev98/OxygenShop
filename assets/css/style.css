@@ -783,6 +783,7 @@
   bottom: 2%;
 }
 .slider__count-item {
+  cursor: pointer;
   border-radius: 50%;
   background-color: #A5A5A5;
   width: 1em;
