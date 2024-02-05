@@ -98,7 +98,6 @@ function delItemActive() {
 
 function getIndex(array, className) {
     let index = 0;
-    console.log(typeof className);
     for(let i = 0; i < array.length; i++) {
         if(typeof className == 'string') {
             if(array.item(i) == (document.getElementsByClassName(className)[0])) {
