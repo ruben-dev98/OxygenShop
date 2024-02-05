@@ -38,8 +38,8 @@ let listMon = document.getElementsByClassName('pricing__list')[0];
 
 let items = document.getElementsByClassName('slider__item');
 let countItems = document.getElementsByClassName('slider__count-item');
-let prev = document.getElementsByClassName('slider__button-prev');
-let next = document.getElementsByClassName('slider__button-next');
+let prev = document.getElementsByClassName('slider__button-prev')[0];
+let next = document.getElementsByClassName('slider__button-next')[0];
 
 /************************************************************/
 
@@ -83,6 +83,16 @@ function calcCoin(mon, price, json) {
     }
     
     return `${symbol}${Number.parseFloat(change*price).toFixed(0)}`;
+}
+
+function setItemActive(index) {
+    items.item(index).setAttribute('class', 'slider__item slider__item--active');
+    countItems.item(index).setAttribute('class', 'slider__count-item slider__count-item--active');
+}
+
+function delItemActive() {
+    (document.getElementsByClassName('slider__item--active')[0]).setAttribute('class', 'slider__item');
+    (document.getElementsByClassName('slider__count-item--active')[0]).setAttribute('class', 'slider__count-item');    
 }
 
 /*************  MENU  ******************/
@@ -193,3 +203,39 @@ listMon.addEventListener('change', (e) => {
     );
 });
 
+prev.addEventListener('click', () => {
+
+});
+
+next.addEventListener('click', () => {
+
+});
+
+for(let i; i < countItems.length; i++) {
+    countItems.item(i).addEventListener(() => {
+
+    });
+}
+
+
+let sliderCount = document.getElementsByClassName('slider__count')[0];
+console.log(sliderCount.children.length);
+//console.log(sliderCount.children.namedItem(e.target));
+
+sliderCount.addEventListener('click', (e) => {
+    console.log(1);
+    if (e.target != sliderCount) {
+        let index = 0;
+        console.log(2);
+        for(let i = 0; i < countItems.length; i++) {
+            console.log(3);
+            if(countItems.item(i) == e.target) {
+                index = i;
+                break;
+            }
+        }
+        console.log(index);
+        delItemActive();
+        setItemActive(index);    
+    }
+});
