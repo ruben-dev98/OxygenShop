@@ -769,6 +769,7 @@
 .slider__item {
   display: none;
   width: 100%;
+  height: 15em;
 }
 .slider__item--active {
   display: block;
@@ -821,6 +822,9 @@
     padding-top: 0em;
     width: 50%;
     margin: 0 auto;
+  }
+  .slider__item {
+    height: 30em;
   }
   .slider__button-prev {
     width: 5em;

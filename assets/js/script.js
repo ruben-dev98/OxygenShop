@@ -38,6 +38,7 @@ let listMon = document.getElementsByClassName('pricing__list')[0];
 
 let items = document.getElementsByClassName('slider__item');
 let countItems = document.getElementsByClassName('slider__count-item');
+let sliderCount = document.getElementsByClassName('slider__count')[0];
 let prev = document.getElementsByClassName('slider__button-prev')[0];
 let next = document.getElementsByClassName('slider__button-next')[0];
 
@@ -93,6 +94,26 @@ function setItemActive(index) {
 function delItemActive() {
     (document.getElementsByClassName('slider__item--active')[0]).setAttribute('class', 'slider__item');
     (document.getElementsByClassName('slider__count-item--active')[0]).setAttribute('class', 'slider__count-item');    
+}
+
+function getIndex(array, className) {
+    let index = 0;
+    console.log(typeof className);
+    for(let i = 0; i < array.length; i++) {
+        if(typeof className == 'string') {
+            if(array.item(i) == (document.getElementsByClassName(className)[0])) {
+                index = i;
+                break;
+            }
+        } else {
+            if(array.item(i) == className) {
+                index = i;
+                break;
+            }
+        }
+    }
+
+    return index;
 }
 
 /*************  MENU  ******************/
@@ -203,38 +224,29 @@ listMon.addEventListener('change', (e) => {
     );
 });
 
-prev.addEventListener('click', () => {
+/*************  SLIDER  ******************/
 
+prev.addEventListener('click', () => {
+    let index = getIndex(countItems, 'slider__count-item--active');
+    if((index - 1) >= 0) {
+        index -= 1;
+    }
+    delItemActive();
+    setItemActive(index);
 });
 
 next.addEventListener('click', () => {
-
+    let index = getIndex(countItems, 'slider__count-item--active');
+    if((index + 1) < countItems.length) {
+        index += 1;
+    }
+    delItemActive();
+    setItemActive(index);
 });
 
-for(let i; i < countItems.length; i++) {
-    countItems.item(i).addEventListener(() => {
-
-    });
-}
-
-
-let sliderCount = document.getElementsByClassName('slider__count')[0];
-console.log(sliderCount.children.length);
-//console.log(sliderCount.children.namedItem(e.target));
-
 sliderCount.addEventListener('click', (e) => {
-    console.log(1);
     if (e.target != sliderCount) {
-        let index = 0;
-        console.log(2);
-        for(let i = 0; i < countItems.length; i++) {
-            console.log(3);
-            if(countItems.item(i) == e.target) {
-                index = i;
-                break;
-            }
-        }
-        console.log(index);
+        let index = getIndex(countItems, e.target);
         delItemActive();
         setItemActive(index);    
     }
