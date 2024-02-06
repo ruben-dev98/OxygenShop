@@ -48,7 +48,6 @@
   background-color: #fff;
   box-shadow: 0em 0.3em 0.7em 0em rgba(0, 0, 0, 0.2901960784);
   z-index: 1;
-  /*display: none;*/
 }
 .nav__list-item {
   font-size: 0.6rem;
@@ -178,7 +177,6 @@
   border-radius: 10em;
   width: 3.9em;
   height: 3.9em;
-  /*Cambiar a rem o porcentaje*/
   text-align: end;
 }
 .popularity__info-icons-icon-img--person {
@@ -259,10 +257,10 @@
 .features__article-info-text {
   font-size: 0.8rem;
   font-weight: 400;
-  line-height: 1.3em;
+  line-height: 1.5em;
   letter-spacing: 0em;
   text-align: left;
-  padding: 3em 1.1em;
+  padding: 3em 1em;
   padding-bottom: 0em;
 }
 .features__article-info-text-second {
@@ -272,7 +270,7 @@
   padding-right: 1em;
 }
 .features__article-info-text--iphone {
-  padding-top: 1em;
+  padding-top: 1.5em;
 }
 .features__article-info-text--trumpet {
   padding-top: 1.5em;
@@ -334,7 +332,7 @@
 }
 .features__article-icons--iphone {
   margin-top: 0.5em;
-  margin-bottom: -8em;
+  margin-bottom: -7em;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -493,7 +491,7 @@
   border: 0.1em;
   border-style: solid;
   border-radius: 1.5em;
-  margin: 15% 0%;
+  margin: 5% 0% 20% 0%;
   height: 17.2em;
 }
 .pricing .prices--red {
@@ -560,7 +558,7 @@
   height: 3.5em;
   border-radius: 2em;
   margin: 0 auto;
-  margin-top: -7.4em;
+  margin-top: -6.5em;
   padding: 0.8em;
   text-align: center;
   font-size: 0.9rem;
@@ -821,6 +819,9 @@
 }
 
 @media only screen and (min-width: 1000px) {
+  .footer {
+    padding: 1em 4.5em 1em 11.5em;
+  }
   .footer__info {
     width: 90%;
   }
@@ -856,6 +857,7 @@ body {
   font-size: 1em;
   cursor: pointer;
 }
+
 .cursor--pointer {
   cursor: pointer;
 }
