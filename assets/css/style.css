@@ -568,7 +568,7 @@
   .pricing {
     padding: 0em;
     display: grid;
-    grid-template-columns: 11.6% auto 5% auto 5% auto 11.6%;
+    grid-template-columns: 11.6% auto 3.8% auto 3.8% auto 11.6%;
     grid-template-areas: ". . . title . . ." ". priceBa . pricePro . pricePre .";
   }
   .pricing__title {
@@ -736,7 +736,7 @@
     margin-top: 8em;
     margin-bottom: 5em;
     display: grid;
-    grid-template-columns: 23% 22% 7.2% 26.8% 23%;
+    grid-template-columns: 23% 25% 3% 26.8% 23%;
     grid-template-areas: ". info . form .";
   }
   .contact__info {
@@ -761,14 +761,15 @@
     padding: 0em 0em;
     padding-bottom: 2.5em;
   }
+  .contact__form-control--check {
+    display: flex;
+  }
   .contact__form-control-input {
     padding: inherit 0em;
   }
-  .contact__form-control-check {
-    margin-left: 0em;
-  }
-  .contact__form-submit {
-    margin-right: 0em;
+  .contact__form-control-text {
+    width: 94%;
+    font-size: 0.76rem;
   }
 }
 .footer {
