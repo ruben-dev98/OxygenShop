@@ -5,13 +5,13 @@
     &__title {
         font-family: $font-rale;
         font-weight: 400;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
         margin-top: 20%;
     }
 
     .prices {
-        border: 1px;
+        border: 0.1em;
         border-style: solid;
         border-radius: 1.5em;
         margin: 15% 0%;
@@ -46,7 +46,7 @@
             &-price {
                 font-weight: 300;
                 font-size: 2.8rem;
-                line-height: 62px;
+                line-height: 1.4em;
                 letter-spacing: 0em;
     
                 &--red {
@@ -83,10 +83,6 @@
                     font-weight: 400;
                     margin-bottom: 1.5em;
 
-                    &-img {
-
-                    }
-
                     &-text {
                         margin-left: 0.3em;
                     }
@@ -95,14 +91,14 @@
         }
 
         &__btn {
-            width: 11.7em;
-            height: 3.9em;
+            width: 10.4em;
+            height: 3.5em;
             border-radius: 2em;
             margin: 0 auto;
             margin-top: -7.4em;
             padding: 0.8em;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             
             &--red {
                 background-color: $color-red;
@@ -146,7 +142,7 @@
                 margin-top: -1em;
 
                 .prices__btn {
-                    margin-top: 2em;
+                    margin-top: 1.8em;
 
                     &--red {
                         box-shadow: 0.5em 0.8em 1em 0em $color-red;

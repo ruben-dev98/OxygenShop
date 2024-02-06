@@ -1,8 +1,6 @@
 .header {
-  /*position: relative;*/ /*No hace falta*/
   width: 100%;
-  /*height: 15%;*/
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2901960784);
+  box-shadow: 0em 0.3em 0.7em 0em rgba(0, 0, 0, 0.2901960784);
   color: #08A6E4;
   padding: 1em;
 }
@@ -13,9 +11,8 @@
   font-family: "Raleway", sans-serif;
   font-size: 2rem;
   font-weight: 300;
-  line-height: 37px;
+  line-height: 1.1em;
   letter-spacing: 0em;
-  /*text-align: left;*/
 }
 .header__icon {
   display: inline-block;
@@ -31,8 +28,7 @@
     display: inline-block;
     width: 100%;
     text-align: left;
-    padding-left: 2.5em;
-    /*text-align: left;*/
+    padding-left: 4em;
   }
   .header__icon {
     display: none;
@@ -50,7 +46,7 @@
   padding: 1.5em;
   list-style-type: none;
   background-color: #fff;
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2901960784);
+  box-shadow: 0em 0.3em 0.7em 0em rgba(0, 0, 0, 0.2901960784);
   z-index: 1;
   /*display: none;*/
 }
@@ -71,20 +67,22 @@
     width: 96%;
   }
   .nav__list {
-    width: 100%;
+    width: 42%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     top: -4.5em;
     background-color: transparent;
     box-shadow: none;
     gap: 7.5em;
+    padding: 1.5em 0em;
+    right: 1em;
   }
   .nav__list-item {
     cursor: pointer;
     padding-bottom: 2em;
   }
   .nav__list-item--active {
-    border-bottom: 4px solid #08A6E4;
+    border-bottom: 0.5em solid #08A6E4;
   }
 }
 .sell {
@@ -131,6 +129,9 @@
 @media only screen and (min-width: 1000px) {
   .sell__title {
     font-family: "Raleway", sans-serif;
+  }
+  .sell__button {
+    width: 27.5em;
   }
   .sell__bg {
     width: 100%;
@@ -232,7 +233,7 @@
 .features__article {
   background-color: #FFF;
   border-radius: 0.3em;
-  border: 1px solid #E8E9ED;
+  border: 0.1em solid #E8E9ED;
   margin-bottom: 2.5em;
   height: 23.1em;
 }
@@ -241,7 +242,7 @@
   font-family: "Raleway", sans-serif;
   font-size: 1.9rem;
   font-weight: 400;
-  line-height: 35px;
+  line-height: 1em;
   letter-spacing: 0em;
   text-align: left;
 }
@@ -258,7 +259,7 @@
 .features__article-info-text {
   font-size: 0.8rem;
   font-weight: 400;
-  line-height: 21px;
+  line-height: 1.3em;
   letter-spacing: 0em;
   text-align: left;
   padding: 3em 1.1em;
@@ -376,6 +377,7 @@
   }
   .features__article-info-title {
     padding: 2.5em 0.5em 0em 1em;
+    font-size: 2.2rem;
   }
   .features__article-info-title-text {
     display: inline;
@@ -385,33 +387,42 @@
     padding: 2.5em 0em 0em 0em;
   }
   .features__article-info-title--trumpet {
-    width: 55%;
-    padding-top: 1em;
+    width: 65%;
   }
   .features__article-info-text {
     padding: 2.5em 0em 3em 0em;
     margin: 0em 1em;
     margin-left: 2.5em;
+    font-size: 1rem;
   }
   .features__article-info-text::after {
     margin-top: 10%;
     bottom: 0;
     content: "";
     display: block;
-    height: 4px;
-    width: 50%;
+    height: 0.3em;
   }
-  .features__article-info-text--iphone {
-    margin-left: 0em;
+  .features__article-info-text--mac {
+    width: 78%;
   }
   .features__article-info-text--mac::after {
     background-color: #FB3B64;
+    width: 74.7%;
+  }
+  .features__article-info-text--iphone {
+    margin-left: 0em;
+    width: 89%;
   }
   .features__article-info-text--iphone::after {
     background-color: #08A6E4;
+    width: 74.1%;
+  }
+  .features__article-info-text--trumpet {
+    width: 70%;
   }
   .features__article-info-text--trumpet::after {
     background-color: #55DFB4;
+    width: 74.5%;
   }
   .features__article-icons {
     grid-area: icons;
@@ -463,7 +474,7 @@
   .features__article-icons-img--trumpet {
     margin: 0 auto;
     display: block;
-    top: 2em;
+    top: 27%;
     position: relative;
   }
 }
@@ -474,12 +485,12 @@
 .pricing__title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   text-align: center;
   margin-top: 20%;
 }
 .pricing .prices {
-  border: 1px;
+  border: 0.1em;
   border-style: solid;
   border-radius: 1.5em;
   margin: 15% 0%;
@@ -510,7 +521,7 @@
 .pricing .prices__plan-price {
   font-weight: 300;
   font-size: 2.8rem;
-  line-height: 62px;
+  line-height: 1.4em;
   letter-spacing: 0em;
 }
 .pricing .prices__plan-price--red {
@@ -545,14 +556,14 @@
   margin-left: 0.3em;
 }
 .pricing .prices__btn {
-  width: 11.7em;
-  height: 3.9em;
+  width: 10.4em;
+  height: 3.5em;
   border-radius: 2em;
   margin: 0 auto;
   margin-top: -7.4em;
   padding: 0.8em;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .pricing .prices__btn--red {
   background-color: #FB3B64;
@@ -586,7 +597,7 @@
     margin-top: -1em;
   }
   .pricing .prices:hover .prices__btn {
-    margin-top: 2em;
+    margin-top: 1.8em;
   }
   .pricing .prices:hover .prices__btn--red {
     box-shadow: 0.5em 0.8em 1em 0em #FB3B64;
@@ -680,8 +691,8 @@
 .contact__form-control-input {
   display: block;
   width: 100%;
-  border: 0px;
-  border-bottom: 1px solid #95989A;
+  border: 0em;
+  border-bottom: 0.1em solid #95989A;
   padding-top: 2em;
 }
 .contact__form-control-label {
@@ -689,7 +700,7 @@
   font-weight: 600;
   font-size: 0.7rem;
   color: #08A6E4;
-  letter-spacing: 3.2799999714px;
+  letter-spacing: 0.3em;
 }
 .contact__form-control-check {
   appearance: none;
@@ -701,7 +712,7 @@
   margin-right: 0.5em;
   border-radius: 0.3em;
   margin-left: -0.1em;
-  border: 1px solid #95989A;
+  border: 0.1em solid #95989A;
 }
 .contact__form-control-check:checked {
   background-color: #FFF;
@@ -714,7 +725,7 @@
   width: 89%;
   font-weight: 400;
   font-size: 0.77rem;
-  line-height: 16px;
+  line-height: 1.3em;
   vertical-align: top;
   color: #707070;
 }
@@ -752,7 +763,7 @@
   }
   .contact__info-icons {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 0.6em;
   }
   .contact__form {
     grid-area: form;
@@ -774,7 +785,7 @@
 }
 .footer {
   width: 100%;
-  box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0em -0.5em 2em 0em rgba(0, 0, 0, 0.2);
   color: #08A6E4;
   margin-top: 3em;
   padding: 1em;
@@ -787,12 +798,12 @@
   font-family: "Raleway", sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
-  line-height: 30px;
+  line-height: 1.1em;
 }
 .footer__info-text {
   font-size: 0.8rem;
   font-weight: 400;
-  line-height: 15px;
+  line-height: 1em;
   color: #A5A5A5;
 }
 .footer__icons {
@@ -837,11 +848,12 @@ body {
 }
 
 .btn {
-  border: 0px;
+  border: 0em;
   color: #FFF;
   background-color: transparent;
   width: 100%;
   height: 100%;
+  font-size: 1em;
   cursor: pointer;
 }
 .cursor--pointer {

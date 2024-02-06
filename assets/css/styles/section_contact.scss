@@ -49,8 +49,8 @@
                 &-input {
                     display: block;
                     width: 100%;
-                    border: 0px;
-                    border-bottom: 1px solid #95989A;
+                    border: 0em;
+                    border-bottom: 0.1em solid #95989A;
                     padding-top: 2em;
                 }
     
@@ -59,7 +59,7 @@
                     font-weight: 600;
                     font-size: 0.7rem;
                     color: $color-blue;
-                    letter-spacing: 3.2799999713897705px;
+                    letter-spacing: 0.3em;
                 }
 
                 &-check {
@@ -72,7 +72,7 @@
                     margin-right: 0.5em;
                     border-radius: 0.3em;
                     margin-left: -0.1em;
-                    border: 1px solid #95989A;
+                    border: 0.1em solid #95989A;
                 }
 
                 &-check:checked {
@@ -87,7 +87,7 @@
                     width: 89%;
                     font-weight: 400;
                     font-size: 0.77rem;
-                    line-height: 16px;
+                    line-height: 1.3em;
                     vertical-align: top;
                     color: #707070;
                 }
@@ -131,7 +131,7 @@
 
             &-icons {
                 display: inline-block;
-                margin-right: 10px;
+                margin-right: 0.6em;
             }
         }
     

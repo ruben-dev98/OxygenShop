@@ -5,7 +5,7 @@
     &__article {
         background-color: #FFF;
         border-radius: 0.3em;
-        border: 1px solid #E8E9ED;
+        border: 0.1em solid #E8E9ED;
         margin-bottom: 2.5em;
         height: 23.1em;
         
@@ -15,7 +15,7 @@
                 font-family: $font-rale;
                 font-size: 1.9rem;
                 font-weight: 400;
-                line-height: 35px;
+                line-height: 1em;
                 letter-spacing: 0em;
                 text-align: left;
 
@@ -37,7 +37,7 @@
             &-text {
                 font-size: 0.8rem;
                 font-weight: 400;
-                line-height: 21px;
+                line-height: 1.3em;
                 letter-spacing: 0em;
                 text-align: left;
                 padding: 3em 1.1em;
@@ -146,6 +146,7 @@
 }
 
 @media only screen and (min-width: 1000px) {
+    
     .features {
         padding: 6em 0em;
         display: grid;
@@ -198,6 +199,7 @@
 
                 &-title {
                     padding: 2.5em 0.5em 0em 1em;
+                    font-size: 2.2rem;
 
                     &-text {
                         display: inline;
@@ -209,8 +211,7 @@
                     }
 
                     &--trumpet {
-                        width: 55%;
-                        padding-top: 1em;
+                        width: 65%;
                     }
                 }
 
@@ -218,30 +219,43 @@
                     padding: 2.5em 0em 3em 0em;
                     margin: 0em 1em;
                     margin-left: 2.5em;
+                    font-size: 1rem;
 
                     &::after {
                         margin-top: 10%;
                         bottom: 0;
                         content: '';
                         display: block;
-                        height: 4px;
-                        width: 50%;
+                        height: 0.3em;
+                    }
+
+                    &--mac {
+                        width: 78%;
+                        &::after {
+                            background-color: $color-red;
+                            width: 74.7%;
+                        }
                     }
 
                     &--iphone {
                         margin-left: 0em;
+                        width: 89%;
+
+                        &::after {
+                            background-color: $color-blue;
+                            width: 74.1%;
+                        }
                     }
 
-                    &--mac::after {
-                        background-color: $color-red;
-                    }
 
-                    &--iphone::after {
-                        background-color: $color-blue;
-                    }
+                    &--trumpet {
+                        width: 70%;
 
-                    &--trumpet::after {
-                        background-color: $color-green;
+                        &::after {
+                            background-color: $color-green;
+                            width: 74.5%;
+                        }
+                        
                     }
                 }
             }
@@ -309,7 +323,7 @@
                     &--trumpet {
                         margin: 0 auto;
                         display: block;
-                        top: 2em;
+                        top: 27%;
                         position: relative;
                     }
                 }
