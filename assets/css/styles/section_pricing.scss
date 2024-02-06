@@ -120,7 +120,7 @@
     .pricing {
         padding: 0em;
         display: grid;
-        grid-template-columns: 11.6% auto 3.8% auto 3.8% auto 11.6%;
+        grid-template-columns: 11.6% 22.9% 3.8% 22.9% 4.8% 22.9% 11.6%;
         grid-template-areas: 
         ". . . title . . ."
         ". priceBa . pricePro . pricePre ."
@@ -133,11 +133,10 @@
     
         .prices {
             height: 28.8em;
-            width: 23.3em;
             margin: 0em 0em;
             
             &:hover {
-                width: 25.3em;
+                width: 108.8%;
                 height: 31.5em;
                 margin-top: -1em;
 

@@ -9,10 +9,11 @@
         font-size: 2rem;
         font-family: $font-rale;
         font-weight: 300;
-        margin-bottom: 2em;
+        margin-bottom: 1em;
     }
 
     &__info {
+        
         &-text {
             font-family: $font-rale;
             font-weight: 400;
@@ -26,7 +27,8 @@
             font-weight: 800;
             font-size: 1.2rem;
             letter-spacing: 0.3em;
-            padding: 1em 0em;
+            padding: 0.5em 0em;
+            margin-left: 0.5em;
         }
 
         &-icons {
@@ -51,7 +53,7 @@
                     }
     
                     &--catalog {
-                        margin-top: 0.1em;
+                        margin-top: 0.3em;
                         margin-left: 2em;
                     }
                 }

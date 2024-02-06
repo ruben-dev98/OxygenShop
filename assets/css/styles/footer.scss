@@ -4,6 +4,7 @@
     color: $color-blue;
     margin-top: 3em;
     padding: 1em;
+    padding-right: 0.5em;
 
     &__info {
         display: inline-block;
@@ -13,11 +14,11 @@
             font-family: $font-rale;
             font-size: 1.6rem;
             font-weight: 300;
-            line-height: 1.1em;
+            line-height: 1.3em;
         }
 
         &-text {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 400;
             line-height: 1em;
             color: #A5A5A5;
@@ -30,6 +31,7 @@
         vertical-align: top;
         
         &-icon {
+            padding-top: 0.6em;
             &--fa {
                 margin-left: 1em;
                 vertical-align: top;
