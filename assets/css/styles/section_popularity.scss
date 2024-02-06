@@ -75,7 +75,7 @@
 
 @media only screen and (min-width: 1000px) {
     .popularity {
-        
+        padding: 0em 0em;
         &__title {
             font-size: 2.3rem;
             font-weight: 400;
@@ -84,7 +84,7 @@
         &__info {
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-columns: 17% 22% 22% 22% 17%;
             grid-template-areas: 
             ". person eye catalog .";
             &-icons--person {

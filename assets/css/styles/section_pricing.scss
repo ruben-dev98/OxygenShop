@@ -103,7 +103,6 @@
             padding: 0.8em;
             text-align: center;
             font-size: 0.8rem;
-            font-weight: 700;
             
             &--red {
                 background-color: $color-red;
@@ -125,7 +124,7 @@
     .pricing {
         padding: 0em;
         display: grid;
-        grid-template-columns: 15% 20% 5% 20% 5% 20% 15%;
+        grid-template-columns: 11.6% auto 5% auto 5% auto 11.6%;
         grid-template-areas: 
         ". . . title . . ."
         ". priceBa . pricePro . pricePre ."
@@ -137,15 +136,17 @@
         }
     
         .prices {
-            height: 29.8em;
+            height: 28.8em;
+            width: 23.3em;
             margin: 0em 0em;
             
             &:hover {
+                width: 25.3em;
                 height: 31.5em;
                 margin-top: -1em;
 
                 .prices__btn {
-                    margin-top: 2.7em;
+                    margin-top: 2em;
 
                     &--red {
                         box-shadow: 0.5em 0.8em 1em 0em $color-red;
@@ -159,13 +160,15 @@
                         box-shadow: 0.5em 0.8em 1em 0em $color-green;
                     }
                 }
+
+                
             }
 
             &--red {
                 grid-area: priceBa;
 
                 &:hover {
-                    box-shadow: 5px 10px 27px 0px $color-red;
+                    box-shadow: 0.5em 0.8em 1.5em 0em $color-red;
                 }
             }
     
@@ -173,7 +176,7 @@
                 grid-area: pricePro;
 
                 &:hover {
-                    box-shadow: 5px 10px 27px 0px $color-blue;
+                    box-shadow: 0.5em 0.8em 1.5em 0em $color-blue;
                 }
             }
     
@@ -181,7 +184,7 @@
                 grid-area: pricePre;
 
                 &:hover {
-                    box-shadow: 5px 10px 27px 0px $color-green;
+                    box-shadow: 0.5em 0.8em 1.5em 0em $color-green;
                 }
             }
     
@@ -196,10 +199,25 @@
                 display: flex;
                 justify-content: center;
                 width: 100%;
+                padding-top: 0em;
+
+                &-list {
+    
+                    &-item {
+
+                        &--emails {
+                            margin-left: 1em;
+                        }
+
+                        &--license {
+                            margin-left: -1em;
+                        }
+                    }
+                }
             }
     
             &__btn {
-                margin-top: 1.7em;
+                margin-top: 0em;
             }
         }
     }

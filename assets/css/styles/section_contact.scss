@@ -109,11 +109,12 @@
 
 @media only screen and (min-width: 1000px) {
     .contact {
+        padding: 0em 0em;
         margin-top: 8em;
         margin-bottom: 5em;
         display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-template-areas: ". info form .";
+        grid-template-columns: 23% 22% 7.2% 26.8% 23%;
+        grid-template-areas: ". info . form .";
     
         &__info {
             grid-area: info;
@@ -122,6 +123,10 @@
 
             &-title {
                 font-size: 3rem;
+            }
+
+            &-text {
+                margin-top: 2rem;
             }
 
             &-icons {
@@ -138,6 +143,10 @@
 
                     &-input {
                         padding: inherit 0em;
+                    }
+                    
+                    &-check {
+                        margin-left: 0em;
                     }
                 }
 

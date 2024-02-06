@@ -202,6 +202,9 @@
 }
 
 @media only screen and (min-width: 1000px) {
+  .popularity {
+    padding: 0em 0em;
+  }
   .popularity__title {
     font-size: 2.3rem;
     font-weight: 400;
@@ -209,7 +212,7 @@
   .popularity__info {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: 17% 22% 22% 22% 17%;
     grid-template-areas: ". person eye catalog .";
   }
   .popularity__info-icons--person {
@@ -337,7 +340,7 @@
   .features {
     padding: 6em 0em;
     display: grid;
-    grid-template-columns: 12% 46.5% 3% 26.5% 12%;
+    grid-template-columns: 15.8% 38.3% 3% 27.1% 15.8%;
     grid-template-areas: ". mac mac mac ." ". iphone iphone iphone ." ". trumpet . trumpImg .";
   }
   .features__article {
@@ -550,7 +553,6 @@
   padding: 0.8em;
   text-align: center;
   font-size: 0.8rem;
-  font-weight: 700;
 }
 .pricing .prices__btn--red {
   background-color: #FB3B64;
@@ -566,7 +568,7 @@
   .pricing {
     padding: 0em;
     display: grid;
-    grid-template-columns: 15% 20% 5% 20% 5% 20% 15%;
+    grid-template-columns: 11.6% auto 5% auto 5% auto 11.6%;
     grid-template-areas: ". . . title . . ." ". priceBa . pricePro . pricePre .";
   }
   .pricing__title {
@@ -574,15 +576,17 @@
     grid-area: title;
   }
   .pricing .prices {
-    height: 29.8em;
+    height: 28.8em;
+    width: 23.3em;
     margin: 0em 0em;
   }
   .pricing .prices:hover {
+    width: 25.3em;
     height: 31.5em;
     margin-top: -1em;
   }
   .pricing .prices:hover .prices__btn {
-    margin-top: 2.7em;
+    margin-top: 2em;
   }
   .pricing .prices:hover .prices__btn--red {
     box-shadow: 0.5em 0.8em 1em 0em #FB3B64;
@@ -597,19 +601,19 @@
     grid-area: priceBa;
   }
   .pricing .prices--red:hover {
-    box-shadow: 5px 10px 27px 0px #FB3B64;
+    box-shadow: 0.5em 0.8em 1.5em 0em #FB3B64;
   }
   .pricing .prices--blue {
     grid-area: pricePro;
   }
   .pricing .prices--blue:hover {
-    box-shadow: 5px 10px 27px 0px #08A6E4;
+    box-shadow: 0.5em 0.8em 1.5em 0em #08A6E4;
   }
   .pricing .prices--green {
     grid-area: pricePre;
   }
   .pricing .prices--green:hover {
-    box-shadow: 5px 10px 27px 0px #55DFB4;
+    box-shadow: 0.5em 0.8em 1.5em 0em #55DFB4;
   }
   .pricing .prices__plan {
     display: block;
@@ -621,9 +625,16 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    padding-top: 0em;
+  }
+  .pricing .prices__info-list-item--emails {
+    margin-left: 1em;
+  }
+  .pricing .prices__info-list-item--license {
+    margin-left: -1em;
   }
   .pricing .prices__btn {
-    margin-top: 1.7em;
+    margin-top: 0em;
   }
 }
 .contact {
@@ -721,11 +732,12 @@
 
 @media only screen and (min-width: 1000px) {
   .contact {
+    padding: 0em 0em;
     margin-top: 8em;
     margin-bottom: 5em;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-areas: ". info form .";
+    grid-template-columns: 23% 22% 7.2% 26.8% 23%;
+    grid-template-areas: ". info . form .";
   }
   .contact__info {
     grid-area: info;
@@ -734,6 +746,9 @@
   }
   .contact__info-title {
     font-size: 3rem;
+  }
+  .contact__info-text {
+    margin-top: 2rem;
   }
   .contact__info-icons {
     display: inline-block;
@@ -748,6 +763,9 @@
   }
   .contact__form-control-input {
     padding: inherit 0em;
+  }
+  .contact__form-control-check {
+    margin-left: 0em;
   }
   .contact__form-submit {
     margin-right: 0em;
