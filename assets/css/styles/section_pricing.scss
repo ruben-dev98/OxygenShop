@@ -1,5 +1,5 @@
 .pricing {
-    padding: 0em 2em;
+    padding: 0em 2.5em;
     &__title {
         font-family: $font-rale;
         font-weight: 400;
@@ -13,7 +13,7 @@
         border-style: solid;
         border-radius: 1.5em;
         margin: 15% 0%;
-        height: 16em;
+        height: 17.2em;
         
         &--red {
             border-color: $color-red;
@@ -97,7 +97,7 @@
             height: 4em;
             border-radius: 2em;
             margin: 0 auto;
-            margin-top: -7.4em;
+            margin-top: -8em;
             padding: 0.8em;
             text-align: center;
             font-size: 0.8rem;
@@ -146,15 +146,15 @@
                     margin-top: 2.7em;
 
                     &--red {
-                        box-shadow: 5px 10px 14px 0px $color-red;
+                        box-shadow: 0.5em 0.8em 1em 0em $color-red;
                     }
     
                     &--blue {
-                        box-shadow: 5px 10px 14px 0px $color-blue;
+                        box-shadow: 0.5em 0.8em 1em 0em $color-blue;
                     }
     
                     &--green {
-                        box-shadow: 5px 10px 14px 0px $color-green;
+                        box-shadow: 0.5em 0.8em 1em 0em $color-green;
                     }
                 }
             }
