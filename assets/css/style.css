@@ -489,6 +489,12 @@
   text-align: center;
   margin-top: 20%;
 }
+.pricing__list {
+  text-align: center;
+  margin: 10% auto;
+  width: 100%;
+  height: 3em;
+}
 .pricing .prices {
   border: 0.1em;
   border-style: solid;
@@ -580,11 +586,16 @@
     padding: 0em;
     display: grid;
     grid-template-columns: 11.6% 22.9% 3.8% 22.9% 4.8% 22.9% 11.6%;
-    grid-template-areas: ". . . title . . ." ". priceBa . pricePro . pricePre .";
+    grid-template-areas: ". . . title . . ." ". . . list . . ." ". priceBa . pricePro . pricePre .";
   }
   .pricing__title {
     margin: 20% 0%;
+    margin-bottom: 0%;
     grid-area: title;
+  }
+  .pricing__list {
+    grid-area: list;
+    width: 50%;
   }
   .pricing .prices {
     height: 28.8em;
@@ -783,7 +794,7 @@
   }
 }
 .slider {
-  padding-top: 2em;
+  margin-top: 2em;
   position: relative;
   width: 100%;
 }
@@ -841,7 +852,7 @@
 
 @media only screen and (min-width: 1000px) {
   .slider {
-    padding-top: 0em;
+    padding: 0em 0em;
     width: 50%;
     margin: 0 auto;
   }
@@ -952,8 +963,8 @@ body {
 
 .to__top {
   display: none;
-  width: 4em;
-  height: 4em;
+  width: 3em;
+  height: 3em;
   position: fixed;
   right: 2%;
   bottom: 5%;
@@ -965,7 +976,7 @@ body {
 
 .modal {
   top: 32.5%;
-  left: 32.5%;
+  left: 4.5%;
 }
 .modal::backdrop {
   opacity: 0.75;
@@ -986,8 +997,31 @@ body {
   height: 100%;
 }
 .modal__title {
-  padding: 5em;
-  padding-top: 4em;
+  padding: 2em;
+  padding-top: 1em;
+}
+
+@media only screen and (min-width: 1000px) {
+  .modal {
+    top: 32.5%;
+    left: 32.5%;
+  }
+  .modal__title {
+    padding: 5em;
+    padding-top: 4em;
+  }
+  .to__top {
+    display: none;
+    width: 4em;
+    height: 4em;
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+  }
+  .to__top-img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

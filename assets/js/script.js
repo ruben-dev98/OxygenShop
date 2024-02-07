@@ -13,7 +13,7 @@ let toTop = document.getElementsByClassName('to__top')[0];
 
 /***************  FORM  ******************/
 
-let btnSub = document.getElementsByClassName('btn__submit')[0];
+let btnSub = document.getElementsByClassName('contact__form-submit')[0];
 let userName = document.getElementById("user");
 let userEmail = document.getElementById("user-email");
 let legal = document.getElementById("legal");
@@ -138,7 +138,7 @@ iconMenuX.addEventListener('click', e => {
 
 window.addEventListener('scroll', e => {
     let width = window.scrollY*100/window.document.body.scrollHeight;
-    if((window.document.body.scrollHeight - 1) - window.scrollY  <= window.innerHeight) {
+    if((window.document.body.scrollHeight) - window.scrollY  <= window.innerHeight) {
         width = 100;
     }
     

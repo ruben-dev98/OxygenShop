@@ -1,8 +1,9 @@
 .slider {
-    //padding: 0em 1.7em;
-    padding-top: 2em;
+    margin-top: 2em;
+    
     position: relative;
     width: 100%;
+    
 
     &__item {
         display: none;
@@ -63,26 +64,16 @@
 
 @media only screen and (min-width: 1000px) {
     .slider {
-        padding-top: 0em;
+        padding: 0em 0em;
         width: 50%;
         margin: 0 auto;
     
         &__item {
             height: 30em;
-            &--active {
-            }
-        }
-    
-        &__count {
-            &-item {
-
-                &--active {
-                }
-            }
         }
     
         &__button {
-
+            
             &-prev {
                 width: 5em;
             }
