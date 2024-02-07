@@ -33,7 +33,6 @@ let coinValues = {
     "gbp": 0
 }
 
-let priceTitles = document.querySelectorAll('.prices__plan-title');
 let basic = document.querySelector('.prices__plan-price--red');
 let prof = document.querySelector('.prices__plan-price--blue');
 let prem = document.querySelector('.prices__plan-price--green');
@@ -54,6 +53,8 @@ let prev = document.querySelector('.slider__button-prev');
 let next = document.querySelector('.slider__button-next');
 
 /************************************************************/
+
+/*************************** FUNCTIONS MODAL *****************************************/
 
 /**
  * 
@@ -78,6 +79,8 @@ function setLocal(item) {
     }
 }
 
+
+
 /**
  * Hacer visible el dialog
  */
@@ -88,6 +91,8 @@ function visibleModal() {
     }
 }
 
+/*************************** FUNCTIONS FORM *****************************************/
+
 /**
 * Limpiar inputs y check del formulario
 **/
@@ -97,6 +102,8 @@ function clear() {
     userEmail.value = "";
     legal.checked = false;
 }
+
+/*************************** FUNCTIONS PRICE *****************************************/
 
 /**
  * 
@@ -151,54 +158,18 @@ function calcCoin(mon, price) {
 }
 
 
-/**
- * 
- * Dependiendo del array de elementos que compartan una clase (arr) añadirle al elemento con el indice (index) el atributo class con la clase (className)
- * 
- */
-/*
-function setItemActive(arr, index, className) {
-    arr[index].setAttribute('class', className);
-}
-*/
+/*************************** FUNCTIONS SLIDER *****************************************/
 
-/**
- * 
- * Dependiendo de la clase por la que queramos buscar un elemento (classNameActive) dejarle una clase (className)
- * 
- */
-/*
-function delItemActive(classNameActive, className) {
-    (document.querySelector("."+classNameActive)).setAttribute('class', className);  
+function getItemActive(className) {
+    return document.querySelector('.'+className);
 }
-*/
-/**
- * 
- * Recoger el indice del elemento ubicado en el array (arr) que tenga la clase (className) o que sea el elemento (className)
- */
-/*
-function getIndex(arr, className) {
-    let index = 0;
-    for(let i = 0; i < arr.length; i++) {
-        if(typeof className == 'string') {
-            if(arr.item(i) == (document.querySelector('.'+className))) {
-                index = i;
-                break;
-            }
-        } else {
-            if(arr.item(i) == className) {
-                index = i;
-                break;
-            }
-        }
-    }
 
-    return index;
+function setClass(elem, classElem) {
+    elem.setAttribute('class', classElem);
 }
-*/
 
 function setClassNextPrev(arr, classNameActive, className, action) {
-    let itemActive = document.querySelector('.'+classNameActive);
+    let itemActive = getItemActive(classNameActive);
     let index = 0;
     arr.forEach((e, i) => {
         if(e == itemActive) {
@@ -206,14 +177,14 @@ function setClassNextPrev(arr, classNameActive, className, action) {
             if(action == 'next') {
                 if((index + 1)  < arr.length) {
                     index += 1;
-                    e.setAttribute('class', className);
-                    arr[index].setAttribute('class', `${className} ${classNameActive}`);
+                    setClass(e, className);
+                    setClass(arr[index], `${className} ${classNameActive}`);
                 }
             } else if(action == 'prev') {
                 if((index - 1)  >= 0) {
                     index -= 1;
-                    e.setAttribute('class', className);
-                    arr[index].setAttribute('class', `${className} ${classNameActive}`);
+                    setClass(e, className);
+                    setClass(arr[index], `${className} ${classNameActive}`);
                 }
             }
         }
@@ -221,41 +192,44 @@ function setClassNextPrev(arr, classNameActive, className, action) {
 }
 
 function setClassTarget(arr, arrItem, target, classNameActive, className, classNameActiveItem, classNameItem) {
-    let itemActive = document.querySelector('.'+classNameActive);
-    let itemActiveItem = document.querySelector('.'+classNameActiveItem);
+    let itemActive = getItemActive(classNameActive);
+    let itemActiveItem = getItemActive(classNameActiveItem);
     arr.forEach((e, i) => {
         if(e == target) {
-            itemActive.setAttribute('class', className);
-            itemActiveItem.setAttribute('class', classNameItem);
-
-            target.setAttribute('class', `${className} ${classNameActive}`);
-            arrItem[i].setAttribute('class', `${classNameItem} ${classNameActiveItem}`);
+            setClass(itemActive, className);
+            setClass(itemActiveItem, classNameItem);
+            setClass(target, `${className} ${classNameActive}`);
+            setClass(arrItem[i], `${classNameItem} ${classNameActiveItem}`);
         }
     });
 }
+
+
+
 
 /**
 * Pintar datos del formulario
 */
 
-function paintData(nom, email) {
+/*function paintData(nom, email) {
     console.log('Hola, ' + nom);
     console.log('con email, ' + email);
-}
+}*/
 
 /*************  MENU  ******************/
 
-iconMenu.addEventListener('click', e => {
-    list.setAttribute('style', 'display: block');
+function listDisplay(display, e, icon) {
+    list.setAttribute('style', `display: ${display}`);
     e.target.setAttribute('style', 'display: none');
-    iconMenuX.setAttribute('style', 'display: inline-block');
+    icon.setAttribute('style', 'display: inline-block');
+}
+
+iconMenu.addEventListener('click', e => {
+    listDisplay('block', e,iconMenuX);
 });
 
 iconMenuX.addEventListener('click', e => {
-    let list = document.getElementsByClassName('nav__list')[0];
-    list.setAttribute('style', 'display: none');
-    e.target.setAttribute('style', 'display: none');
-    iconMenu.setAttribute('style', 'display: inline-block');
+    listDisplay('none', e, iconMenu);
 });
 
 /*************  SCROLLBAR  ******************/
