@@ -135,9 +135,9 @@
         <section class="pricing">
             <h2 class="pricing__title">Pricing</h2>
             <select class="pricing__list">
-                <option selected value="eur">EUR</option>
-                <option value="usd">USD</option>
-                <option value="gbp">GBP</option>
+                <option class="pricing__list-item" selected value="eur">EUR</option>
+                <option class="pricing__list-item" value="usd">USD</option>
+                <option class="pricing__list-item" value="gbp">GBP</option>
             </select>
             <article class="prices prices--red">
                 <div class="prices__plan">
@@ -254,17 +254,17 @@
                     <span class="contact__info-icons-text contact__info-contact-icons-text--tlf">123 456 789</span>
                 </div>
             </div>
-            <form class="contact__form">
+            <form class="contact__form" action="javascript:void(0);">
                 <div class="contact__form-control">
                     <label class="contact__form-control-label" for="user">NAME</label>
-                    <input class="contact__form-control-input" type="text" name="user" id="user">
+                    <input class="contact__form-control-input" pattern=".([a-zA-Z]{1,100})" type="text" name="user" id="user">
                 </div>
                 <div class="contact__form-control">
                     <label class="contact__form-control-label" for="user-email">EMAIL</label>
-                    <input class="contact__form-control-input" type="email" name="user-email" id="user-email">
+                    <input class="contact__form-control-input" pattern='([A-zA-Z0-9]+|[A-zA-Z0-9\.]+[A-zA-Z0-9\.]+)@([a-zA-Z\-0-9]+).([a-zA-Z]{2,})' required type="email" name="user-email" id="user-email">
                 </div>
                 <div class="contact__form-control contact__form-control--check">
-                    <input class="contact__form-control-check" type="checkbox" name="legal" id="legal">
+                    <input class="contact__form-control-check" required type="checkbox" name="legal" id="legal">
                     <span class="contact__form-control-text">
                         I hereby give consent for my personal data included in my application to be processed for the
                         purposes

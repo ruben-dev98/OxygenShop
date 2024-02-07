@@ -162,7 +162,7 @@ function setItemActive(arr, index, className) {
 
 /**
  * 
- * Dependiendo de la clase por la que queramos buscar un elemento (classNameActive) 
+ * Dependiendo de la clase por la que queramos buscar un elemento (classNameActive) dejarle una clase (className)
  * 
  */
 
@@ -192,6 +192,15 @@ function getIndex(arr, className) {
     }
 
     return index;
+}
+
+/**
+* Pintar datos del formulario
+*/
+
+function paintData(nom, email) {
+    console.log('Hola, ' + nom);
+    console.log('con email, ' + email);
 }
 
 /*************  MENU  ******************/
@@ -248,7 +257,6 @@ toTop.addEventListener('click', e => {
 
 btnSub.addEventListener('click', () => {
     let u = new User(userName.value, userEmail.value, legal.checked);
-    userName.removeAttribute('style');
     if(u.isValid(userName, userEmail, legal)) {
         fetch("https://jsonplaceholder.typicode.com/posts", {
             method: "POST",
@@ -258,11 +266,13 @@ btnSub.addEventListener('click', () => {
             }
         })
         .then((response) => response.json())
-        .then((json) => {
-            console.log(json);
+        .then(async (json) => {
+            let js = await json;
+            paintData(js.name, js.email);
+            console.log(js);
             u.removeUser();
+            clear();
         });
-        clear();
     }
 });
 
