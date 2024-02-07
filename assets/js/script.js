@@ -27,6 +27,11 @@ let btnModal = document.getElementsByClassName('modal__btn')[0];
 const basicPrice = 0;
 const profPrice = 25;
 const premPrice = 60;
+let coinValues = {
+    "eur": 0,
+    "usd": 0,
+    "gbp": 0
+}
 
 let priceTitles = document.getElementsByClassName('prices__plan-title');
 let basic = document.getElementsByClassName('prices__plan-price--red')[0];
@@ -50,6 +55,11 @@ let next = document.getElementsByClassName('slider__button-next')[0];
 
 /************************************************************/
 
+/**
+ * 
+ * Recoger una variable de localStorage por un nombre (item) 
+ */
+
 function isLocal(item) {
     if(!localStorage.getItem(item)) {
         return false;
@@ -57,11 +67,20 @@ function isLocal(item) {
     return true;
 }
 
+/**
+ * 
+ * Guardar una variable en localStorage con un nombre (item) 
+ */
+
 function setLocal(item) {
     if(!localStorage.getItem(item)) {
         localStorage.setItem(item, true);
     }
 }
+
+/**
+ * Hacer visible el dialog
+ */
 
 function visibleModal() {
     if(!isLocal('modal')) {
@@ -69,36 +88,92 @@ function visibleModal() {
     }
 }
 
+/**
+* Limpiar inputs y check del formulario
+**/
+
 function clear() {
     userName.value = "";
     userEmail.value = "";
     legal.checked = false;
 }
 
-function calcCoin(mon, price, jsn) {
+/**
+ * 
+ * Precio por defecto que tendran los componentes pricing
+ */
+
+function setDefaultPrice(mon) {
+    basic.innerHTML = calcCoin(mon, basicPrice);
+    prof.innerHTML = calcCoin(mon, profPrice);
+    prem.innerHTML = calcCoin(mon, premPrice);
+}
+
+/**
+ * Recoger los valores del cambio de monedas para realizar los calculos en los precios
+ */
+
+function getCoinsData() {
+    fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
+    .then((response) => response.json())
+    .then(async (json) => {
+        let js = await json;
+        coinValues = {
+            "eur": js.eur.eur,
+            "usd": js.eur.usd,
+            "gbp": js.eur.gbp
+        };
+        setDefaultPrice(listMon.value);
+    });
+}
+
+/**
+ * 
+ * Calcular el nuevo precio dependiendo de la moneda de cambio (mon) y el precio anterior (pre)
+ * Devolviendo una cadena de texto con el símbolo que le corresponda a la moneda
+ */
+
+function calcCoin(mon, price) {
     let symbol = '';
     let change = 0;
     if(mon == 'eur') {
         symbol = '€';
-        change = jsn.eur.eur;
+        change = coinValues.eur;
     } else if(mon == 'gbp') {
         symbol = '£';
-        change = jsn.eur.gbp;
+        change = coinValues.gbp;
     } else {
         symbol = '$';
-        change = jsn.eur.usd;
+        change = coinValues.usd;
     }
     
     return `${symbol}${Number.parseFloat(change*price).toFixed(0)}`;
 }
 
+/**
+ * 
+ * Dependiendo del array de elementos que compartan una clase (arr) añadirle al elemento con el indice (index) el atributo class con la clase (className)
+ * 
+ */
+
 function setItemActive(arr, index, className) {
     arr.item(index).setAttribute('class', className);
 }
 
+/**
+ * 
+ * Dependiendo de la clase por la que queramos buscar un elemento (classNameActive) 
+ * 
+ */
+
 function delItemActive(classNameActive, className) {
     (document.getElementsByClassName(classNameActive)[0]).setAttribute('class', className);  
 }
+
+/**
+ * 
+ * Recoger el indice del elemento ubicado en el array (arr) que tenga la clase (className) o que sea el elemento (className)
+ */
 
 function getIndex(arr, className) {
     let index = 0;
@@ -191,10 +266,6 @@ btnSub.addEventListener('click', () => {
     }
 });
 
-// Popup Modal aparece al 25% de la página o después de 5seg
-// 3 formas de quitarla tecla ESC, click fuera de modal y boton X en modal
-// LocalStorage para que no aparezca de nuevo
-
 /***************  MODAL  ******************/
 setTimeout(() => {
     visibleModal();
@@ -223,7 +294,7 @@ window.addEventListener('click', (e) => {
 /**************  PRICES  *******************/
 
 listMon.addEventListener('change', (e) => {
-    fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
+    /*fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
     .then((response) => response.json())
     .then(async (json) => {
         let mon = e.target.value;
@@ -231,7 +302,11 @@ listMon.addEventListener('change', (e) => {
         basic.innerHTML = calcCoin(mon, basicPrice, js);
         prof.innerHTML = calcCoin(mon, profPrice, js);
         prem.innerHTML = calcCoin(mon, premPrice, js);
-    });
+    });*/
+    let mon = e.target.value;
+    basic.innerHTML = calcCoin(mon, basicPrice);
+    prof.innerHTML = calcCoin(mon, profPrice);
+    prem.innerHTML = calcCoin(mon, premPrice);
 });
 
 /*************  SLIDER  ******************/
@@ -270,3 +345,7 @@ sliderCount.addEventListener('click', (e) => {
         setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);
     }
 });
+
+/****************************************/
+
+getCoinsData();
