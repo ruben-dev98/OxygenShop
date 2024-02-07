@@ -1,27 +1,27 @@
 /*************  MENU  ******************/
-let iconMenu = document.getElementsByClassName('header__icon-menu')[0];
-let iconMenuX = document.getElementsByClassName('header__icon-x-menu')[0];
-let list = document.getElementsByClassName('nav__list')[0];
+let iconMenu = document.querySelector('.header__icon-menu');
+let iconMenuX = document.querySelector('.header__icon-x-menu');
+let list = document.querySelector('.nav__list');
 
 /*************  SCROLLBAR  ******************/
 
-let scrollBar = document.getElementsByClassName('scroll')[0];
+let scrollBar = document.querySelector('.scroll');
 
 /*************  TO_TOP  ******************/
 
-let toTop = document.getElementsByClassName('to__top')[0];
+let toTop = document.querySelector('.to__top');
 
 /***************  FORM  ******************/
 
-let btnSub = document.getElementsByClassName('contact__form-submit')[0];
-let userName = document.getElementById("user");
-let userEmail = document.getElementById("user-email");
-let legal = document.getElementById("legal");
+let btnSub = document.querySelector('.contact__form-submit');
+let userName = document.querySelector("#user");
+let userEmail = document.querySelector("#user-email");
+let legal = document.querySelector("#legal");
 
 /***************  MODAL  ******************/
 
-let modal = document.getElementsByClassName('modal')[0];
-let btnModal = document.getElementsByClassName('modal__btn')[0];
+let modal = document.querySelector('.modal');
+let btnModal = document.querySelector('.modal__btn');
 
 /*************  PRICES  ******************/
 const basicPrice = 0;
@@ -33,11 +33,11 @@ let coinValues = {
     "gbp": 0
 }
 
-let priceTitles = document.getElementsByClassName('prices__plan-title');
-let basic = document.getElementsByClassName('prices__plan-price--red')[0];
-let prof = document.getElementsByClassName('prices__plan-price--blue')[0];
-let prem = document.getElementsByClassName('prices__plan-price--green')[0];
-let listMon = document.getElementsByClassName('pricing__list')[0];
+let priceTitles = document.querySelectorAll('.prices__plan-title');
+let basic = document.querySelector('.prices__plan-price--red');
+let prof = document.querySelector('.prices__plan-price--blue');
+let prem = document.querySelector('.prices__plan-price--green');
+let listMon = document.querySelector('.pricing__list');
 
 /*************  SLIDER  ******************/
 
@@ -47,11 +47,11 @@ const classItemActive = 'slider__item--active';
 const classCountItem = 'slider__count-item';
 const classCountItemActive = 'slider__count-item--active';
 
-let items = document.getElementsByClassName('slider__item');
-let countItems = document.getElementsByClassName('slider__count-item');
-let sliderCount = document.getElementsByClassName('slider__count')[0];
-let prev = document.getElementsByClassName('slider__button-prev')[0];
-let next = document.getElementsByClassName('slider__button-next')[0];
+let items = document.querySelectorAll('.slider__item');
+let countItems = document.querySelectorAll('.slider__count-item');
+let sliderCount = document.querySelector('.slider__count');
+let prev = document.querySelector('.slider__button-prev');
+let next = document.querySelector('.slider__button-next');
 
 /************************************************************/
 
@@ -150,36 +150,38 @@ function calcCoin(mon, price) {
     return `${symbol}${Number.parseFloat(change*price).toFixed(0)}`;
 }
 
+
 /**
  * 
  * Dependiendo del array de elementos que compartan una clase (arr) añadirle al elemento con el indice (index) el atributo class con la clase (className)
  * 
  */
-
+/*
 function setItemActive(arr, index, className) {
-    arr.item(index).setAttribute('class', className);
+    arr[index].setAttribute('class', className);
 }
+*/
 
 /**
  * 
  * Dependiendo de la clase por la que queramos buscar un elemento (classNameActive) dejarle una clase (className)
  * 
  */
-
+/*
 function delItemActive(classNameActive, className) {
-    (document.getElementsByClassName(classNameActive)[0]).setAttribute('class', className);  
+    (document.querySelector("."+classNameActive)).setAttribute('class', className);  
 }
-
+*/
 /**
  * 
  * Recoger el indice del elemento ubicado en el array (arr) que tenga la clase (className) o que sea el elemento (className)
  */
-
+/*
 function getIndex(arr, className) {
     let index = 0;
     for(let i = 0; i < arr.length; i++) {
         if(typeof className == 'string') {
-            if(arr.item(i) == (document.getElementsByClassName(className)[0])) {
+            if(arr.item(i) == (document.querySelector('.'+className))) {
                 index = i;
                 break;
             }
@@ -192,6 +194,44 @@ function getIndex(arr, className) {
     }
 
     return index;
+}
+*/
+
+function setClassNextPrev(arr, classNameActive, className, action) {
+    let itemActive = document.querySelector('.'+classNameActive);
+    let index = 0;
+    arr.forEach((e, i) => {
+        if(e == itemActive) {
+            index = i;
+            if(action == 'next') {
+                if((index + 1)  < arr.length) {
+                    index += 1;
+                    e.setAttribute('class', className);
+                    arr[index].setAttribute('class', `${className} ${classNameActive}`);
+                }
+            } else if(action == 'prev') {
+                if((index - 1)  >= 0) {
+                    index -= 1;
+                    e.setAttribute('class', className);
+                    arr[index].setAttribute('class', `${className} ${classNameActive}`);
+                }
+            }
+        }
+    });
+}
+
+function setClassTarget(arr, arrItem, target, classNameActive, className, classNameActiveItem, classNameItem) {
+    let itemActive = document.querySelector('.'+classNameActive);
+    let itemActiveItem = document.querySelector('.'+classNameActiveItem);
+    arr.forEach((e, i) => {
+        if(e == target) {
+            itemActive.setAttribute('class', className);
+            itemActiveItem.setAttribute('class', classNameItem);
+
+            target.setAttribute('class', `${className} ${classNameActive}`);
+            arrItem[i].setAttribute('class', `${classNameItem} ${classNameActiveItem}`);
+        }
+    });
 }
 
 /**
@@ -268,7 +308,7 @@ btnSub.addEventListener('click', () => {
         .then((response) => response.json())
         .then(async (json) => {
             let js = await json;
-            paintData(js.name, js.email);
+            //paintData(js.name, js.email);
             console.log(js);
             u.removeUser();
             clear();
@@ -322,37 +362,46 @@ listMon.addEventListener('change', (e) => {
 /*************  SLIDER  ******************/
 
 prev.addEventListener('click', () => {
-    let index = getIndex(countItems, classCountItemActive);
+    /*let index = getIndex(countItems, classCountItemActive);
     if((index - 1) >= 0) {
         index -= 1;
-    }
-
-    delItemActive(classItemActive, classItem);
-    delItemActive(classCountItemActive, classCountItem);
-    setItemActive(items, index, `${classItem} ${classItemActive}`);
-    setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);  
+    }*/
+    setClassNextPrev(countItems, classCountItemActive, classCountItem, 'prev');
+    setClassNextPrev(items, classItemActive, classItem, 'prev');
+    /*  
+        delItemActive(classItemActive, classItem);
+        delItemActive(classCountItemActive, classCountItem);
+        setItemActive(items, index, `${classItem} ${classItemActive}`);
+        setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);  
+    */
 });
 
 next.addEventListener('click', () => {
-    let index = getIndex(countItems, classCountItemActive);
+    /*let index = getIndex(countItems, classCountItemActive);
     if((index + 1) < countItems.length) {
         index += 1;
-    }
-
-    delItemActive(classItemActive, classItem);
-    delItemActive(classCountItemActive, classCountItem);
-    setItemActive(items, index, `${classItem} ${classItemActive}`);
-    setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);  
+    }*/
+    setClassNextPrev(countItems, classCountItemActive, classCountItem, 'next');
+    setClassNextPrev(items, classItemActive, classItem, 'next');
+    /*
+        delItemActive(classItemActive, classItem);
+        delItemActive(classCountItemActive, classCountItem);
+        setItemActive(items, index, `${classItem} ${classItemActive}`);
+        setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);  
+    */
 });
 
 sliderCount.addEventListener('click', (e) => {
     if (e.target != sliderCount) {
-        let index = getIndex(countItems, e.target);
+        //let index = getIndex(countItems, e.target);
         
-        delItemActive(classItemActive, classItem);
-        delItemActive(classCountItemActive, classCountItem);
-        setItemActive(items, index, `${classItem} ${classItemActive}`);
-        setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);
+        setClassTarget(countItems, items, e.target, classCountItemActive, classCountItem, classItemActive, classItem);
+        /*
+            delItemActive(classItemActive, classItem);
+            delItemActive(classCountItemActive, classCountItem);
+            setItemActive(items, index, `${classItem} ${classItemActive}`);
+            setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);
+        */
     }
 });
 
