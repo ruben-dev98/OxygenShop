@@ -46,11 +46,10 @@ const classItemActive = 'slider__item--active';
 const classCountItem = 'slider__count-item';
 const classCountItemActive = 'slider__count-item--active';
 
-let items = document.querySelectorAll('.slider__item');
-let countItems = document.querySelectorAll('.slider__count-item');
+const classPrev = '.slider__button-prev';
+const classNext = '.slider__button-next';
+
 let sliderCount = document.querySelector('.slider__count');
-let prev = document.querySelector('.slider__button-prev');
-let next = document.querySelector('.slider__button-next');
 
 /************************************************************/
 
@@ -160,51 +159,6 @@ function calcCoin(mon, price) {
 
 /*************************** FUNCTIONS SLIDER *****************************************/
 
-function getItemActive(className) {
-    return document.querySelector('.'+className);
-}
-
-function setClass(elem, classElem) {
-    elem.setAttribute('class', classElem);
-}
-
-function setClassNextPrev(arr, classNameActive, className, action) {
-    let itemActive = getItemActive(classNameActive);
-    let index = 0;
-    arr.forEach((e, i) => {
-        if(e == itemActive) {
-            index = i;
-            if(action == 'next') {
-                if((index + 1)  < arr.length) {
-                    index += 1;
-                    setClass(e, className);
-                    setClass(arr[index], `${className} ${classNameActive}`);
-                }
-            } else if(action == 'prev') {
-                if((index - 1)  >= 0) {
-                    index -= 1;
-                    setClass(e, className);
-                    setClass(arr[index], `${className} ${classNameActive}`);
-                }
-            }
-        }
-    });
-}
-
-function setClassTarget(arr, arrItem, target, classNameActive, className, classNameActiveItem, classNameItem) {
-    let itemActive = getItemActive(classNameActive);
-    let itemActiveItem = getItemActive(classNameActiveItem);
-    arr.forEach((e, i) => {
-        if(e == target) {
-            setClass(itemActive, className);
-            setClass(itemActiveItem, classNameItem);
-            setClass(target, `${className} ${classNameActive}`);
-            setClass(arrItem[i], `${classNameItem} ${classNameActiveItem}`);
-        }
-    });
-}
-
-
 
 
 /**
@@ -260,40 +214,41 @@ function anim() {
     }, 20);
 }
 
-toTop.addEventListener('click', e => {
-    let time = setTimeout(() => {
-        anim();
-        clearTimeout(time);
-    }, 200);
+toTop.addEventListener('click', () => {
+    setTimeout(anim, 200);
 });
 
 /***************  FORM  ******************/
 
-btnSub.addEventListener('click', () => {
+btnSub.addEventListener('click', async() => {
     let u = new User(userName.value, userEmail.value, legal.checked);
     if(u.isValid(userName, userEmail, legal)) {
-        fetch("https://jsonplaceholder.typicode.com/posts", {
+        let json = await fetch("https://jsonplaceholder.typicode.com/posts", {
             method: "POST",
             body: u.saveUser(),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             }
-        })
-        .then((response) => response.json())
+        });
+        console.log(json);
+        /*.then((response) => response.json())
         .then(async (json) => {
             let js = await json;
             //paintData(js.name, js.email);
             console.log(js);
             u.removeUser();
             clear();
-        });
+        });*/
     }
 });
 
 /***************  MODAL  ******************/
-setTimeout(() => {
-    visibleModal();
-}, 5000);
+
+let modalTime = setTimeout(visibleModal, 5000);
+
+if(isLocal('modal')) {
+    clear(modalTime);
+}
 
 btnModal.addEventListener('click', () => {
     modal.close();
@@ -335,50 +290,72 @@ listMon.addEventListener('change', (e) => {
 
 /*************  SLIDER  ******************/
 
-prev.addEventListener('click', () => {
-    /*let index = getIndex(countItems, classCountItemActive);
-    if((index - 1) >= 0) {
-        index -= 1;
-    }*/
-    setClassNextPrev(countItems, classCountItemActive, classCountItem, 'prev');
-    setClassNextPrev(items, classItemActive, classItem, 'prev');
-    /*  
-        delItemActive(classItemActive, classItem);
-        delItemActive(classCountItemActive, classCountItem);
-        setItemActive(items, index, `${classItem} ${classItemActive}`);
-        setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);  
-    */
-});
+let slider = new Slider(classItem, classCountItem, classItemActive, classCountItemActive, classPrev, classNext);
 
-next.addEventListener('click', () => {
-    /*let index = getIndex(countItems, classCountItemActive);
-    if((index + 1) < countItems.length) {
-        index += 1;
-    }*/
-    setClassNextPrev(countItems, classCountItemActive, classCountItem, 'next');
-    setClassNextPrev(items, classItemActive, classItem, 'next');
-    /*
-        delItemActive(classItemActive, classItem);
-        delItemActive(classCountItemActive, classCountItem);
-        setItemActive(items, index, `${classItem} ${classItemActive}`);
-        setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);  
-    */
-});
+slider.prev();
+slider.next();
 
 sliderCount.addEventListener('click', (e) => {
     if (e.target != sliderCount) {
-        //let index = getIndex(countItems, e.target);
-        
-        setClassTarget(countItems, items, e.target, classCountItemActive, classCountItem, classItemActive, classItem);
-        /*
-            delItemActive(classItemActive, classItem);
-            delItemActive(classCountItemActive, classCountItem);
-            setItemActive(items, index, `${classItem} ${classItemActive}`);
-            setItemActive(countItems, index, `${classCountItem} ${classCountItemActive}`);
-        */
+        slider.target(e.target);
     }
 });
 
+/*prev.addEventListener('click', () => {
+    slider.prev();
+});
+
+next.addEventListener('click', () => {
+    slider.next();
+});*/
+
+
+
 /****************************************/
+
+/*
+function getItemActive(className) {
+    return document.querySelector('.'+className);
+}
+
+function setClass(elem, classElem) {
+    elem.setAttribute('class', classElem);
+}
+
+function setClassNextPrev(arr, classNameActive, className, action) {
+    let itemActive = getItemActive(classNameActive);
+    let index = 0;
+    arr.forEach((e, i) => {
+        if(e == itemActive) {
+            index = i;
+            if(action == 'next') {
+                if((index + 1)  < arr.length) {
+                    index += 1;
+                    setClass(e, className);
+                    setClass(arr[index], `${className} ${classNameActive}`);
+                }
+            } else if(action == 'prev') {
+                if((index - 1)  >= 0) {
+                    index -= 1;
+                    setClass(e, className);
+                    setClass(arr[index], `${className} ${classNameActive}`);
+                }
+            }
+        }
+    });
+}
+
+function setClassTarget(arr, arrItem, target, classNameActive, className, classNameActiveItem, classNameItem) {
+    let itemActive = getItemActive(classNameActive);
+    let itemActiveItem = getItemActive(classNameActiveItem);
+    arr.forEach((e, i) => {
+        if(e == target) {
+            setClass(itemActive, className);
+            setClass(itemActiveItem, classNameItem);
+            setClass(target, `${className} ${classNameActive}`);
+            setClass(arrItem[i], `${classNameItem} ${classNameActiveItem}`);
+        }
+    });
+}*/
 
 getCoinsData();
