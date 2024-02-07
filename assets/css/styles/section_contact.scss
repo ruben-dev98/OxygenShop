@@ -1,10 +1,10 @@
 .contact {
     width: 100%;
+    padding: 0em 1.8em;
 
     &__info {
         width: 100%;
-        padding: 0em 1.5em;
-        margin-top: 2.5em;
+        margin-bottom: 2em;
 
         &-title {
             font-family: $font-rale;
@@ -16,7 +16,7 @@
             font-size: 1rem;
             font-weight: 400;
             margin-top: 0.5em;
-            margin-bottom: 4.5em;
+            margin-bottom: 2.5em;
         }
 
         &-icons {
@@ -45,13 +45,12 @@
         width: 100%;
 
             &-control {
-                padding: 1.5em 1.7em;
-
+                padding: 1.7em 0em;
                 &-input {
                     display: block;
                     width: 100%;
-                    border: 0px;
-                    border-bottom: 1px solid #95989A;
+                    border: 0em;
+                    border-bottom: 0.1em solid #95989A;
                     padding-top: 2em;
                 }
     
@@ -60,7 +59,7 @@
                     font-weight: 600;
                     font-size: 0.7rem;
                     color: $color-blue;
-                    letter-spacing: 3.2799999713897705px;
+                    letter-spacing: 0.3em;
                 }
 
                 &-check {
@@ -72,7 +71,8 @@
                     height: 1.8em;
                     margin-right: 0.5em;
                     border-radius: 0.3em;
-                    border: 1px solid #95989A;
+                    margin-left: -0.1em;
+                    border: 0.1em solid #95989A;
                 }
 
                 &-check:checked {
@@ -80,29 +80,28 @@
                     background-image: url(../img/checkmark.svg);
                     background-repeat: no-repeat;
                     background-position: center;
-                    /*background-size: 100%;*/
                 }
 
                 &-text {
                     display: inline-block;
-                    width: 80%;
+                    width: 89%;
                     font-weight: 400;
-                    font-size: 0.9rem;
-                    line-height: 16px;
+                    font-size: 0.77rem;
+                    line-height: 1.3em;
                     vertical-align: top;
                     color: #707070;
                 }
             }
 
         &-submit {
-            width: 16em;
-            height: 4em;
+            font-size: 0.8rem;
+            width: 17.7em;
+            height: 4.2em;
             text-align: center;
-            vertical-align: middle;
             background-color: $color-blue;
             border-radius: 2em;
-            box-shadow: 5px 10px 14px 0px #07ACE64A;
-            margin-right: 1.7em;
+            box-shadow: 0.5em 0.8em 1em 0em #07ACE64A;
+            margin-right: 0em;
             margin-left: auto;
         }
     }
@@ -110,11 +109,12 @@
 
 @media only screen and (min-width: 1000px) {
     .contact {
+        padding: 0em 0em;
         margin-top: 8em;
         margin-bottom: 5em;
         display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-template-areas: ". info form .";
+        grid-template-columns: 23% 25% 3% 26.8% 23%;
+        grid-template-areas: ". info . form .";
     
         &__info {
             grid-area: info;
@@ -125,9 +125,13 @@
                 font-size: 3rem;
             }
 
+            &-text {
+                margin-top: 2rem;
+            }
+
             &-icons {
                 display: inline-block;
-                margin-right: 10px;
+                margin-right: 0.6em;
             }
         }
     
@@ -137,13 +141,18 @@
                     padding: 0em 0em;
                     padding-bottom: 2.5em;
 
+                    &--check {
+                        display: flex;
+                    }
+
                     &-input {
                         padding: inherit 0em;
                     }
-                }
 
-                &-submit {
-                    margin-right: 0em;
+                    &-text {
+                        width: 94%;
+                        font-size: 0.76rem;
+                    }
                 }
         }
     }

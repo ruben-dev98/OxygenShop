@@ -1,30 +1,65 @@
 .features {
     background-color: #F7F7F7;
-    padding: 2.7em 1.5em;
+    padding: 3.1em 1.9em;
 
     &__article {
         background-color: #FFF;
         border-radius: 0.3em;
-        border: 1px solid #E8E9ED;
+        border: 0.1em solid #E8E9ED;
         margin-bottom: 2.5em;
+        height: 23.1em;
+        
         &-info {
             &-title {
-                padding: 1em 0.6em 0em 0.4em;
+                padding: 0.5em 0.5em;
                 font-family: $font-rale;
                 font-size: 1.9rem;
                 font-weight: 400;
-                line-height: 35px;
+                line-height: 1em;
                 letter-spacing: 0em;
                 text-align: left;
+
+                &-text {
+                    display: block;
+                }
+
+                &--iphone {
+                    padding-bottom: 0em;
+                }
+
+                &--trumpet {
+                    padding-bottom: 0em;
+                    padding-top: 0.7em;
+                }
+
             }
         
             &-text {
                 font-size: 0.8rem;
                 font-weight: 400;
-                line-height: 21px;
+                line-height: 1.5em;
                 letter-spacing: 0em;
                 text-align: left;
-                padding: 1em;
+                padding: 3em 1em;
+                padding-bottom: 0em;
+
+                &-second {
+                    padding-right: 2em;
+                    
+                    &--trumpet {
+                        padding-right: 1em;
+                    }
+                }
+
+                &--iphone {
+                    padding-top: 1.5em;
+                }
+
+                &--trumpet {
+                    padding-top: 1.5em;
+                    font-size: 1rem;
+                }
+                
             }
         }
         
@@ -50,7 +85,6 @@
                     background-color: $color-blue;
                     width: 8.2em;
                     height: 8.2em;
-                    /*Cambiar a rem o porcentaje*/
                     border-radius: 50%;
                     margin: 0 auto;
                 }
@@ -60,10 +94,9 @@
                     background-color: $color-green;
                     width: 100%;
                     height: 12.2em;
-                    /*Cambiar a rem o porcentaje*/
                     text-align: left;
                     border-radius: 0.3em;
-                    margin-top: -3em;
+                    margin-top: -8em;
                 }
             }
 
@@ -72,7 +105,6 @@
                 &--mac {
                     width: 12em;
                     height: 6.8em;
-                    /*Cambiar a rem o porcentaje*/
                     display: inline-block;
                     position: relative;
                     left: -3em;
@@ -87,7 +119,11 @@
                 }
         
                 &--trumpet {
-                    width: fit-content;
+                    width: 18.4em;
+                    height: 13em;
+                    position: relative;
+                    left: -5%;
+                    bottom: -5%;
                 }
             }
     
@@ -97,7 +133,7 @@
     
             &--iphone {
                 margin-top: 0.5em;
-                margin-bottom: -8em;
+                margin-bottom: -7em;
             }
             
             
@@ -106,10 +142,11 @@
 }
 
 @media only screen and (min-width: 1000px) {
+    
     .features {
-        /*padding: 2.7em 16.5em;*/
+        padding: 6em 0em;
         display: grid;
-        grid-template-columns: 14.25% 44.25% 3% 24.25% 14.25%;
+        grid-template-columns: 15.8% 38.3% 3% 27.1% 15.8%;
         grid-template-areas: 
         ". mac mac mac ."
         ". iphone iphone iphone ."
@@ -118,7 +155,7 @@
     
         &__article {
             padding: 0em;
-            /*display: grid;*/
+
             &--mac {
                 grid-area: mac;
                 display: grid;
@@ -158,8 +195,10 @@
 
                 &-title {
                     padding: 2.5em 0.5em 0em 1em;
+                    font-size: 2.2rem;
 
-                    &--mac {
+                    &-text {
+                        display: inline;
                     }
 
                     &--iphone {
@@ -168,8 +207,7 @@
                     }
 
                     &--trumpet {
-                        width: 55%;
-                        padding-top: 1em;
+                        width: 65%;
                     }
                 }
 
@@ -177,30 +215,43 @@
                     padding: 2.5em 0em 3em 0em;
                     margin: 0em 1em;
                     margin-left: 2.5em;
+                    font-size: 1rem;
 
                     &::after {
                         margin-top: 10%;
                         bottom: 0;
                         content: '';
                         display: block;
-                        height: 4px;
-                        width: 50%;
+                        height: 0.3em;
+                    }
+
+                    &--mac {
+                        width: 78%;
+                        &::after {
+                            background-color: $color-red;
+                            width: 74.7%;
+                        }
                     }
 
                     &--iphone {
                         margin-left: 0em;
+                        width: 89%;
+
+                        &::after {
+                            background-color: $color-blue;
+                            width: 74.1%;
+                        }
                     }
 
-                    &--mac::after {
-                        background-color: $color-red;
-                    }
 
-                    &--iphone::after {
-                        background-color: $color-blue;
-                    }
+                    &--trumpet {
+                        width: 70%;
 
-                    &--trumpet::after {
-                        background-color: $color-green;
+                        &::after {
+                            background-color: $color-green;
+                            width: 74.5%;
+                        }
+                        
                     }
                 }
             }
@@ -268,7 +319,7 @@
                     &--trumpet {
                         margin: 0 auto;
                         display: block;
-                        top: 2em;
+                        top: 27%;
                         position: relative;
                     }
                 }
@@ -276,35 +327,3 @@
         }
     }
 }
-
-/*@media only screen and (min-width: 1500px) {
-    .features {
-        &__article {
-    
-            &-icons {
-
-                &-icon {
-    
-                    &--mac {
-                        width: 11.3em;
-                        height: 11.3em;
-                        right: -61%;
-                        top: 11%;
-                        display: block;
-                    }
-                }
-    
-                &-img {
-    
-                    &--mac {
-                        width: 23em;
-                        height: 13.7em;
-                        left: 23%;
-                        top: -34%;
-                        display: block;
-                    }
-                }
-            }
-        }
-    }
-}*/
