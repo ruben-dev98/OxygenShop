@@ -116,4 +116,11 @@ class Slider {
         });
         
     }
+
+    automatic() {
+        setInterval(() => {
+            this.nextIndex();
+            this.slide(undefined);
+        }, 6000);
+    }
 }
