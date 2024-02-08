@@ -49,8 +49,6 @@ const classCountItemActive = 'slider__count-item--active';
 const classPrev = '.slider__button-prev';
 const classNext = '.slider__button-next';
 
-let sliderCount = document.querySelector('.slider__count');
-
 /************************************************************/
 
 /*************************** FUNCTIONS MODAL *****************************************/
@@ -77,8 +75,6 @@ function setLocal(item) {
         localStorage.setItem(item, true);
     }
 }
-
-
 
 /**
  * Hacer visible el dialog
@@ -121,7 +117,15 @@ function setDefaultPrice(mon) {
 
 function getCoinsData() {
     fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
-    .then((response) => response.json())
+    .then((response) =>  {
+        if(response.status === 200) {
+            return response.json();
+        } else if (response.status === 400) {
+            console.log('Data Not Found');
+        } else if(response.status === 500) {
+            console.log('Error On Server')
+        }
+    })
     .then(async (json) => {
         let js = await json;
         coinValues = {
@@ -130,7 +134,7 @@ function getCoinsData() {
             "gbp": js.eur.gbp
         };
         setDefaultPrice(listMon.value);
-    });
+    }).catch((error) => console.log(error));
 }
 
 /**
@@ -156,20 +160,6 @@ function calcCoin(mon, price) {
     return `${symbol}${Number.parseFloat(change*price).toFixed(0)}`;
 }
 
-
-/*************************** FUNCTIONS SLIDER *****************************************/
-
-
-
-/**
-* Pintar datos del formulario
-*/
-
-/*function paintData(nom, email) {
-    console.log('Hola, ' + nom);
-    console.log('con email, ' + email);
-}*/
-
 /*************  MENU  ******************/
 
 function listDisplay(display, e, icon) {
@@ -188,13 +178,12 @@ iconMenuX.addEventListener('click', e => {
 
 /*************  SCROLLBAR  ******************/
 
+
 window.addEventListener('scroll', e => {
-    let width = window.scrollY*100/window.document.body.scrollHeight;
-    if((window.document.body.scrollHeight) - window.scrollY  <= window.innerHeight) {
-        width = 100;
-    }
-    
+    let widthMax = (window.document.body.scrollHeight) - window.innerHeight;
+    let width = window.scrollY*100/widthMax;
     scrollBar.setAttribute('style', `width: ${width}%; display: block;`);
+    
     if(width >= 25) {
         visibleModal();
         toTop.setAttribute('style', 'display: block');
@@ -205,17 +194,13 @@ window.addEventListener('scroll', e => {
 
 /*************  TO_TOP  ******************/
 
-function anim() {
-    let anim = setInterval(() => {
-        window.scrollTo(0 , window.scrollY - 85);
-        if(window.scrollY == 0) {
-            clearInterval(anim);
-        }
-    }, 20);
-}
-
 toTop.addEventListener('click', () => {
-    setTimeout(anim, 200);
+    setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, 200);
 });
 
 /***************  FORM  ******************/
@@ -223,22 +208,25 @@ toTop.addEventListener('click', () => {
 btnSub.addEventListener('click', async() => {
     let u = new User(userName.value, userEmail.value, legal.checked);
     if(u.isValid(userName, userEmail, legal)) {
-        let json = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        fetch("https://jsonplaceholder.typicode.com/posts", {
             method: "POST",
             body: u.saveUser(),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             }
-        });
-        console.log(json);
-        /*.then((response) => response.json())
-        .then(async (json) => {
-            let js = await json;
-            //paintData(js.name, js.email);
-            console.log(js);
+        }).then((response) => {
+            if(response.status === 201) {
+                return response.json();
+            } else if (response.status === 400) {
+                console.log('Data Not Found');
+            } else if(response.status === 500) {
+                console.log('Error On Server')
+            }
+        }).then((json) => {
+            console.log(json);
             u.removeUser();
             clear();
-        });*/
+        }).catch((error) => console.log(error));
     }
 });
 
@@ -273,15 +261,6 @@ window.addEventListener('click', (e) => {
 /**************  PRICES  *******************/
 
 listMon.addEventListener('change', (e) => {
-    /*fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
-    .then((response) => response.json())
-    .then(async (json) => {
-        let mon = e.target.value;
-        let js = await json;
-        basic.innerHTML = calcCoin(mon, basicPrice, js);
-        prof.innerHTML = calcCoin(mon, profPrice, js);
-        prem.innerHTML = calcCoin(mon, premPrice, js);
-    });*/
     let mon = e.target.value;
     basic.innerHTML = calcCoin(mon, basicPrice);
     prof.innerHTML = calcCoin(mon, profPrice);
@@ -296,10 +275,9 @@ slider.prev();
 slider.next();
 slider.target();
 
-/*sliderCount.addEventListener('click', (e) => {
-    if (e.target != sliderCount) {
-        slider.target(e.target);
-    }
-});*/
+let sliderInter = setInterval(() => {
+    slider.nextIndex();
+    slider.slide(undefined);
+}, 8000);
 
 getCoinsData();

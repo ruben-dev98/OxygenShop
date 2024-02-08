@@ -79,12 +79,16 @@ class Slider {
     prevIndex() {
         if(this.index > 0) {
             this.index -= 1;
+        } else {
+            this.setIndex(this.lastIndex);
         }
     }
 
     nextIndex() {
         if(this.index < this.lastIndex) {
             this.index += 1;
+        } else {
+            this.setIndex(0);
         }
     }
 
