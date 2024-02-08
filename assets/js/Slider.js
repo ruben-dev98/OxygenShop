@@ -26,6 +26,27 @@ class Slider {
         this.index = 0;
         this.lastIndex = this.items.length - 1;
     }
+
+    slide(target) {
+        let itemActive = this.getItemActive();
+        let itemCountActive = this.getCountActive();
+        this.countItems.forEach((e, i) => {
+            this.setItem(itemActive);
+            this.setCount(itemCountActive);
+            if(target !== undefined) {
+                if(e === target) {
+                    this.setItemActive(this.items[i]);
+                    this.setCountActive(target);
+                    this.setIndex(i);
+                }
+            } else {
+                if (e === itemCountActive) {
+                    this.setItemActive(this.items[this.index]);
+                    this.setCountActive(this.countItems[this.index]);
+                }
+            }
+        });
+    }
     
     setItem(elem) {
         elem.setAttribute('class', this.classItem);
@@ -69,51 +90,26 @@ class Slider {
 
     prev() {
         this.prevButton.addEventListener('click', () => {
-            let itemActive = this.getCountActive();
-            this.countItems.forEach((e, i) => {
-                if (e === itemActive) {
-                    this.prevIndex();
-
-                    this.setItem(this.items[i]);
-                    this.setCount(e);
-                    
-                    this.setItemActive(this.items[this.index]);
-                    this.setCountActive(this.countItems[this.index]);
-                }
-            });
+            this.prevIndex();
+            this.slide(undefined);
         });
     }
 
     next() {
         this.nextButton.addEventListener('click', () => {
-            let itemActive = this.getCountActive();
-            this.countItems.forEach((e, i) => {
-                if (e === itemActive) {
-                    this.nextIndex();
-
-                    this.setItem(this.items[i]);
-                    this.setCount(e);
-
-                    this.setItemActive(this.items[this.index]);
-                    this.setCountActive(this.countItems[this.index]);
-                }
-            });
+            this.nextIndex();
+            this.slide(undefined);
         });
     }
 
-    target(target) {
-        let itemActive = this.getItemActive();
-        let itemCountActive = this.getCountActive();
-        this.countItems.forEach((e, i) => {
-        if(e === target) {
-            this.setItem(itemActive);
-            this.setCount(itemCountActive);
-
-            this.setItemActive(this.items[i]);
-            this.setCountActive(target);
-
-            this.setIndex(i);
-        }
-    });
+    target() {
+        this.countItems[0].parentElement.addEventListener('click', (event) => {
+            if (event.target !== this.countItems[0].parentElement &&
+                (event.target !== this.prevButton && event.target !== this.nextButton)) {
+                let target = event.target;
+                this.slide(target);
+            }
+        });
+        
     }
 }

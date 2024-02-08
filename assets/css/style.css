@@ -796,6 +796,14 @@
     font-size: 0.76rem;
   }
 }
+@keyframes slid {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .slider {
   margin-top: 2em;
   position: relative;
@@ -808,6 +816,8 @@
 }
 .slider__item--active {
   display: block;
+  animation-name: slid;
+  animation-duration: 0.5s;
 }
 .slider__count {
   display: flex;

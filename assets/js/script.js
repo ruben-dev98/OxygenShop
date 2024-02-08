@@ -294,68 +294,12 @@ let slider = new Slider(classItem, classCountItem, classItemActive, classCountIt
 
 slider.prev();
 slider.next();
+slider.target();
 
-sliderCount.addEventListener('click', (e) => {
+/*sliderCount.addEventListener('click', (e) => {
     if (e.target != sliderCount) {
         slider.target(e.target);
     }
-});
-
-/*prev.addEventListener('click', () => {
-    slider.prev();
-});
-
-next.addEventListener('click', () => {
-    slider.next();
 });*/
-
-
-
-/****************************************/
-
-/*
-function getItemActive(className) {
-    return document.querySelector('.'+className);
-}
-
-function setClass(elem, classElem) {
-    elem.setAttribute('class', classElem);
-}
-
-function setClassNextPrev(arr, classNameActive, className, action) {
-    let itemActive = getItemActive(classNameActive);
-    let index = 0;
-    arr.forEach((e, i) => {
-        if(e == itemActive) {
-            index = i;
-            if(action == 'next') {
-                if((index + 1)  < arr.length) {
-                    index += 1;
-                    setClass(e, className);
-                    setClass(arr[index], `${className} ${classNameActive}`);
-                }
-            } else if(action == 'prev') {
-                if((index - 1)  >= 0) {
-                    index -= 1;
-                    setClass(e, className);
-                    setClass(arr[index], `${className} ${classNameActive}`);
-                }
-            }
-        }
-    });
-}
-
-function setClassTarget(arr, arrItem, target, classNameActive, className, classNameActiveItem, classNameItem) {
-    let itemActive = getItemActive(classNameActive);
-    let itemActiveItem = getItemActive(classNameActiveItem);
-    arr.forEach((e, i) => {
-        if(e == target) {
-            setClass(itemActive, className);
-            setClass(itemActiveItem, classNameItem);
-            setClass(target, `${className} ${classNameActive}`);
-            setClass(arrItem[i], `${classNameItem} ${classNameActiveItem}`);
-        }
-    });
-}*/
 
 getCoinsData();
