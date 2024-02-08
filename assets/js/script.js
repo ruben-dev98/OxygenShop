@@ -21,6 +21,9 @@ let legal = document.querySelector("#legal");
 /***************  MODAL  ******************/
 
 let modal = document.querySelector('.modal');
+let userModal = document.querySelector('#modal-user');
+let emailModal = document.querySelector('#modal-email');
+let btnSubModal = document.querySelector('.modal__form-submit');
 let btnModal = document.querySelector('.modal__btn');
 
 /*************  PRICES  ******************/
@@ -93,6 +96,9 @@ function visibleModal() {
 **/
 
 function clear() {
+    userModal.value = "";
+    emailModal.value = "";
+
     userName.value = "";
     userEmail.value = "";
     legal.checked = false;
@@ -126,12 +132,11 @@ function getCoinsData() {
             console.log('Error On Server')
         }
     })
-    .then(async (json) => {
-        let js = await json;
+    .then((json) => {
         coinValues = {
-            "eur": js.eur.eur,
-            "usd": js.eur.usd,
-            "gbp": js.eur.gbp
+            "eur": json.eur.eur,
+            "usd": json.eur.usd,
+            "gbp": json.eur.gbp
         };
         setDefaultPrice(listMon.value);
     }).catch((error) => console.log(error));
@@ -208,9 +213,10 @@ toTop.addEventListener('click', () => {
 btnSub.addEventListener('click', async() => {
     let u = new User(userName.value, userEmail.value, legal.checked);
     if(u.isValid(userName, userEmail, legal)) {
+
         fetch("https://jsonplaceholder.typicode.com/posts", {
             method: "POST",
-            body: u.saveUser(),
+            body: u.toJson(),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             }
@@ -224,7 +230,6 @@ btnSub.addEventListener('click', async() => {
             }
         }).then((json) => {
             console.log(json);
-            u.removeUser();
             clear();
         }).catch((error) => console.log(error));
     }
@@ -237,6 +242,30 @@ let modalTime = setTimeout(visibleModal, 5000);
 if(isLocal('modal')) {
     clear(modalTime);
 }
+
+btnSubModal.addEventListener('click', async() => {
+    let u = new User(userModal.value, emailModal.value, true);
+    if(u.isValid(userModal, emailModal, undefined)) {
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+            method: "POST",
+            body: u.toJson(),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        }).then((response) => {
+            if(response.status === 201) {
+                return response.json();
+            } else if (response.status === 400) {
+                console.log('Data Not Found');
+            } else if(response.status === 500) {
+                console.log('Error On Server')
+            }
+        }).then((json) => {
+            console.log(json);
+            clear();
+        }).catch((error) => console.log(error));
+    }
+});
 
 btnModal.addEventListener('click', () => {
     modal.close();
@@ -271,13 +300,9 @@ listMon.addEventListener('change', (e) => {
 
 let slider = new Slider(classItem, classCountItem, classItemActive, classCountItemActive, classPrev, classNext);
 
+slider.automatic();
 slider.prev();
 slider.next();
 slider.target();
-
-let sliderInter = setInterval(() => {
-    slider.nextIndex();
-    slider.slide(undefined);
-}, 8000);
 
 getCoinsData();

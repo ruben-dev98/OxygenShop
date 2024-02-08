@@ -25,6 +25,20 @@
             <img class="modal__btn-img" src="assets/img/dialog-close.svg" alt="Icono en forma de X para cerrar ventana modal">
         </button>
         <h2 class="modal__title">SUBSCRIBE TO OUR NEWSLETTER</h2>
+        <form class="modal__form" action="javascript:void(0);">
+            <div class="modal__form-control">
+                <label class="modal__form-control-label" for="modal-user">USER</label>
+                <input class="modal__form-control-input" pattern=".([a-zA-Z]{1,100})" required type="text" name="modal-user" id="modal-user">
+            </div>
+            <div class="modal__form-control">
+                <label class="modal__form-control-label" for="modal-email">EMAIL</label>
+                <input class="modal__form-control-input" pattern='([A-zA-Z0-9]+|[A-zA-Z0-9\.]+[A-zA-Z0-9\.]+)@([a-zA-Z\-0-9]+).([a-zA-Z]{2,})' required type="email" name="modal-email" id="modal-email">
+            </div>
+            <div class="cursor--pointer modal__form-submit">
+                <button class="btn">Send</button>
+            </div>
+        </form>
+        
     </dialog>
     <div class="scroll"></div>
     <header class="header">
