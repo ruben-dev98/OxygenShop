@@ -14,9 +14,19 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Oxygen Shop</title>
+    <script src="assets/js/User.js"></script>
+    <script src="assets/js/Slider.js"></script>
+    <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
+    <dialog class="modal">
+        <button class="modal__btn">
+            <img class="modal__btn-img" src="assets/img/dialog-close.svg" alt="Icono en forma de X para cerrar ventana modal">
+        </button>
+        <h2 class="modal__title">SUBSCRIBE TO OUR NEWSLETTER</h2>
+    </dialog>
+    <div class="scroll"></div>
     <header class="header">
         <h1 class="header__title">OXYGENShop</h1>
         <div class="header__icon">
@@ -127,6 +137,11 @@
         </section>
         <section class="pricing">
             <h2 class="pricing__title">Pricing</h2>
+            <select class="pricing__list">
+                <option class="pricing__list-item" selected value="eur">EUR</option>
+                <option class="pricing__list-item" value="usd">USD</option>
+                <option class="pricing__list-item" value="gbp">GBP</option>
+            </select>
             <article class="prices prices--red">
                 <div class="prices__plan">
                     <h2 class="prices__plan-title">Basic</h2>
@@ -242,17 +257,17 @@
                     <span class="contact__info-icons-text contact__info-contact-icons-text--tlf">123 456 789</span>
                 </div>
             </div>
-            <form class="contact__form">
+            <form class="contact__form" action="javascript:void(0);">
                 <div class="contact__form-control">
                     <label class="contact__form-control-label" for="user">NAME</label>
-                    <input class="contact__form-control-input" type="text" name="user" id="user">
+                    <input class="contact__form-control-input" pattern=".([a-zA-Z]{1,100})" type="text" name="user" id="user">
                 </div>
                 <div class="contact__form-control">
                     <label class="contact__form-control-label" for="user-email">EMAIL</label>
-                    <input class="contact__form-control-input" type="email" name="user-email" id="user-email">
+                    <input class="contact__form-control-input" pattern='([A-zA-Z0-9]+|[A-zA-Z0-9\.]+[A-zA-Z0-9\.]+)@([a-zA-Z\-0-9]+).([a-zA-Z]{2,})' required type="email" name="user-email" id="user-email">
                 </div>
                 <div class="contact__form-control contact__form-control--check">
-                    <input class="contact__form-control-check" type="checkbox" name="legal" id="legal">
+                    <input class="contact__form-control-check" required type="checkbox" name="legal" id="legal">
                     <span class="contact__form-control-text">
                         I hereby give consent for my personal data included in my application to be processed for the
                         purposes
@@ -268,6 +283,22 @@
                 </div>
             </form>
         </section>
+        <section class="slider">
+            <img class="slider__item slider__item--active" src="assets/img/night-sky-clear-trees-sm.jpg" alt=""/>
+            <img class="slider__item" src="assets/img/milky-way-tree-silhouettes.jpg" alt=""/>
+            <img class="slider__item" src="assets/img/picography-moon-craters.jpg" alt=""/>
+            <img class="slider__item" src="assets/img/picography-moon-lunar-background.jpg" alt=""/>
+            <div class="slider__count">
+                <div class="slider__count-item slider__count-item--active"></div>
+                <div class="slider__count-item"></div>
+                <div class="slider__count-item"></div>
+                <div class="slider__count-item"></div>
+            </div>
+            <div class="slider__button">
+                <button class="slider__button-prev cursor--pointer"><img src="assets/img/arrow-circle-left.svg" alt="Icono de una flecha mirando hacia la izquierda"/></button>
+                <button class="slider__button-next cursor--pointer"><img src="assets/img/arrow-circle-right.svg" alt="Icono de una flecha mirando hacia la derecha"/></button>
+            </div>
+        </section>
     </div>
     <footer class="footer">
         <div class="footer__info">
@@ -277,5 +308,9 @@
             <img class="footer__icons-icon footer__icons-icon--twi" src="assets/img/twitter.svg" alt="">
             <img class="footer__icons-icon footer__icons-icon--fa" src="assets/img/facebook.svg" alt="">
     </footer>
+    <div class="to__top cursor--pointer">
+        <img class="to__top-img" src="assets/img/arrow-up.svg" alt=""/>
+    </div>
+    
 </body>
 </html>
