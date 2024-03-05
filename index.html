@@ -28,11 +28,11 @@
         <form class="modal__form" action="javascript:void(0);">
             <div class="modal__form-control">
                 <label class="modal__form-control-label" for="modal-user">USER</label>
-                <input class="modal__form-control-input" pattern=".([a-zA-Z]{1,100})" required type="text" name="modal-user" id="modal-user">
+                <input class="modal__form-control-input" type="text" name="modal-user" id="modal-user">
             </div>
             <div class="modal__form-control">
                 <label class="modal__form-control-label" for="modal-email">EMAIL</label>
-                <input class="modal__form-control-input" pattern='([A-zA-Z0-9]+|[A-zA-Z0-9\.]+[A-zA-Z0-9\.]+)@([a-zA-Z\-0-9]+).([a-zA-Z]{2,})' required type="email" name="modal-email" id="modal-email">
+                <input class="modal__form-control-input" type="email" name="modal-email" id="modal-email">
             </div>
             <div class="cursor--pointer modal__form-submit">
                 <button class="btn">Send</button>
@@ -258,45 +258,6 @@
                 </div>
             </article>
         </section>
-        <section class="contact">
-            <div class="contact__info">
-                <h2 class="contact__info-title">Any questions?</h2>
-                <p class="contact__info-text">Leave your email address or call us!</p>
-                <div class="contact__info-icons">
-                    <img class="contact__info-icons-img" src="assets/img/mail-icon.svg" alt="" />
-                    <span class="contact__info-icons-text contact__info-contact-icons-text--email">info@bestshop.xyz</span>
-                </div>
-                <div class="contact__info-icons">
-                    <img class="contact__info-icons-img" src="assets/img/phone-icon.svg" alt="" />
-                    <span class="contact__info-icons-text contact__info-contact-icons-text--tlf">123 456 789</span>
-                </div>
-            </div>
-            <form class="contact__form" action="javascript:void(0);">
-                <div class="contact__form-control">
-                    <label class="contact__form-control-label" for="user">NAME</label>
-                    <input class="contact__form-control-input" pattern=".([a-zA-Z]{1,100})" type="text" name="user" id="user">
-                </div>
-                <div class="contact__form-control">
-                    <label class="contact__form-control-label" for="user-email">EMAIL</label>
-                    <input class="contact__form-control-input" pattern='([A-zA-Z0-9]+|[A-zA-Z0-9\.]+[A-zA-Z0-9\.]+)@([a-zA-Z\-0-9]+).([a-zA-Z]{2,})' required type="email" name="user-email" id="user-email">
-                </div>
-                <div class="contact__form-control contact__form-control--check">
-                    <input class="contact__form-control-check" required type="checkbox" name="legal" id="legal">
-                    <span class="contact__form-control-text">
-                        I hereby give consent for my personal data included in my application to be processed for the
-                        purposes
-                        of the recruitment process under the European Parliament’s and
-                        Council of the European Union Regulation on the Protection of Natural Persons as of 27 April
-                        2016,
-                        with regard to the processing of personal data and on the free movement of such data,
-                        and repealing Directive 95/46/EC (Data Protection Directive)
-                    </span>
-                </div>
-                <div class="cursor--pointer contact__form-submit">
-                    <button class="btn">Send</button>
-                </div>
-            </form>
-        </section>
         <section class="slider">
             <img class="slider__item slider__item--active" src="assets/img/night-sky-clear-trees-sm.jpg" alt=""/>
             <img class="slider__item" src="assets/img/milky-way-tree-silhouettes.jpg" alt=""/>
@@ -313,6 +274,46 @@
                 <button class="slider__button-next cursor--pointer"><img src="assets/img/arrow-circle-right.svg" alt="Icono de una flecha mirando hacia la derecha"/></button>
             </div>
         </section>
+        <section class="contact">
+            <div class="contact__info">
+                <h2 class="contact__info-title">Any questions?</h2>
+                <p class="contact__info-text">Leave your email address or call us!</p>
+                <div class="contact__info-icons">
+                    <img class="contact__info-icons-img" src="assets/img/mail-icon.svg" alt="" />
+                    <span class="contact__info-icons-text contact__info-contact-icons-text--email">info@bestshop.xyz</span>
+                </div>
+                <div class="contact__info-icons">
+                    <img class="contact__info-icons-img" src="assets/img/phone-icon.svg" alt="" />
+                    <span class="contact__info-icons-text contact__info-contact-icons-text--tlf">123 456 789</span>
+                </div>
+            </div>
+            <form class="contact__form">
+                <div class="contact__form-control">
+                    <label class="contact__form-control-label" for="user">NAME</label>
+                    <input class="contact__form-control-input" type="text" name="user" id="user">
+                </div>
+                <div class="contact__form-control">
+                    <label class="contact__form-control-label" for="user-email">EMAIL</label>
+                    <input class="contact__form-control-input" type="email" name="user-email" id="user-email">
+                </div>
+                <div class="contact__form-control contact__form-control--check">
+                    <input class="contact__form-control-check" type="checkbox" name="legal" id="legal">
+                    <span class="contact__form-control-text">
+                        I hereby give consent for my personal data included in my application to be processed for the
+                        purposes
+                        of the recruitment process under the European Parliament’s and
+                        Council of the European Union Regulation on the Protection of Natural Persons as of 27 April
+                        2016,
+                        with regard to the processing of personal data and on the free movement of such data,
+                        and repealing Directive 95/46/EC (Data Protection Directive)
+                    </span>
+                </div>
+                <div class="cursor--pointer contact__form-submit">
+                    <button class="btn">Send</button>
+                </div>
+            </form>
+        </section>
+        
     </div>
     <footer class="footer">
         <div class="footer__info">

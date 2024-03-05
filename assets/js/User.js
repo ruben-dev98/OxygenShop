@@ -11,7 +11,7 @@ class User {
 
     isValid(iUser, iEmail, cLegal) {
         let regEmail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-        let regName = new RegExp(/^(([a-zA-Z]){2,100})$/);
+        let regName = new RegExp(/^(([a-zA-Z0-9]){2,100})$/);
         let bool = true;
         if(this.name == "" || !regName.test(this.name)) {
             iUser.setAttribute('style', 'border: 2px solid red;');

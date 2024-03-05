@@ -1,32 +1,22 @@
-/*************  MENU  ******************/
 let iconMenu = document.querySelector('.header__icon-menu');
 let iconMenuX = document.querySelector('.header__icon-x-menu');
 let list = document.querySelector('.nav__list');
 
-/*************  SCROLLBAR  ******************/
-
 let scrollBar = document.querySelector('.scroll');
-
-/*************  TO_TOP  ******************/
 
 let toTop = document.querySelector('.to__top');
 
-/***************  FORM  ******************/
-
-let btnSub = document.querySelector('.contact__form-submit');
+let formCont = document.querySelector('.contact__form')
 let userName = document.querySelector("#user");
 let userEmail = document.querySelector("#user-email");
 let legal = document.querySelector("#legal");
 
-/***************  MODAL  ******************/
-
 let modal = document.querySelector('.modal');
 let userModal = document.querySelector('#modal-user');
 let emailModal = document.querySelector('#modal-email');
-let btnSubModal = document.querySelector('.modal__form-submit');
+let formMod = document.querySelector('.modal__form');
 let btnModal = document.querySelector('.modal__btn');
 
-/*************  PRICES  ******************/
 const basicPrice = 0;
 const profPrice = 25;
 const premPrice = 60;
@@ -41,8 +31,6 @@ let prof = document.querySelector('.prices__plan-price--blue');
 let prem = document.querySelector('.prices__plan-price--green');
 let listMon = document.querySelector('.pricing__list');
 
-/*************  SLIDER  ******************/
-
 const classItem = 'slider__item';
 const classItemActive = 'slider__item--active';
 
@@ -52,15 +40,6 @@ const classCountItemActive = 'slider__count-item--active';
 const classPrev = '.slider__button-prev';
 const classNext = '.slider__button-next';
 
-/************************************************************/
-
-/*************************** FUNCTIONS MODAL *****************************************/
-
-/**
- * 
- * Recoger una variable de localStorage por un nombre (item) 
- */
-
 function isLocal(item) {
     if(!localStorage.getItem(item)) {
         return false;
@@ -68,32 +47,17 @@ function isLocal(item) {
     return true;
 }
 
-/**
- * 
- * Guardar una variable en localStorage con un nombre (item) 
- */
-
 function setLocal(item) {
     if(!localStorage.getItem(item)) {
         localStorage.setItem(item, true);
     }
 }
 
-/**
- * Hacer visible el dialog
- */
-
 function visibleModal() {
     if(!isLocal('modal')) {
         modal.showModal();
     }
 }
-
-/*************************** FUNCTIONS FORM *****************************************/
-
-/**
-* Limpiar inputs y check del formulario
-**/
 
 function clear() {
     userModal.value = "";
@@ -104,22 +68,11 @@ function clear() {
     legal.checked = false;
 }
 
-/*************************** FUNCTIONS PRICE *****************************************/
-
-/**
- * 
- * Precio por defecto que tendran los componentes pricing
- */
-
 function setDefaultPrice(mon) {
     basic.innerHTML = calcCoin(mon, basicPrice);
     prof.innerHTML = calcCoin(mon, profPrice);
     prem.innerHTML = calcCoin(mon, premPrice);
 }
-
-/**
- * Recoger los valores del cambio de monedas para realizar los calculos en los precios
- */
 
 function getCoinsData() {
     fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
@@ -142,12 +95,6 @@ function getCoinsData() {
     }).catch((error) => console.log(error));
 }
 
-/**
- * 
- * Calcular el nuevo precio dependiendo de la moneda de cambio (mon) y el precio anterior (pre)
- * Devolviendo una cadena de texto con el símbolo que le corresponda a la moneda
- */
-
 function calcCoin(mon, price) {
     let symbol = '';
     let change = 0;
@@ -165,8 +112,6 @@ function calcCoin(mon, price) {
     return `${symbol}${Number.parseFloat(change*price).toFixed(0)}`;
 }
 
-/*************  MENU  ******************/
-
 function listDisplay(display, e, icon) {
     list.setAttribute('style', `display: ${display}`);
     e.target.setAttribute('style', 'display: none');
@@ -181,9 +126,6 @@ iconMenuX.addEventListener('click', e => {
     listDisplay('none', e, iconMenu);
 });
 
-/*************  SCROLLBAR  ******************/
-
-
 window.addEventListener('scroll', e => {
     let widthMax = (window.document.body.scrollHeight) - window.innerHeight;
     let width = window.scrollY*100/widthMax;
@@ -197,8 +139,6 @@ window.addEventListener('scroll', e => {
     }
 });
 
-/*************  TO_TOP  ******************/
-
 toTop.addEventListener('click', () => {
     setTimeout(() => {
         window.scrollTo({
@@ -208,9 +148,8 @@ toTop.addEventListener('click', () => {
     }, 200);
 });
 
-/***************  FORM  ******************/
-
-btnSub.addEventListener('click', async() => {
+formCont.addEventListener('submit', async(event) => {
+    event.preventDefault();
     let u = new User(userName.value, userEmail.value, legal.checked);
     if(u.isValid(userName, userEmail, legal)) {
 
@@ -235,15 +174,14 @@ btnSub.addEventListener('click', async() => {
     }
 });
 
-/***************  MODAL  ******************/
-
 let modalTime = setTimeout(visibleModal, 5000);
 
 if(isLocal('modal')) {
     clear(modalTime);
 }
 
-btnSubModal.addEventListener('click', async() => {
+formMod.addEventListener('submit', async(event) => {
+    event.preventDefault();
     let u = new User(userModal.value, emailModal.value, true);
     if(u.isValid(userModal, emailModal, undefined)) {
         fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -263,7 +201,10 @@ btnSubModal.addEventListener('click', async() => {
         }).then((json) => {
             console.log(json);
             clear();
+            setLocal('modal');
+            modal.close();
         }).catch((error) => console.log(error));
+        
     }
 });
 
@@ -287,16 +228,12 @@ window.addEventListener('click', (e) => {
     
 });
 
-/**************  PRICES  *******************/
-
 listMon.addEventListener('change', (e) => {
     let mon = e.target.value;
     basic.innerHTML = calcCoin(mon, basicPrice);
     prof.innerHTML = calcCoin(mon, profPrice);
     prem.innerHTML = calcCoin(mon, premPrice);
 });
-
-/*************  SLIDER  ******************/
 
 let slider = new Slider(classItem, classCountItem, classItemActive, classCountItemActive, classPrev, classNext);
 
