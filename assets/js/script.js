@@ -17,6 +17,8 @@ let emailModal = document.querySelector('#modal-email');
 let formMod = document.querySelector('.modal__form');
 let btnModal = document.querySelector('.modal__btn');
 
+const navItem = document.querySelectorAll('.nav__list-item');
+
 const basicPrice = 0;
 const profPrice = 25;
 const premPrice = 60;
@@ -119,7 +121,7 @@ function listDisplay(display, e, icon) {
 }
 
 iconMenu.addEventListener('click', e => {
-    listDisplay('block', e,iconMenuX);
+    listDisplay('block', e, iconMenuX);
 });
 
 iconMenuX.addEventListener('click', e => {
@@ -148,6 +150,12 @@ toTop.addEventListener('click', () => {
     }, 200);
 });
 
+navItem.forEach((element) => {
+    element.addEventListener('click', (event) => {
+        event.target.classList.toggle('nav__list-item--active');
+    });
+})
+
 formCont.addEventListener('submit', async(event) => {
     event.preventDefault();
     let u = new User(userName.value, userEmail.value, legal.checked);
@@ -168,6 +176,13 @@ formCont.addEventListener('submit', async(event) => {
                 console.log('Error On Server')
             }
         }).then((json) => {
+            Swal.fire({
+                title: 'Your data has sent successfully',
+                text: 'Thanks for your time!',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 2500
+            });
             console.log(json);
             clear();
         }).catch((error) => console.log(error));
@@ -199,6 +214,13 @@ formMod.addEventListener('submit', async(event) => {
                 console.log('Error On Server')
             }
         }).then((json) => {
+            Swal.fire({
+                title: 'Your data has sent successfully',
+                text: 'Thanks for your time!',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 2500
+            });
             console.log(json);
             clear();
             setLocal('modal');
