@@ -177,7 +177,7 @@ formCont.addEventListener('submit', async(event) => {
             }
         }).then((json) => {
             Swal.fire({
-                title: 'Your data has sent successfully',
+                title: 'Your data has been sent successfully',
                 text: 'Thanks for your time!',
                 icon: 'success',
                 showConfirmButton: false,
@@ -215,7 +215,7 @@ formMod.addEventListener('submit', async(event) => {
             }
         }).then((json) => {
             Swal.fire({
-                title: 'Your data has sent successfully',
+                title: 'Your data has been sent successfully',
                 text: 'Thanks for your time!',
                 icon: 'success',
                 showConfirmButton: false,
