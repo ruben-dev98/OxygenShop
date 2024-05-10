@@ -124,13 +124,13 @@
   margin-top: 1.2em;
   margin-bottom: 1.4em;
 }
-.nav__list-item--active {
-  color: #000000;
-}
 .nav__list-item a {
   text-decoration: none;
+  color: #A5A5A5;
+  padding: 2rem 0rem 1.2rem 0rem;
+}
+.nav__list-item--active a {
   color: #000000;
-  padding: 2rem 0rem;
 }
 
 @media only screen and (min-width: 1000px) {

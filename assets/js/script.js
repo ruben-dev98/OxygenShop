@@ -17,7 +17,8 @@ let emailModal = document.querySelector('#modal-email');
 let formMod = document.querySelector('.modal__form');
 let btnModal = document.querySelector('.modal__btn');
 
-const navItem = document.querySelectorAll('.nav__list-item');
+const nav = document.querySelector('.nav__list');
+const navItems = document.querySelectorAll('.nav__list-item');
 
 const basicPrice = 0;
 const profPrice = 25;
@@ -43,20 +44,20 @@ const classPrev = '.slider__button-prev';
 const classNext = '.slider__button-next';
 
 function isLocal(item) {
-    if(!localStorage.getItem(item)) {
+    if (!localStorage.getItem(item)) {
         return false;
     }
     return true;
 }
 
 function setLocal(item) {
-    if(!localStorage.getItem(item)) {
+    if (!localStorage.getItem(item)) {
         localStorage.setItem(item, true);
     }
 }
 
 function visibleModal() {
-    if(!isLocal('modal')) {
+    if (!isLocal('modal')) {
         modal.showModal();
     }
 }
@@ -78,40 +79,40 @@ function setDefaultPrice(mon) {
 
 function getCoinsData() {
     fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json')
-    .then((response) =>  {
-        if(response.status === 200) {
-            return response.json();
-        } else if (response.status === 400) {
-            console.log('Data Not Found');
-        } else if(response.status === 500) {
-            console.log('Error On Server')
-        }
-    })
-    .then((json) => {
-        coinValues = {
-            "eur": json.eur.eur,
-            "usd": json.eur.usd,
-            "gbp": json.eur.gbp
-        };
-        setDefaultPrice(listMon.value);
-    }).catch((error) => console.log(error));
+        .then((response) => {
+            if (response.status === 200) {
+                return response.json();
+            } else if (response.status === 400) {
+                console.log('Data Not Found');
+            } else if (response.status === 500) {
+                console.log('Error On Server')
+            }
+        })
+        .then((json) => {
+            coinValues = {
+                "eur": json.eur.eur,
+                "usd": json.eur.usd,
+                "gbp": json.eur.gbp
+            };
+            setDefaultPrice(listMon.value);
+        }).catch((error) => console.log(error));
 }
 
 function calcCoin(mon, price) {
     let symbol = '';
     let change = 0;
-    if(mon == 'eur') {
+    if (mon == 'eur') {
         symbol = '€';
         change = coinValues.eur;
-    } else if(mon == 'gbp') {
+    } else if (mon == 'gbp') {
         symbol = '£';
         change = coinValues.gbp;
     } else {
         symbol = '$';
         change = coinValues.usd;
     }
-    
-    return `${symbol}${Number.parseFloat(change*price).toFixed(0)}`;
+
+    return `${symbol}${Number.parseFloat(change * price).toFixed(0)}`;
 }
 
 function listDisplay(display, e, icon) {
@@ -130,10 +131,10 @@ iconMenuX.addEventListener('click', e => {
 
 window.addEventListener('scroll', e => {
     let widthMax = (window.document.body.scrollHeight) - window.innerHeight;
-    let width = window.scrollY*100/widthMax;
+    let width = window.scrollY * 100 / widthMax;
     scrollBar.setAttribute('style', `width: ${width}%; display: block;`);
-    
-    if(width >= 25) {
+
+    if (width >= 25) {
         visibleModal();
         toTop.setAttribute('style', 'display: block');
     } else {
@@ -150,16 +151,22 @@ toTop.addEventListener('click', () => {
     }, 200);
 });
 
-navItem.forEach((element) => {
-    element.addEventListener('click', (event) => {
-        event.target.classList.toggle('nav__list-item--active');
-    });
+nav.addEventListener('click', (event) => {
+    if (event.target.className !== 'nav__list') {
+        for (item of navItems) {
+            if (item.className.includes('nav__list-item--active') && event.target.parentNode !== item) {
+                item.classList.toggle('nav__list-item--active');
+            }
+        }
+        event.target.parentNode.classList.toggle('nav__list-item--active');
+    }
+
 })
 
-formCont.addEventListener('submit', async(event) => {
+formCont.addEventListener('submit', async (event) => {
     event.preventDefault();
     let u = new User(userName.value, userEmail.value, legal.checked);
-    if(u.isValid(userName, userEmail, legal)) {
+    if (u.isValid(userName, userEmail, legal)) {
 
         fetch("https://jsonplaceholder.typicode.com/posts", {
             method: "POST",
@@ -168,11 +175,11 @@ formCont.addEventListener('submit', async(event) => {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         }).then((response) => {
-            if(response.status === 201) {
+            if (response.status === 201) {
                 return response.json();
             } else if (response.status === 400) {
                 console.log('Data Not Found');
-            } else if(response.status === 500) {
+            } else if (response.status === 500) {
                 console.log('Error On Server')
             }
         }).then((json) => {
@@ -191,14 +198,14 @@ formCont.addEventListener('submit', async(event) => {
 
 let modalTime = setTimeout(visibleModal, 5000);
 
-if(isLocal('modal')) {
+if (isLocal('modal')) {
     clear(modalTime);
 }
 
-formMod.addEventListener('submit', async(event) => {
+formMod.addEventListener('submit', async (event) => {
     event.preventDefault();
     let u = new User(userModal.value, emailModal.value, true);
-    if(u.isValid(userModal, emailModal, undefined)) {
+    if (u.isValid(userModal, emailModal, undefined)) {
         fetch("https://jsonplaceholder.typicode.com/posts", {
             method: "POST",
             body: u.toJson(),
@@ -206,11 +213,11 @@ formMod.addEventListener('submit', async(event) => {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         }).then((response) => {
-            if(response.status === 201) {
+            if (response.status === 201) {
                 return response.json();
             } else if (response.status === 400) {
                 console.log('Data Not Found');
-            } else if(response.status === 500) {
+            } else if (response.status === 500) {
                 console.log('Error On Server')
             }
         }).then((json) => {
@@ -226,7 +233,7 @@ formMod.addEventListener('submit', async(event) => {
             setLocal('modal');
             modal.close();
         }).catch((error) => console.log(error));
-        
+
     }
 });
 
@@ -236,18 +243,18 @@ btnModal.addEventListener('click', () => {
 });
 
 modal.addEventListener('keydown', (e) => {
-    if(e.keyCode == 27) {
+    if (e.keyCode == 27) {
         modal.close();
         setLocal('modal');
     }
 });
 
 window.addEventListener('click', (e) => {
-    if(e.target == modal) {
+    if (e.target == modal) {
         modal.close();
         setLocal('modal');
     }
-    
+
 });
 
 listMon.addEventListener('change', (e) => {
