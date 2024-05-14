@@ -127,7 +127,6 @@
 .nav__list-item a {
   text-decoration: none;
   color: #A5A5A5;
-  padding: 2rem 0rem 1.2rem 0rem;
 }
 .nav__list-item--active a {
   color: #000000;
@@ -154,6 +153,9 @@
   }
   .nav__list-item--active {
     border-bottom: 0.5em solid #08A6E4;
+  }
+  .nav__list-item a {
+    padding: 2rem 0rem 1.2rem 0rem;
   }
 }
 .sell {
@@ -876,7 +878,7 @@
   }
 }
 .slider {
-  margin-top: 2em;
+  margin: 2em 0em 3em 0em;
   position: relative;
   width: 100%;
 }
