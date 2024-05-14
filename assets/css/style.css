@@ -677,38 +677,38 @@
   }
   .pricing .prices:hover {
     width: 108.8%;
-    height: 31.5em;
+    height: 29.5em;
     margin-top: -1em;
   }
   .pricing .prices:hover .prices__btn {
-    margin-top: 1.8em;
+    margin-top: 0.5em;
   }
   .pricing .prices:hover .prices__btn--red {
-    box-shadow: 0.5em 0.8em 1em 0em #FB3B64;
+    box-shadow: 1.5px 2.8px 6.5px 0px #FB3B64;
   }
   .pricing .prices:hover .prices__btn--blue {
-    box-shadow: 0.5em 0.8em 1em 0em #08A6E4;
+    box-shadow: 1.5px 2.8px 6.5px 0px #08A6E4;
   }
   .pricing .prices:hover .prices__btn--green {
-    box-shadow: 0.5em 0.8em 1em 0em #55DFB4;
+    box-shadow: 1.5px 2.8px 6.5px 0px #55DFB4;
   }
   .pricing .prices--red {
     grid-area: priceBa;
   }
   .pricing .prices--red:hover {
-    box-shadow: 0.5em 0.8em 1.5em 0em #FB3B64;
+    box-shadow: 1.5px 2.8px 6.5px 0px #FB3B64;
   }
   .pricing .prices--blue {
     grid-area: pricePro;
   }
   .pricing .prices--blue:hover {
-    box-shadow: 0.5em 0.8em 1.5em 0em #08A6E4;
+    box-shadow: 1.5px 2.8px 6.5px 0px #08A6E4;
   }
   .pricing .prices--green {
     grid-area: pricePre;
   }
   .pricing .prices--green:hover {
-    box-shadow: 0.5em 0.8em 1.5em 0em #55DFB4;
+    box-shadow: 1.5px 2.8px 6.5px 0px #55DFB4;
   }
   .pricing .prices__plan {
     display: block;
