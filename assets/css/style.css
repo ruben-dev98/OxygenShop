@@ -787,6 +787,7 @@
   font-size: 0.7rem;
   color: #08A6E4;
   letter-spacing: 0.3em;
+  padding: 1rem 0;
 }
 .contact__form-control-check {
   appearance: none;
